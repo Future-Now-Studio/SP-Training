@@ -1517,12 +1517,7 @@ header #menu-toggle {
     margin: 0 auto;
     color: var(--brand-dark);
     font-weight: 400;
-    padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 45, 245, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 45, 245, 0.1);
+    padding: 0;
 }
 
 /* Warum Personal Training Section */
@@ -1679,7 +1674,7 @@ header #menu-toggle {
     }
     .intro-text {
         font-size: 1.125rem;
-        padding: 2rem 1.5rem;
+        padding: 0;
     }
     #personaltraining-closing {
         padding: 4rem 1.5rem;
