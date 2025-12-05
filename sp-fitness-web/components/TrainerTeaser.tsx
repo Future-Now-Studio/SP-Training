@@ -1,0 +1,97 @@
+import Link from "next/link";
+import Image from "next/image";
+import FadeIn from "./FadeIn";
+
+export default function TrainerTeaser() {
+  return (
+    <section id="trainer">
+      <div className="wrapper">
+        {/* Left Side - Content */}
+        <FadeIn className="trainer-content" direction="right" delay={0.2}>
+          <p className="trainer-subtitle">DEIN PERSONAL TRAINER</p>
+          <h2 className="trainer-name">
+            <span className="name-white">Sebastian</span> <span className="name-blue">Pfau</span>
+          </h2>
+          
+          <p className="trainer-description">
+            Mit über 10 Jahren Erfahrung im Fitness- und Rehabilitationsbereich bin ich dein Partner auf dem Weg zu deinen Zielen. Egal ob Muskelaufbau, Abnehmen, Rehabilitation nach Verletzungen oder Leistungssteigerung – ich begleite dich mit professioneller Betreuung und individuellen Trainingsplänen.
+          </p>
+
+          {/* Feature Boxes Grid */}
+          <div className="trainer-features">
+            <div className="feature-box">
+              <div className="feature-icon">
+                <i className="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div className="feature-text">
+                <strong>Zertifizierter Personal Trainer</strong>
+                <span>Lizenzierter Fitnesstrainer</span>
+              </div>
+            </div>
+
+            <div className="feature-box">
+              <div className="feature-icon">
+                <i className="fa-solid fa-user-group"></i>
+              </div>
+              <div className="feature-text">
+                <strong>10+ Jahre Erfahrung</strong>
+                <span>Im Fitness & Reha Bereich</span>
+              </div>
+            </div>
+
+            <div className="feature-box">
+              <div className="feature-icon">
+                <i className="fa-solid fa-bullseye"></i>
+              </div>
+              <div className="feature-text">
+                <strong>Individuelle Betreuung</strong>
+                <span>Maßgeschneiderte Trainingspläne</span>
+              </div>
+            </div>
+
+            <div className="feature-box">
+              <div className="feature-icon">
+                <i className="fa-solid fa-heart"></i>
+              </div>
+              <div className="feature-text">
+                <strong>Leidenschaft</strong>
+                <span>Für Fitness und Gesundheit</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quote Section */}
+          <div className="trainer-quote">
+            <div className="quote-line"></div>
+            <blockquote>
+              "Mein Ziel ist es, dich nicht nur körperlich, sondern auch mental stärker zu machen. Zusammen erreichen wir, was du dir vorgenommen hast."
+            </blockquote>
+            <p className="quote-author">— Sebastian Pfau</p>
+          </div>
+
+          {/* Learn More Button */}
+          <div className="trainer-cta">
+            <Link href="/trainer" className="button key">
+              <span>Mehr über das Team erfahren</span>
+              <i className="fa-solid fa-arrow-right"></i>
+            </Link>
+          </div>
+        </FadeIn>
+
+        {/* Right Side - Image */}
+        <FadeIn className="trainer-image-wrapper" direction="left" delay={0.4}>
+          <div className="trainer-image-frame">
+            <Image 
+              src="/images/Trainer.png" 
+              alt="Sebastian Pfau - Personal Trainer" 
+              fill
+              style={{objectFit: "contain", objectPosition: "center"}}
+              priority
+            />
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+

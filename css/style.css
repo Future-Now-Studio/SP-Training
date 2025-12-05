@@ -315,6 +315,7 @@ header #menu-toggle {
 #start {
     display: flex;
     flex-direction: row;
+    position: relative;
 
     width: 100%;
     height: 100%;
@@ -325,6 +326,83 @@ header #menu-toggle {
     background-size: cover;
     background-position: center center;
     
+}
+#start .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+#start .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+
+    width: 50%;
+    height: 100%;
+    padding: 2rem 5rem;
+    padding-right: 0;
+}
+#start .hero-content .hero-logo {
+    display: block;
+    width: 30rem;
+    height: auto;
+    margin-bottom: 2rem;
+}
+#start .hero-content .text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+#start .hero-content .text-box .badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #005AFF;
+    color: #ffffff;
+    border-radius: 1rem;
+    font-family: "Lato", system-ui;
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 10%;
+}
+#start .hero-content .text-box h1 {
+    color: #ffffff;
+    margin: 0;
+}
+#start .hero-content .text-box h1 .highlight {
+    color: #005AFF;
+}
+#start .hero-content .text-box h2 {
+    color: #ffffff;
+    margin: 0;
+}
+#start .hero-content .text-box .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+#start .hero-trainer-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50%;
+    max-width: 40rem;
+    object-fit: contain;
+    object-position: bottom right;
+    z-index: 1;
 }
 #start .start {
     display: flex;
@@ -408,6 +486,35 @@ header #menu-toggle {
         
         background-image: linear-gradient(0deg, rgba(1,10,56,0) 0%, rgba(1,10,55,0.6) 40%, rgba(1,10,55,0.75) 60%, rgba(1,10,54,0.9) 100%), url('../images/hero_bg_2.jpg');        
     }
+    #start .hero-content {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        padding-top: 5rem;
+        align-items: center;
+    }
+    #start .hero-content .text-box {
+        align-items: center;
+        text-align: center;
+    }
+    #start .hero-content .text-box h1 {
+        text-align: center;
+    }
+    #start .hero-content .text-box h2 {
+        text-align: center;
+    }
+    #start .hero-content .text-box .buttons {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    #start .hero-trainer-img {
+        position: relative;
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        object-position: top center;
+    }
     #start .start {   
         width: 100%;
         height: 20rem;
@@ -439,6 +546,24 @@ header #menu-toggle {
 
     #start {
         gap: 2rem;
+    }
+    #start .hero-content {
+        padding-top: 4rem;
+    }
+    #start .hero-content .hero-logo {
+        width: 10rem;
+    }
+    #start .hero-content .text-box {
+        gap: 1rem;
+    }
+    #start .hero-content .text-box h1 {
+        font-size: 2rem;
+    }
+    #start .hero-content .text-box h2 {
+        font-size: 1.25rem;
+    }
+    #start .hero-trainer-img {
+        height: 15rem;
     }
     #start .end .inner {
         gap: 2rem;
@@ -1098,6 +1223,232 @@ header #menu-toggle {
     }
 }
 
+
+
+
+/* Personal Training Page Styles */
+
+#personaltraining-intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    background-color: #ffffff;
+}
+#personaltraining-intro .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100rem;
+}
+#personaltraining-intro .wrapper .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    max-width: 60rem;
+}
+#personaltraining-intro .wrapper .content p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: center;
+    color: #000931;
+}
+
+@media screen and (max-width: 100rem) {
+    #personaltraining-intro .wrapper {
+        width: 100%;
+        padding: 0 2rem;
+    }
+}
+@media screen and (max-width: 40rem) {
+    #personaltraining-intro {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    #personaltraining-intro .wrapper .content p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+
+#warum-personaltraining {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    background-color: #000931;
+    background: linear-gradient(90deg, rgba(0,14,74,1) 0%, rgba(0,9,49,1) 100%);
+}
+#warum-personaltraining .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    width: 100rem;
+}
+#warum-personaltraining .wrapper h3 {
+    color: #ffffff;
+    text-align: center;
+}
+#warum-personaltraining .wrapper .features {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    width: 100%;
+}
+#warum-personaltraining .wrapper .features .feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 22rem;
+    min-height: 20rem;
+
+    padding: 0.5rem;
+}
+#warum-personaltraining .wrapper .features .feature .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 2rem;
+
+    border: 0.25rem solid #000E4A;
+    border-radius: 1rem;
+
+    background-color: transparent;
+}
+#warum-personaltraining .wrapper .features .feature .inner h4 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    margin: 0;
+}
+#warum-personaltraining .wrapper .features .feature .inner p {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+@media screen and (max-width: 100rem) {
+    #warum-personaltraining .wrapper {
+        width: 100%;
+        padding: 0 2rem;
+    }
+}
+@media screen and (max-width: 60rem) {
+    #warum-personaltraining .wrapper .features .feature {
+        width: 100%;
+        min-height: auto;
+    }
+}
+@media screen and (max-width: 40rem) {
+    #warum-personaltraining {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    #warum-personaltraining .wrapper {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    #warum-personaltraining .wrapper .features .feature .inner {
+        padding: 1.5rem;
+    }
+    #warum-personaltraining .wrapper .features .feature .inner h4 {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+}
+
+
+#personaltraining-closing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    background-color: #ffffff;
+}
+#personaltraining-closing .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100rem;
+}
+#personaltraining-closing .wrapper .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    max-width: 60rem;
+}
+#personaltraining-closing .wrapper .content h3 {
+    color: #000931;
+    text-align: center;
+}
+#personaltraining-closing .wrapper .content p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: center;
+    color: #000931;
+}
+
+@media screen and (max-width: 100rem) {
+    #personaltraining-closing .wrapper {
+        width: 100%;
+        padding: 0 2rem;
+    }
+}
+@media screen and (max-width: 40rem) {
+    #personaltraining-closing {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    #personaltraining-closing .wrapper .content {
+        gap: 1.5rem;
+    }
+    #personaltraining-closing .wrapper .content p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
 
 
 

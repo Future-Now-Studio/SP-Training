@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Training – SP Fitness by Sebastian Pfau | Individuell, professionell und zielorientiert</title>
+    
+    <meta name="description" content="Personal Training bei SP Fitness by Sebastian Pfau in Schwetzingen: Individuelle Trainingskonzepte, 8 Jahre Berufserfahrung, für alle Altersklassen. Jetzt informieren!">
+    
+    <meta name="keywords" content="Personal Training Schwetzingen, Personal Trainer, Einzeltraining, Fitness Training, Sebastian Pfau, SP Fitness">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Sebastian Pfau">
+    
+    <link rel="canonical" href="https://www.sp-fitness.de/personaltraining.html">
+    <link rel="icon" href="images/fav.svg" type="image/x-icon">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Personal Training – SP Fitness by Sebastian Pfau">
+    <meta property="og:description" content="Personal Training – Individuell, professionell und zielorientiert. 8 Jahre Berufserfahrung, maßgeschneiderte Trainingsprogramme für alle Altersklassen.">
+    <meta property="og:image" content="https://www.sp-fitness.de/images/og-image.jpg">
+    <meta property="og:url" content="https://www.sp-fitness.de/personaltraining.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Personal Training – SP Fitness by Sebastian Pfau">
+    <meta name="twitter:description" content="Personal Training – Individuell, professionell und zielorientiert. 8 Jahre Berufserfahrung, maßgeschneiderte Trainingsprogramme für alle Altersklassen.">
+    <meta name="twitter:image" content="https://www.sp-fitness.de/images/twitter-card.jpg">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Personal Training",
+      "description": "Personal Training – Individuell, professionell und zielorientiert. 8 Jahre Berufserfahrung, maßgeschneiderte Trainingsprogramme für alle Altersklassen.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SP Fitness by Sebastian Pfau",
+        "url": "https://www.spfitness.de"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/2b3eb46296.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+
+    <header>
+
+      <div class="wrapper">
+        <div class="start">
+          <a href="index.html"><img src="images/logo_header.svg" alt="SP Fitness by Sebastian Pfau – Dein Trainer für Outdoor Kurse, Personal Training & Reha Sport in Schwetzingen" title="SP Fitness by Sebastian Pfau – Dein Trainer für Outdoor Kurse, Personal Training & Reha Sport in Schwetzingen"></a>
+        </div>
+        <a id="menu-toggle" class="button flat">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+
+        <div class="end">
+          <ul class="navigation">
+            <li><a href="index.html#start" class="button flat">Start</a></li>
+            <li><a href="index.html#leistungen" class="button flat">Leistungen</a></li>
+            <li><a href="index.html#studio" class="button flat">Studio</a></li>
+            <li><a href="index.html#preise" class="button flat">Preise</a></li>
+            <li><a href="index.html#kontakt" class="button flat">Kontakt</a></li>
+            <li><a href="index.html#trainer" class="button flat">Trainer</a></li>
+            <li><a href="index.html#impressum" class="button flat">Impressum</a></li>
+          </ul>
+          <ul class="links">
+            <li><a class="phone-link" href="#"><i class="fa-solid fa-square-phone"></i></a></li>
+            <li><a class="email-link" href="#"><i class="fa-solid fa-square-envelope"></i></a></li>
+            <li><a href="https://wa.me/4917696252517" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+            <li><a href="https://www.instagram.com/sp_fitness.personal_training/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a></li>
+          </ul>
+
+        </div>
+      </div>
+    </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const menuToggle = document.getElementById("menu-toggle");
+          const menu = document.querySelector("header .wrapper .end");
+          const menuLinks = document.querySelectorAll("header .wrapper .end a"); // Alle Links im Menü
+          let menuOpen = false;
+      
+          // Menü öffnen/schließen beim Klick auf das Icon
+          menuToggle.addEventListener("click", function (e) {
+              e.preventDefault(); // Verhindert das Springen bei <a>-Tags
+              menuOpen = !menuOpen;
+              menu.classList.toggle("active");
+      
+              // Icon wechseln
+              menuToggle.innerHTML = menuOpen
+                  ? '<i class="fa-solid fa-times"></i>'  // "Schließen"-Icon
+                  : '<i class="fa-solid fa-bars"></i>'; // "Öffnen"-Icon
+          });
+      
+          // Menü schließen, wenn ein Link angeklickt wird
+          menuLinks.forEach(link => {
+              link.addEventListener("click", function () {
+                  menu.classList.remove("active"); // Menü ausblenden
+                  menuOpen = false;
+                  menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>'; // Icon zurücksetzen
+              });
+          });
+      });
+      </script>
+      
+
+
+      <section id="start">
+        <div class="hero-bg"></div>
+        
+        <div class="hero-content">
+            <img src="images/logo.svg" alt="Logo" class="hero-logo">
+            
+            <div class="text-box">
+              <span class="badge">Personal Training</span>
+              <h1>Individuell, professionell<br>und zielorientiert</h1>
+              <h2>Sebastian Pfau - Personal Trainer</h2>
+              
+              <div class="buttons">
+                <a href="#kontakt" class="button key"><span>Jetzt durchstarten</span></a>
+                <a href="index.html" class="button ghost invert"><span>Zurück zur Startseite</span></a>
+              </div>
+            </div>
+        </div>
+        
+        <img src="images/sebastian.png" class="hero-trainer-img" alt="Sebastian Pfau">
+      </section>
+
+
+
+
+    <section id="personaltraining-intro">
+      <div class="wrapper">
+        <div class="content">
+          <p>Personal Training ist die effektivste Form des Trainings, wenn es um messbare Fortschritte, nachhaltige Ergebnisse und eine sichere Ausführung geht. Unser Anspruch ist es, Ihnen eine Betreuung zu bieten, die fachlich fundiert, strukturiert und präzise auf Ihre persönlichen Ziele abgestimmt ist.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="warum-personaltraining">
+      <div class="wrapper">
+        <h3>Warum Personal Training bei uns?</h3>
+        
+        <div class="features">
+          
+          <div class="feature">
+            <div class="inner">
+              <h4>1. Individuelle Trainingskonzepte auf höchstem Niveau</h4>
+              <p>Jeder Mensch hat unterschiedliche Voraussetzungen, Ziele und Herausforderungen. Daher entwickeln wir für Sie ein maßgeschneidertes Trainingsprogramm, das Ihren Bedürfnissen exakt entspricht – unabhängig davon, ob Sie Ihre Gesundheit verbessern, Kraft aufbauen, Gewicht reduzieren oder Ihre allgemeine Fitness steigern möchten.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="inner">
+              <h4>2. Fachliche Kompetenz durch 8 Jahre Berufserfahrung</h4>
+              <p>Ihr Trainer verfügt über acht Jahre professionelle Berufserfahrung im Personal Training und bringt zusätzlich eine sehr lange eigene Trainingserfahrung mit: Seit 2006 trainiert er selbst regelmäßig und intensiv im Fitnessbereich. Dieses Zusammenspiel aus beruflicher Expertise und jahrelanger praktischer Erfahrung schafft eine fundierte Grundlage für ein qualitativ hochwertiges und effektives Coaching.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="inner">
+              <h4>3. Geeignet für alle Altersklassen und Trainingsziele</h4>
+              <p>Ob Anfänger, Fortgeschrittener oder Wiedereinsteiger – unser Personal Training richtet sich an Menschen jeden Alters. Auch bei körperlichen Einschränkungen oder besonderen Anforderungen passen wir das Training individuell an, um Ihnen die bestmöglichen Ergebnisse zu ermöglichen.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="inner">
+              <h4>4. Nachhaltige Begleitung und professionelle Motivation</h4>
+              <p>Wir legen großen Wert auf eine kontinuierliche, seriöse und zielorientierte Betreuung. Durch präzise Trainingssteuerung, regelmäßige Anpassungen und eine klare Strategie sorgen wir dafür, dass Sie konstant Fortschritte machen und langfristig motiviert bleiben.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="personaltraining-closing">
+      <div class="wrapper">
+        <div class="content">
+          <h3>Ein Training, das auf Erfahrung, Qualität und Vertrauen basiert</h3>
+          <p>Profitieren Sie von einer persönlichen Betreuung, die auf langjährigem Know-how und echter Leidenschaft für Fitness und Gesundheit beruht. Gemeinsam schaffen wir die Grundlage für mehr Leistung, Wohlbefinden und Lebensqualität.</p>
+          <a href="#kontakt" class="button key"><span>Jetzt Kontakt aufnehmen</span></a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+   
+
+
+
+
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          // Telefonnummer & Formatierung
+          const phoneRaw = "+49" + "176" + "96252517"; // Für 'tel:'
+          const phoneDisplay = "0176 / 96 25 25 17"; // Für Menschen lesbar
+          const phoneDisplayH4 = "0176 / 96 25 25 17"; // Für Menschen lesbar
+    
+          // E-Mail-Adresse
+          const emailRaw = "kontakt" + "@" + "sp-fitness" + ".de";
+    
+          // Alle Telefon-Links setzen
+          document.querySelectorAll(".phone-link").forEach(link => {
+              link.href = "tel:" + phoneRaw;
+              link.innerHTML  = '<i class="fa-solid fa-square-phone"></i>';
+          });
+
+          // Alle Telefon-Links setzen
+          document.querySelectorAll(".phone-link-h4").forEach(link => {
+              link.href = "tel:" + phoneRaw;
+              link.innerHTML  = "<h4>" + phoneDisplay + "</h4>";
+          });
+    
+          // Alle E-Mail-Links setzen
+          document.querySelectorAll(".email-link").forEach(link => {
+              link.href = "mailto:" + emailRaw;
+              link.innerHTML = '<i class="fa-solid fa-square-envelope"></i>';
+          });
+          // Alle E-Mail-Links setzen
+          document.querySelectorAll(".email-link-h4").forEach(link => {
+              link.href = "mailto:" + emailRaw;
+              link.innerHTML  = "<h4>" + emailRaw + "</h4>";
+          });
+      });
+    </script>
+    
+
+  </body>
+  </html>
+
