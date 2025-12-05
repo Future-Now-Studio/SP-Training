@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+html, body { height: 100%; scroll-behavior: smooth; accent-color: #005AFF; }
+
+
+a, p, i, b, strong, li {
+    font-family: "Lato", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+}
+a { text-decoration: none; }
+
+
+h2 {
+    font-family: "Jockey One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 100%;
+}
+h3 {
+    font-family: "Lato", system-ui;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 20%;
+}
+.caption {
+    text-transform: uppercase;
+}
+
+
+section#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    background-color: #000933;
+    background-image: url("../images/pattern.svg");
+    background-repeat: repeat;
+    background-size: 5rem;
+
+    padding: 1rem;
+}
+section#hero .head {
+    width: 100%;
+    max-width: 30rem;
+    align-items: center;
+}
+section#hero .head img {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+}
+
+
+section#hero .body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+
+    height: 100%;
+}
+
+section#hero .body .kontakt {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+
+    width: 50%;
+    min-width: 20rem;
+
+    background-color: #000D4D;
+    border-radius: 2rem;
+
+    padding: 3rem;
+}
+section#hero .body .kontakt .item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+section#hero .body .kontakt h2 {
+    color: #ffffff;
+}
+section#hero .body .kontakt h3 {
+    color: #005AFF;
+}
+
+section#hero .body .video {
+    order: 2;
+    display: block;
+    max-width: 20rem;
+    background-color: #000000;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    box-shadow: 4px 4px 64px 32px rgba(0,45,245,0.1),
+                2px 2px 4px 0px rgba(0,9,51,1),
+                4px 4px 16px 8px rgba(0,9,51,0.5),
+                0px 0px 32px 4px rgba(255,255,255,0.2);
+
+    margin: 0;
+}
+
+section#hero .body .video video {
+    width: 100%; /* Fill the available width */
+    height: auto; /* Adjust height automatically */
+}
+
+section#hero .body .leistungen {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    width: 50%;
+    min-width: 20rem;
+    background-color: #000D4D;
+    border-radius: 2rem;
+
+    padding: 3rem;
+}
+section#hero .body .leistungen ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+section#hero .body .leistungen li {
+    color: #ffffff;
+    font-family: "Lato", system-ui;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 100%;
+    letter-spacing: 10%;
+}
+section#hero .body .leistungen h3 {
+    color: #005AFF;
+}
+
+section#hero .foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 1rem;
+}
+section#hero .foot p {
+    color: #ffffff;
+}
+
+
+
+@media only screen and (max-width: 60rem) {
+    section#hero {
+        height: auto;
+    }
+    section#hero .body {
+        flex-direction: column;    
+        height: auto;
+    }
+    section#hero .body .kontakt {
+        order: 3;
+    }
+    section#hero .body .video {
+        margin: 1rem;
+        order: 1;
+    }
+    section#hero .body .leistungen {
+        order: 2;
+    }
+    section#hero .foot {
+        text-align: center;
+    }
+}
