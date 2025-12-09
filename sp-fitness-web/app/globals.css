@@ -442,12 +442,12 @@ header .wrapper .end ul.links li a {
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    background-color: var(--brand-dark);
+    background-color: var(--brand-blue);
     border-radius: 0.5rem;
     transition: all 0.3s ease;
 }
 header .wrapper .end ul.links li a i {
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 1.25rem;
 }
 header .wrapper .end ul.links li a:hover {
@@ -990,39 +990,50 @@ header #menu-toggle {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4rem;
-    padding: 5rem 4rem;
+    padding: 4rem 3rem;
     background-color: #ffffff;
+}
+.studio-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.studio-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 .studio-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 400;
     color: var(--brand-dark);
     text-transform: uppercase;
-    margin: 0 0 2.5rem 0;
+    margin: 0;
     line-height: 1.2;
 }
 .studio-features {
     list-style: none;
     padding: 0;
-    margin: 0 0 3rem 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 .studio-features li {
     font-family: var(--font-lato), system-ui;
-    font-size: 1rem;
-    color: var(--brand-dark);
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
+    font-size: 0.9375rem;
+    color: rgba(0, 9, 49, 0.8);
+    padding-left: 1.25rem;
     position: relative;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 .studio-features li::before {
     content: "•";
     position: absolute;
     left: 0;
-    color: var(--brand-dark);
-    font-size: 1.5rem;
+    color: var(--brand-blue);
+    font-size: 1.25rem;
     line-height: 1;
 }
 .studio-btn {
@@ -1031,6 +1042,9 @@ header #menu-toggle {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    align-self: flex-start;
 }
 .studio-btn:hover {
     background-color: var(--brand-dark);
@@ -1040,37 +1054,57 @@ header #menu-toggle {
 .studio-btn span {
     color: inherit;
 }
-.studio-section-title {
-    font-family: var(--font-jockey-one), system-ui;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--brand-dark);
-    text-transform: uppercase;
-    margin: 0 0 1rem 0;
-    line-height: 1.3;
+.studio-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 9, 49, 0.1);
 }
-.studio-subtext {
-    font-family: var(--font-lato), system-ui;
-    font-size: 0.875rem;
-    color: #666;
-    margin: 0 0 0.5rem 0;
-    font-style: italic;
-    line-height: 1.6;
-}
-#studio .adresse .details {
+.studio-info-item {
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
 }
-#studio .adresse .details p {
+.studio-info-label {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+.studio-info-value {
     font-family: var(--font-lato), system-ui;
     font-size: 1rem;
     color: var(--brand-dark);
     margin: 0;
     line-height: 1.6;
+    font-weight: 500;
+}
+.studio-info-note {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.8125rem;
+    color: rgba(0, 9, 49, 0.6);
+    margin: 0;
+    font-style: italic;
+    line-height: 1.5;
+}
+.studio-btn-small {
+    border: 2px solid var(--brand-dark);
+    color: var(--brand-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8125rem;
+    padding: 0.625rem 1.25rem;
+    margin-top: 0.5rem;
+    align-self: flex-start;
+}
+.studio-btn-small:hover {
+    background-color: var(--brand-dark);
+    color: #ffffff;
 }
 #studio .end {
     position: relative;
@@ -1171,8 +1205,14 @@ header #menu-toggle {
         grid-template-columns: 1fr;
     }
     #studio .start {
-        padding: 4rem 2rem;
+        padding: 3rem 2rem;
+    }
+    .studio-content {
         gap: 2.5rem;
+    }
+    .studio-info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
     #studio .end {
         height: 30rem;
@@ -1214,27 +1254,52 @@ header #menu-toggle {
 /* Modern Pricing Section */
 #preise {
     padding: 6rem 2rem;
-    background-color: #f8f9fa; /* Light grey for contrast against dark footer */
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
 }
 #preise .wrapper {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+.pricing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid rgba(0, 90, 255, 0.3);
+}
+.pricing-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+.pricing-subtitle {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-weight: 400;
+}
+.pricing-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
-    max-width: 100rem;
-    margin: 0 auto;
 }
 .pricing-card {
     background: #ffffff;
     border-radius: 1.5rem;
     padding: 2.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 .pricing-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 .pricing-card h3 {
     color: var(--brand-dark);
@@ -1264,23 +1329,28 @@ header #menu-toggle {
     font-weight: 400;
 }
 .pricing-card.dark {
-    background: var(--brand-dark);
+    background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .pricing-card.dark h3 {
     color: #ffffff;
+    border-bottom-color: var(--brand-blue);
 }
 .pricing-card.dark td {
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.9);
 }
 .pricing-card.dark td:last-child {
     color: #ffffff;
 }
+.pricing-card.dark .sub-text {
+    color: rgba(255,255,255,0.7);
+}
 
 /* Responsive Pricing Section */
 @media screen and (max-width: 120rem) {
-    #preise .wrapper {
+    .pricing-grid {
         grid-template-columns: repeat(5, 1fr);
         gap: 1rem;
     }
@@ -1292,13 +1362,13 @@ header #menu-toggle {
     }
 }
 @media screen and (max-width: 80rem) {
-    #preise .wrapper {
+    .pricing-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }
 }
 @media screen and (max-width: 60rem) {
-    #preise .wrapper {
+    .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -1306,7 +1376,17 @@ header #menu-toggle {
     #preise {
         padding: 4rem 1.5rem;
     }
-    #preise .wrapper {
+    .pricing-header {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+    }
+    .pricing-title {
+        font-size: 2rem;
+    }
+    .pricing-subtitle {
+        font-size: 1rem;
+    }
+    .pricing-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
@@ -1724,19 +1804,61 @@ header #menu-toggle {
 }
 
 /* Personal Training Closing Section */
-#personaltraining-closing {
+#personaltraining-closing,
+#hatha-yoga-closing,
+#ernaehrungsberatung-closing,
+#pilates-closing,
+#yoga-nidra-closing {
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     text-align: center;
-    color: #ffffff;
+    position: relative;
 }
-#personaltraining-closing .closing-title,
-#personaltraining-closing .closing-text {
+#personaltraining-closing::before,
+#hatha-yoga-closing::before,
+#ernaehrungsberatung-closing::before,
+#pilates-closing::before,
+#yoga-nidra-closing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+.closing-content-wrapper {
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.closing-icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.closing-icon-circle {
+    width: 6rem;
+    height: 6rem;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 90, 255, 0.25);
+}
+.closing-icon-circle i {
+    font-size: 2.5rem;
     color: #ffffff;
 }
 .closing-content {
-    max-width: 60rem;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 .closing-title {
     font-family: var(--font-jockey-one), system-ui;
@@ -1744,18 +1866,19 @@ header #menu-toggle {
     font-weight: 400;
     text-transform: uppercase;
     color: var(--brand-dark);
-    margin: 0 0 2rem 0;
+    margin: 0;
     line-height: 1.3;
 }
 .closing-text {
     font-family: var(--font-lato), system-ui;
     font-size: 1.125rem;
     line-height: 1.8;
-    color: var(--brand-dark);
-    margin: 0 0 2.5rem 0;
+    color: rgba(0, 9, 49, 0.8);
+    margin: 0;
+    max-width: 50rem;
 }
 .closing-cta {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .cta-large {
     min-height: 3.5rem;
@@ -1765,11 +1888,39 @@ header #menu-toggle {
 }
 
 /* Hatha Yoga Sections */
-#hatha-yoga-intro {
+#hatha-yoga-intro,
+#pilates-intro,
+#yoga-nidra-intro {
     padding: 6rem 2rem;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     position: relative;
     overflow: hidden;
+}
+#yoga-nidra-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#yoga-nidra-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+#pilates-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#pilates-intro .wrapper {
+    position: relative;
+    z-index: 1;
 }
 #hatha-yoga-intro::before {
     content: "";
@@ -1920,7 +2071,9 @@ header #menu-toggle {
     color: rgba(0, 9, 49, 0.8);
     margin: 0;
 }
-#warum-hatha-yoga {
+#warum-hatha-yoga,
+#warum-pilates,
+#warum-yoga-nidra {
     background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
     padding: 4rem 2rem;
     color: #ffffff;
@@ -1929,7 +2082,9 @@ header #menu-toggle {
     max-width: 100rem;
     margin: 0 auto;
 }
-#warum-hatha-yoga .section-title {
+#warum-hatha-yoga .section-title,
+#warum-pilates .section-title,
+#warum-yoga-nidra .section-title {
     font-family: var(--font-jockey-one), system-ui;
     font-size: 2.25rem;
     font-weight: 400;
@@ -1938,34 +2093,34 @@ header #menu-toggle {
     color: #ffffff;
     margin: 0 0 2.5rem 0;
 }
-#warum-hatha-yoga .features-grid {
+#warum-hatha-yoga .features-grid,
+#warum-pilates .features-grid,
+#warum-yoga-nidra .features-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
-#warum-hatha-yoga .feature-card {
+#warum-hatha-yoga .feature-card,
+#warum-pilates .feature-card,
+#warum-yoga-nidra .feature-card {
     padding: 2rem;
 }
-#warum-hatha-yoga .feature-icon-wrapper {
+#warum-hatha-yoga .feature-icon-wrapper,
+#warum-pilates .feature-icon-wrapper,
+#warum-yoga-nidra .feature-icon-wrapper {
     margin-bottom: 1rem;
 }
-#warum-hatha-yoga .feature-card h4 {
+#warum-hatha-yoga .feature-card h4,
+#warum-pilates .feature-card h4,
+#warum-yoga-nidra .feature-card h4 {
     font-size: 1.25rem;
     margin: 0 0 0.75rem 0;
 }
-#warum-hatha-yoga .feature-card p {
+#warum-hatha-yoga .feature-card p,
+#warum-pilates .feature-card p,
+#warum-yoga-nidra .feature-card p {
     font-size: 0.9375rem;
     line-height: 1.6;
-}
-#hatha-yoga-closing {
-    padding: 6rem 2rem;
-    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
-    text-align: center;
-    color: #ffffff;
-}
-#hatha-yoga-closing .closing-title,
-#hatha-yoga-closing .closing-text {
-    color: #ffffff;
 }
 
 /* Ernährungsberatung Sections - New Clean Design */
@@ -2359,22 +2514,14 @@ header #menu-toggle {
 }
 
 /* Closing Section */
-#ernaehrungsberatung-closing {
-    padding: 6rem 2rem;
-    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
-    text-align: center;
-    color: #ffffff;
-}
-#ernaehrungsberatung-closing .closing-title,
-#ernaehrungsberatung-closing .closing-text {
-    color: #ffffff;
-}
 
 /* Responsive Personal Training Sections */
 @media screen and (max-width: 60rem) {
     #personaltraining-intro,
     #hatha-yoga-intro,
-    #ernaehrungsberatung-intro {
+    #ernaehrungsberatung-intro,
+    #pilates-intro,
+    #yoga-nidra-intro {
         padding: 4rem 1.5rem;
     }
     .nutrition-intro-layout {
@@ -2429,15 +2576,21 @@ header #menu-toggle {
     }
     #warum-personaltraining .section-title,
     #warum-hatha-yoga .section-title,
+    #warum-pilates .section-title,
+    #warum-yoga-nidra .section-title,
     .section-title {
         font-size: 1.75rem;
         margin-bottom: 2rem;
     }
-    #warum-hatha-yoga .features-grid {
+    #warum-hatha-yoga .features-grid,
+    #warum-pilates .features-grid,
+    #warum-yoga-nidra .features-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
-    #warum-hatha-yoga .feature-card {
+    #warum-hatha-yoga .feature-card,
+    #warum-pilates .feature-card,
+    #warum-yoga-nidra .feature-card {
         padding: 1.5rem;
     }
     .section-subtitle {
@@ -2499,8 +2652,20 @@ header #menu-toggle {
     }
     #personaltraining-closing,
     #hatha-yoga-closing,
-    #ernaehrungsberatung-closing {
+    #ernaehrungsberatung-closing,
+    #pilates-closing,
+    #yoga-nidra-closing {
         padding: 4rem 1.5rem;
+    }
+    .closing-content-wrapper {
+        gap: 1.5rem;
+    }
+    .closing-icon-circle {
+        width: 5rem;
+        height: 5rem;
+    }
+    .closing-icon-circle i {
+        font-size: 2rem;
     }
     .closing-title {
         font-size: 2rem;

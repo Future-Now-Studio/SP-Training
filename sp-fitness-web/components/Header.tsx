@@ -107,6 +107,16 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/yoga-nidra" className="button flat" onClick={closeMenu}>
+                    Yoga Nidra
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pilates" className="button flat" onClick={closeMenu}>
+                    Pilates
+                  </Link>
+                </li>
+                <li>
                   <Link href="/ernaehrungsberatung" className="button flat" onClick={closeMenu}>
                     Ernährungsberatung
                   </Link>
@@ -122,10 +132,10 @@ export default function Header() {
           
           {/* Social Icons on the right */}
           <ul className="links">
-            <li><a className="phone-link" href="tel:+4917696252517"><i className="fa-solid fa-square-phone"></i></a></li>
-            <li><a className="email-link" href="mailto:kontakt@sp-fitness.de"><i className="fa-solid fa-square-envelope"></i></a></li>
-            <li><a href="https://wa.me/4917696252517" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-square-whatsapp"></i></a></li>
-            <li><a href="https://www.instagram.com/sp_fitness.personal_training/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-square-instagram"></i></a></li>
+            <li><a className="phone-link" href="tel:+4917696252517"><i className="fa-solid fa-phone"></i></a></li>
+            <li><a className="email-link" href="mailto:kontakt@sp-fitness.de"><i className="fa-solid fa-envelope"></i></a></li>
+            <li><a href="https://wa.me/4917696252517" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="https://www.instagram.com/sp_fitness.personal_training/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
           </ul>
         </div>
       </div>

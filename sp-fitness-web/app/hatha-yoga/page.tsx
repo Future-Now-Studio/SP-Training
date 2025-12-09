@@ -234,16 +234,23 @@ export default function HathaYoga() {
       <section id="hatha-yoga-closing">
         <div className="wrapper">
           <FadeIn direction="up">
-            <div className="content closing-content">
-              <h2 className="closing-title">Entdecke, wie gut Yoga dir tut</h2>
-              <p className="closing-text">
-                Freue dich auf wohltuende Stunden, die dir helfen, Gelassenheit zu finden, deine Körperwahrnehmung zu vertiefen und dein inneres Gleichgewicht nachhaltig zu stärken. Komm vorbei, atme tief durch – und entdecke, wie gut Yoga dir tut.
-              </p>
-              <div className="closing-cta">
-                <Link href="#kontakt" className="button key cta-large">
-                  <span>JETZT KONTAKT AUFNEHMEN</span>
-                  <i className="fa-solid fa-arrow-right"></i>
-                </Link>
+            <div className="closing-content-wrapper">
+              <div className="closing-icon-container">
+                <div className="closing-icon-circle">
+                  <i className="fa-solid fa-spa"></i>
+                </div>
+              </div>
+              <div className="closing-content">
+                <h2 className="closing-title">Entdecke, wie gut Yoga dir tut</h2>
+                <p className="closing-text">
+                  Freue dich auf wohltuende Stunden, die dir helfen, Gelassenheit zu finden, deine Körperwahrnehmung zu vertiefen und dein inneres Gleichgewicht nachhaltig zu stärken. Komm vorbei, atme tief durch – und entdecke, wie gut Yoga dir tut.
+                </p>
+                <div className="closing-cta">
+                  <Link href="#kontakt" className="button key cta-large">
+                    <span>JETZT KONTAKT AUFNEHMEN</span>
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
               </div>
             </div>
           </FadeIn>

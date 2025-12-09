@@ -149,33 +149,34 @@ export default function Home() {
       <section id="studio">
         <div className="start">
           <FadeIn direction="right">
-            <div className="info">
-              <h3 className="studio-title">PERSONAL TRAINING STUDIO</h3>
-              <ul className="studio-features">
-                <li>Training & Kurse nur mit Termin</li>
-                <li>Klimatisierte Räume</li>
-                <li>Outdoor Bereich</li>
-              </ul>
-              <div style={{marginTop: "2.5rem"}}>
-                 <a href="/kursplan.pdf" className="button ghost studio-btn" target="_blank" rel="noopener noreferrer">
-                   <i className="fa-solid fa-download"></i>
-                   <span>KURSPLAN</span>
-                 </a>
-              </div>
-            </div>
-
-            <div className="zeiten">
-              <h3 className="studio-section-title">ÖFFNUNGSZEITEN<br/>NACH ABSPRACHE</h3>
-              <p className="studio-subtext">(Keine regulären Öffnungszeiten)</p>
-            </div>
-
-            <div className="adresse">
-              <h3 className="studio-section-title">ADRESSE</h3>
-              <div className="details">
-                <p>Marktplatz 28a<br/>68723 Schwetzingen</p>
-                <a href="https://maps.app.goo.gl/19rmohZyWYcpoT5JA" target="_blank" className="button ghost studio-btn" rel="noopener noreferrer">
-                  <span>KOMM VORBEI</span>
+            <div className="studio-content">
+              <div className="studio-main">
+                <h3 className="studio-title">PERSONAL TRAINING STUDIO</h3>
+                <ul className="studio-features">
+                  <li>Training & Kurse nur mit Termin</li>
+                  <li>Klimatisierte Räume</li>
+                  <li>Outdoor Bereich</li>
+                </ul>
+                <a href="/kursplan.pdf" className="button ghost studio-btn" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-solid fa-download"></i>
+                  <span>KURSPLAN</span>
                 </a>
+              </div>
+
+              <div className="studio-info-grid">
+                <div className="studio-info-item">
+                  <h4 className="studio-info-label">ÖFFNUNGSZEITEN</h4>
+                  <p className="studio-info-value">Nach Absprache</p>
+                  <p className="studio-info-note">(Keine regulären Öffnungszeiten)</p>
+                </div>
+
+                <div className="studio-info-item">
+                  <h4 className="studio-info-label">ADRESSE</h4>
+                  <p className="studio-info-value">Marktplatz 28a<br/>68723 Schwetzingen</p>
+                  <a href="https://maps.app.goo.gl/19rmohZyWYcpoT5JA" target="_blank" className="button ghost studio-btn-small" rel="noopener noreferrer">
+                    <span>KOMM VORBEI</span>
+                  </a>
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -188,6 +189,14 @@ export default function Home() {
 
       <section id="preise">
         <div className="wrapper">
+          <FadeIn direction="down">
+            <div className="pricing-header">
+              <h2 className="pricing-title">PREISE & PAKETE</h2>
+              <p className="pricing-subtitle">Transparente Preise für dein Training</p>
+            </div>
+          </FadeIn>
+          
+          <div className="pricing-grid">
           <FadeIn className="pricing-card" delay={0.1}>
             <h3>Personal Training</h3>
             <table>
@@ -273,6 +282,7 @@ export default function Home() {
             <p style={{marginBottom: "1rem"}}>Für dein Training mit deiner eigenen Gruppe oder zum Filmen für deinen Social Media Content.</p>
             <p className="sub-text">(Preise auf Anfrage je nach Dauer und Nutzung)</p>
           </FadeIn>
+          </div>
         </div>
       </section>
 

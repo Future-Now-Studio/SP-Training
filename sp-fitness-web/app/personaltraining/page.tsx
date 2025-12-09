@@ -144,14 +144,21 @@ export default function PersonalTraining() {
       <section id="personaltraining-closing">
         <div className="wrapper">
           <FadeIn direction="up">
-            <div className="content closing-content">
-              <h2 className="closing-title">Ein Training, das auf Erfahrung, Qualität und Vertrauen basiert</h2>
-              <p className="closing-text">Profitieren Sie von einer persönlichen Betreuung, die auf langjährigem Know-how und echter Leidenschaft für Fitness und Gesundheit beruht. Gemeinsam schaffen wir die Grundlage für mehr Leistung, Wohlbefinden und Lebensqualität.</p>
-              <div className="closing-cta">
-                <Link href="#kontakt" className="button key cta-large">
-                  <span>JETZT KONTAKT AUFNEHMEN</span>
-                  <i className="fa-solid fa-arrow-right"></i>
-                </Link>
+            <div className="closing-content-wrapper">
+              <div className="closing-icon-container">
+                <div className="closing-icon-circle">
+                  <i className="fa-solid fa-dumbbell"></i>
+                </div>
+              </div>
+              <div className="closing-content">
+                <h2 className="closing-title">Ein Training, das auf Erfahrung, Qualität und Vertrauen basiert</h2>
+                <p className="closing-text">Profitieren Sie von einer persönlichen Betreuung, die auf langjährigem Know-how und echter Leidenschaft für Fitness und Gesundheit beruht. Gemeinsam schaffen wir die Grundlage für mehr Leistung, Wohlbefinden und Lebensqualität.</p>
+                <div className="closing-cta">
+                  <Link href="#kontakt" className="button key cta-large">
+                    <span>JETZT KONTAKT AUFNEHMEN</span>
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
               </div>
             </div>
           </FadeIn>

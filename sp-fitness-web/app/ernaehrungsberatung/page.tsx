@@ -348,16 +348,23 @@ export default function Ernaehrungsberatung() {
       <section id="ernaehrungsberatung-closing">
         <div className="wrapper">
           <FadeIn direction="up">
-            <div className="content closing-content">
-              <h2 className="closing-title">Ihr Weg zu mehr Energie, Leichtigkeit und Lebensqualität</h2>
-              <p className="closing-text">
-                Mit unserer ganzheitlichen Ernährungsberatung erhalten Sie mehr als nur Empfehlungen: Sie bekommen verlässliche Begleitung, klar verständliche Strategien und individuelle Unterstützung, die Sie Schritt für Schritt zu Ihrem persönlichen Wohlfühlkörper führt.
-              </p>
-              <div className="closing-cta">
-                <Link href="#kontakt" className="button key cta-large">
-                  <span>JETZT KONTAKT AUFNEHMEN</span>
-                  <i className="fa-solid fa-arrow-right"></i>
-                </Link>
+            <div className="closing-content-wrapper">
+              <div className="closing-icon-container">
+                <div className="closing-icon-circle">
+                  <i className="fa-solid fa-apple-whole"></i>
+                </div>
+              </div>
+              <div className="closing-content">
+                <h2 className="closing-title">Ihr Weg zu mehr Energie, Leichtigkeit und Lebensqualität</h2>
+                <p className="closing-text">
+                  Mit unserer ganzheitlichen Ernährungsberatung erhalten Sie mehr als nur Empfehlungen: Sie bekommen verlässliche Begleitung, klar verständliche Strategien und individuelle Unterstützung, die Sie Schritt für Schritt zu Ihrem persönlichen Wohlfühlkörper führt.
+                </p>
+                <div className="closing-cta">
+                  <Link href="#kontakt" className="button key cta-large">
+                    <span>JETZT KONTAKT AUFNEHMEN</span>
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
               </div>
             </div>
           </FadeIn>
