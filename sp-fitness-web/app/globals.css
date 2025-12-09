@@ -83,6 +83,14 @@ sub, sup {
 
 html, body { height: 100%; scroll-behavior: smooth; }
 
+/* Base Wrapper - Aligned with Header */
+.wrapper {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
 a, p, i, b, strong, li, td {
     font-family: var(--font-lato), system-ui;
     font-weight: 400;
@@ -360,6 +368,64 @@ header .wrapper .end ul.navigation li a {
 header .wrapper .end ul.navigation li a:hover {
     color: var(--brand-blue-hover);
 }
+/* Dropdown Menu */
+header .wrapper .end ul.navigation li.dropdown-container {
+    position: relative;
+}
+header .wrapper .end ul.navigation li .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+header .wrapper .end ul.navigation li .dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+header .wrapper .end ul.navigation li .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0 0 0;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+header .wrapper .end ul.navigation li .dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+header .wrapper .end ul.navigation li .dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+header .wrapper .end ul.navigation li .dropdown-menu li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--brand-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+header .wrapper .end ul.navigation li .dropdown-menu li a:hover {
+    background-color: rgba(0, 90, 255, 0.1);
+    color: var(--brand-blue-hover);
+    padding-left: 2rem;
+}
 /* Social Icons on Right */
 header .wrapper .end ul.links {
     list-style: none;
@@ -424,6 +490,29 @@ header #menu-toggle {
     }
     header .wrapper .end ul.navigation li a {
         font-size: 1.25rem;
+    }
+    header .wrapper .end ul.navigation li.dropdown-container {
+        width: 100%;
+    }
+    header .wrapper .end ul.navigation li .dropdown-menu {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin: 0.5rem 0 0 0;
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+    }
+    header .wrapper .end ul.navigation li .dropdown-menu.active {
+        transform: none;
+        display: block;
+    }
+    header .wrapper .end ul.navigation li .dropdown-menu li a {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    header .wrapper .end ul.navigation li .dropdown-menu li a:hover {
+        padding-left: 2rem;
     }
     header .wrapper .end ul.links {
         flex-direction: row;
@@ -1229,8 +1318,37 @@ header #menu-toggle {
 /* Trainer Section - Modern Design */
 #trainer {
     padding: 6rem 2rem;
-    background: var(--brand-dark);
-    color: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--brand-dark);
+}
+#trainer .trainer-subtitle {
+    color: var(--brand-blue);
+}
+#trainer .trainer-name .name-white {
+    color: var(--brand-dark);
+}
+#trainer .trainer-description {
+    color: var(--brand-dark);
+}
+#trainer .feature-box {
+    background: rgba(0, 9, 49, 0.05);
+    border: 1px solid rgba(0, 90, 255, 0.2);
+}
+#trainer .feature-box:hover {
+    background: rgba(0, 9, 49, 0.08);
+    border-color: rgba(0, 90, 255, 0.4);
+}
+#trainer .feature-text strong {
+    color: var(--brand-dark);
+}
+#trainer .feature-text span {
+    color: rgba(0, 9, 49, 0.7);
+}
+#trainer .trainer-quote blockquote {
+    color: var(--brand-dark);
+}
+#trainer .quote-author {
+    color: rgba(0, 9, 49, 0.8);
 }
 #trainer .wrapper {
     display: grid;
@@ -1384,8 +1502,19 @@ header #menu-toggle {
     aspect-ratio: 3 / 4;
     border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 0 40px rgba(0, 90, 255, 0.4), 0 20px 60px rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(0, 90, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 9, 49, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none !important;
+    outline: none !important;
+}
+.trainer-image-frame img,
+.trainer-image-frame * {
+    border: none !important;
+    outline: none !important;
+}
+.trainer-image-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 9, 49, 0.18);
 }
 
 /* Responsive */
@@ -1425,10 +1554,6 @@ header #menu-toggle {
     padding: 6rem 2rem;
     background: #ffffff;
     text-align: center;
-}
-#kontakt .wrapper {
-    max-width: 80rem;
-    margin: 0 auto;
 }
 .contact-title {
     font-family: var(--font-jockey-one), system-ui;
@@ -1471,8 +1596,6 @@ header #menu-toggle {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 2rem;
-    max-width: 80rem;
-    margin: 0 auto;
 }
 #impressum h3 {
     font-size: 1.5rem;
@@ -1504,8 +1627,6 @@ header #menu-toggle {
     background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
 }
 #personaltraining-intro .wrapper {
-    max-width: 80rem;
-    margin: 0 auto;
     position: relative;
     z-index: 1;
 }
@@ -1545,55 +1666,53 @@ header #menu-toggle {
     gap: 2rem;
 }
 .feature-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 90, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     padding: 2.5rem;
-    border-radius: 1.5rem;
+    border-radius: 0.75rem;
     transition: all 0.3s ease;
     position: relative;
-    box-shadow: 0 0 20px rgba(0, 90, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     overflow: visible;
 }
 .feature-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(0, 90, 255, 0.5);
-    box-shadow: 0 0 30px rgba(0, 90, 255, 0.2);
-    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 .feature-icon-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 .feature-icon-circle {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     background: var(--brand-blue-hover);
-    border-radius: 50%;
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 90, 255, 0.3);
+    box-shadow: none;
     transition: all 0.3s ease;
     position: relative;
 }
 .feature-card:hover .feature-icon-circle {
     background: var(--brand-blue);
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 6px 25px rgba(0, 90, 255, 0.5);
 }
 .feature-icon-circle i {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #ffffff;
 }
 .feature-card h4 {
     font-family: var(--font-lato), system-ui;
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 700;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1rem 0;
     color: #ffffff;
     line-height: 1.4;
+    text-align: left;
 }
 .feature-card p {
     font-family: var(--font-lato), system-ui;
@@ -1601,17 +1720,19 @@ header #menu-toggle {
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
+    text-align: left;
 }
 
 /* Personal Training Closing Section */
 #personaltraining-closing {
     padding: 6rem 2rem;
-    background: #ffffff;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
     text-align: center;
+    color: #ffffff;
 }
-#personaltraining-closing .wrapper {
-    max-width: 80rem;
-    margin: 0 auto;
+#personaltraining-closing .closing-title,
+#personaltraining-closing .closing-text {
+    color: #ffffff;
 }
 .closing-content {
     max-width: 60rem;
@@ -1643,24 +1764,724 @@ header #menu-toggle {
     gap: 0.75rem;
 }
 
+/* Hatha Yoga Sections */
+#hatha-yoga-intro {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+#hatha-yoga-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#hatha-yoga-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Yoga Intro Grid Layout */
+.yoga-intro-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+.yoga-intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.yoga-intro-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--brand-dark);
+    margin: 0;
+    line-height: 1.2;
+}
+.yoga-intro-lead {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0;
+    font-weight: 400;
+}
+.yoga-intro-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(0, 9, 49, 0.8);
+    margin: 0;
+}
+.yoga-intro-image {
+    position: relative;
+}
+.yoga-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 9, 49, 0.12);
+}
+
+/* Yoga Pillars Section */
+#yoga-pillars {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+.yoga-pillars-title {
+    font-family: var(--font-lato), system-ui;
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-transform: none;
+    color: var(--brand-dark);
+    margin: 0 0 3rem 0;
+    text-align: center;
+    line-height: 1.3;
+}
+.yoga-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+.yoga-pillar-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 9, 49, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.yoga-pillar-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 9, 49, 0.15);
+    transform: translateY(-5px);
+}
+.pillar-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+.pillar-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+.pillar-icon-large {
+    width: 5rem;
+    height: 5rem;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+.pillar-icon-large i {
+    font-size: 2rem;
+    color: #ffffff;
+}
+.pillar-content h3 {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.pillar-subtitle {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--brand-blue);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.pillar-description {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(0, 9, 49, 0.8);
+    margin: 0;
+}
+#warum-hatha-yoga {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    padding: 4rem 2rem;
+    color: #ffffff;
+}
+#warum-hatha-yoga .wrapper {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+#warum-hatha-yoga .section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.25rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 0 2.5rem 0;
+}
+#warum-hatha-yoga .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+#warum-hatha-yoga .feature-card {
+    padding: 2rem;
+}
+#warum-hatha-yoga .feature-icon-wrapper {
+    margin-bottom: 1rem;
+}
+#warum-hatha-yoga .feature-card h4 {
+    font-size: 1.25rem;
+    margin: 0 0 0.75rem 0;
+}
+#warum-hatha-yoga .feature-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+#hatha-yoga-closing {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    text-align: center;
+    color: #ffffff;
+}
+#hatha-yoga-closing .closing-title,
+#hatha-yoga-closing .closing-text {
+    color: #ffffff;
+}
+
+/* Ernährungsberatung Sections - New Clean Design */
+#ernaehrungsberatung-intro {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+#ernaehrungsberatung-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#ernaehrungsberatung-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Nutrition Intro Layout */
+.nutrition-intro-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.nutrition-intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.nutrition-intro-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--brand-dark);
+    margin: 0;
+    line-height: 1.2;
+}
+.nutrition-intro-lead {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0;
+    font-weight: 400;
+}
+.nutrition-intro-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(0, 9, 49, 0.8);
+    margin: 0;
+}
+.nutrition-intro-image {
+    position: relative;
+}
+.nutrition-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 9, 49, 0.12);
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.section-subtitle {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 1rem 0 0 0;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-intro {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 1.5rem auto 0 auto;
+    max-width: 60rem;
+    font-style: italic;
+}
+
+/* Nutrition Individual Approach - New Design */
+#nutrition-individual {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    padding: 6rem 2rem;
+    color: #ffffff;
+}
+.nutrition-approach-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+.nutrition-approach-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--brand-blue-hover);
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+.nutrition-approach-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--brand-blue);
+    transform: translateX(5px);
+}
+.approach-item-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.approach-icon-wrapper {
+    flex-shrink: 0;
+}
+.approach-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--brand-blue-hover);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.nutrition-approach-item:hover .approach-icon {
+    background: var(--brand-blue);
+    transform: scale(1.1);
+}
+.approach-icon i {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.approach-text {
+    flex: 1;
+}
+.approach-text h3 {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.75rem 0;
+}
+.approach-text p {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Holistic Approach */
+#nutrition-holistic {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+.holistic-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.holistic-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.holistic-content .section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--brand-dark);
+    margin: 0;
+    line-height: 1.2;
+    text-align: left;
+}
+.holistic-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0;
+}
+.holistic-conclusion {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 1rem 0 0 0;
+    font-weight: 600;
+    padding-top: 1.5rem;
+    border-top: 2px solid rgba(0, 90, 255, 0.2);
+}
+.holistic-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+.pillar-item {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 9, 49, 0.08);
+}
+.pillar-item:hover {
+    border-color: var(--brand-blue-hover);
+    box-shadow: 0 4px 16px rgba(0, 90, 255, 0.15);
+    transform: translateY(-3px);
+}
+.pillar-icon {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+.pillar-icon i {
+    font-size: 1.75rem;
+    color: #ffffff;
+}
+.pillar-item h4 {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Training Section */
+#nutrition-training {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    padding: 6rem 2rem;
+    color: #ffffff;
+}
+.training-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+}
+.training-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.training-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.training-content .section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+    text-align: left;
+}
+.training-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+.training-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.training-point {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+.training-point i {
+    color: var(--brand-blue-hover);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+.training-conclusion {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 1rem 0 0 0;
+    font-weight: 600;
+    padding-top: 1.5rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Practical Approach */
+#nutrition-practical {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+.practical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+.practical-card {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 9, 49, 0.08);
+}
+.practical-card:hover {
+    border-color: var(--brand-blue-hover);
+    box-shadow: 0 4px 16px rgba(0, 90, 255, 0.15);
+    transform: translateY(-3px);
+}
+.practical-icon {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+}
+.practical-icon i {
+    font-size: 1.75rem;
+    color: #ffffff;
+}
+.practical-card h3 {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.practical-card p {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: rgba(0, 9, 49, 0.8);
+    margin: 0;
+}
+.practical-conclusion {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Closing Section */
+#ernaehrungsberatung-closing {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    text-align: center;
+    color: #ffffff;
+}
+#ernaehrungsberatung-closing .closing-title,
+#ernaehrungsberatung-closing .closing-text {
+    color: #ffffff;
+}
+
 /* Responsive Personal Training Sections */
 @media screen and (max-width: 60rem) {
-    #personaltraining-intro {
+    #personaltraining-intro,
+    #hatha-yoga-intro,
+    #ernaehrungsberatung-intro {
         padding: 4rem 1.5rem;
+    }
+    .nutrition-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .nutrition-intro-title {
+        font-size: 2rem;
+    }
+    .nutrition-intro-lead {
+        font-size: 1.125rem;
+    }
+    .yoga-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .yoga-intro-title {
+        font-size: 2rem;
+    }
+    .yoga-intro-lead {
+        font-size: 1.125rem;
+    }
+    .yoga-pillars-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+    .yoga-pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .pillar-content {
+        padding: 2rem;
+    }
+    .yoga-approach {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    .yoga-approach-text {
+        font-size: 1rem;
+        text-align: left;
     }
     .intro-text {
         font-size: 1.125rem;
     }
-    #warum-personaltraining {
-        padding: 4rem 1.5rem;
+    #warum-personaltraining,
+    #warum-hatha-yoga,
+    #nutrition-individual,
+    #nutrition-holistic,
+    #nutrition-training,
+    #nutrition-practical {
+        padding: 3rem 1.5rem;
     }
-    #warum-personaltraining .section-title {
-        font-size: 2rem;
-        margin-bottom: 3rem;
+    #warum-personaltraining .section-title,
+    #warum-hatha-yoga .section-title,
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
     }
-    #warum-personaltraining .features-grid {
+    #warum-hatha-yoga .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    #warum-hatha-yoga .feature-card {
+        padding: 1.5rem;
+    }
+    .section-subtitle {
+        font-size: 1.125rem;
+    }
+    .nutrition-approach-list {
+        gap: 1.5rem;
+    }
+    .nutrition-approach-item {
+        padding: 2rem 1.5rem;
+    }
+    .approach-item-content {
+        gap: 1.5rem;
+    }
+    .approach-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .approach-text h3 {
+        font-size: 1.25rem;
+    }
+    .holistic-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    .holistic-content .section-title {
+        text-align: center;
+        font-size: 2rem;
+    }
+    .holistic-pillars {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .training-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .training-content .section-title {
+        text-align: center;
+        font-size: 2rem;
+    }
+    .practical-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     .feature-card {
         padding: 2rem 1.5rem;
@@ -1676,7 +2497,9 @@ header #menu-toggle {
         font-size: 1.125rem;
         padding: 0;
     }
-    #personaltraining-closing {
+    #personaltraining-closing,
+    #hatha-yoga-closing,
+    #ernaehrungsberatung-closing {
         padding: 4rem 1.5rem;
     }
     .closing-title {
@@ -1739,10 +2562,6 @@ header #menu-toggle {
     width: 100%;
     padding: 4rem 2rem;
     text-align: center;
-}
-.trainer-hero-content .wrapper {
-    max-width: 80rem;
-    margin: 0 auto;
 }
 .trainer-hero-title {
     font-family: var(--font-jockey-one), system-ui;
@@ -2068,10 +2887,6 @@ header #menu-toggle {
     background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
     color: #ffffff;
 }
-.footer-cta .wrapper {
-    max-width: 100rem;
-    margin: 0 auto;
-}
 .footer-cta-title {
     font-family: var(--font-jockey-one), system-ui;
     font-size: 3rem;
@@ -2295,10 +3110,6 @@ header #menu-toggle {
     background: #ffffff;
     padding: 4rem 2rem;
 }
-.footer-bottom .wrapper {
-    max-width: 100rem;
-    margin: 0 auto;
-}
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2516,16 +3327,19 @@ header #menu-toggle {
     width: 100%;
     height: 100%;
     min-height: 40rem;
+    border: none !important;
+    outline: none !important;
+}
+.trainer-detail-image-wrapper img,
+.trainer-detail-image-wrapper * {
+    border: none !important;
+    outline: none !important;
 }
 
 /* Trainer Detail Content */
 .trainer-detail-content {
     background: #ffffff;
     padding: 6rem 2rem;
-}
-.trainer-detail-content .wrapper {
-    max-width: 80rem;
-    margin: 0 auto;
 }
 .trainer-detail-block {
     margin-bottom: 4rem;

@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownClicked, setDropdownClicked] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   const toggleMenu = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -13,7 +16,33 @@ export default function Header() {
 
   const closeMenu = () => {
     setMenuOpen(false);
+    setDropdownOpen(false);
+    setDropdownClicked(false);
   };
+
+  const handleDropdownClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setDropdownClicked(true);
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+        setDropdownClicked(false);
+      }
+    };
+
+    if (dropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownOpen]);
 
   return (
     <header>
@@ -42,7 +71,48 @@ export default function Header() {
           {/* Centered Navigation */}
           <ul className="navigation">
             <li><Link href="/#start" className="button flat" onClick={closeMenu}>Start</Link></li>
-            <li><Link href="/#leistungen" className="button flat" onClick={closeMenu}>Leistungen</Link></li>
+            <li 
+              ref={dropdownRef}
+              className="dropdown-container"
+              onMouseEnter={() => {
+                // Auto-open on hover for desktop (when mobile menu is closed and not manually clicked)
+                if (!menuOpen && !dropdownClicked) {
+                  setDropdownOpen(true);
+                }
+              }}
+              onMouseLeave={() => {
+                // Auto-close on hover leave for desktop (when mobile menu is closed and not manually clicked)
+                if (!menuOpen && !dropdownClicked) {
+                  setDropdownOpen(false);
+                }
+              }}
+            >
+              <a 
+                href="#" 
+                className="button flat dropdown-toggle" 
+                onClick={handleDropdownClick}
+              >
+                Leistungen
+                <i className={`fa-solid ${dropdownOpen ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
+              </a>
+              <ul className={`dropdown-menu ${dropdownOpen ? "active" : ""}`}>
+                <li>
+                  <Link href="/personaltraining" className="button flat" onClick={closeMenu}>
+                    Personal Training
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/hatha-yoga" className="button flat" onClick={closeMenu}>
+                    Hatha Yoga
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/ernaehrungsberatung" className="button flat" onClick={closeMenu}>
+                    Ernährungsberatung
+                  </Link>
+                </li>
+              </ul>
+            </li>
             <li><Link href="/#studio" className="button flat" onClick={closeMenu}>Studio</Link></li>
             <li><Link href="/#preise" className="button flat" onClick={closeMenu}>Preise</Link></li>
             <li><Link href="/#kontakt" className="button flat" onClick={closeMenu}>Kontakt</Link></li>
