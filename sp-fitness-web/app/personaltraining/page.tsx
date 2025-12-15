@@ -166,7 +166,9 @@ export default function PersonalTraining() {
       </section>
 
       {/* Trainer Teaser */}
-      <TrainerTeaser />
+      <div className="personaltraining-trainer-wrapper">
+        <TrainerTeaser />
+      </div>
     
     </main>
   );

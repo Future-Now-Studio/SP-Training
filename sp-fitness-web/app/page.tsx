@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import StudioGallery from "@/components/StudioGallery";
 import FadeIn from "@/components/FadeIn";
-import TrainingTypeSelector from "@/components/TrainingTypeSelector";
 import TrainerTeaser from "@/components/TrainerTeaser";
 
 export default function Home() {
@@ -53,10 +52,10 @@ export default function Home() {
                   <span>JETZT FIT WERDEN</span>
                   <i className="fa-solid fa-arrow-right"></i>
                 </Link>
-                <a href="/kursplan.pdf" className="button hero-cta-secondary" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-solid fa-download"></i>
+                <Link href="/kurse" className="button hero-cta-secondary">
+                  <i className="fa-solid fa-calendar-days"></i>
                   <span>KURSPLAN</span>
-                </a>
+                </Link>
               </div>
             </div>
           </FadeIn>
@@ -67,9 +66,6 @@ export default function Home() {
         <div className="wrapper">
           {/* Header Section */}
           <FadeIn direction="down" className="ziel-header">
-            <div className="ziel-icon">
-              <i className="fa-solid fa-microphone"></i>
-            </div>
             <p className="ziel-question">WAS IST DEIN ZIEL?</p>
             <h3 className="ziel-heading">
               Ich helfe <span className="highlight-blue">DIR</span>, dich an dein Ziel zu bringen
@@ -77,19 +73,13 @@ export default function Home() {
             <div className="ziel-underline"></div>
           </FadeIn>
 
-          {/* Training Type Selector */}
-          <FadeIn direction="down" delay={0.1}>
-            <TrainingTypeSelector />
-          </FadeIn>
-
           {/* Content Cards */}
           <div className="leistungen-grid">
             <FadeIn className="leistung-card" delay={0.2}>
               <div className="card-icon">
-                <Image src="/images/icon_01.svg" title="Verletzungen & Einschränkungen" alt="Verletzungen & Einschränkungen" width={60} height={60} />
+                <Image src="/images/icon_01.svg" title="Verletzungen & Einschränkungen" alt="Verletzungen & Einschränkungen" width={140} height={140} />
               </div>
               <h3>Verletzungen & Einschränkungen</h3>
-              <p className="card-description">Professionelle Rehabilitation nach Verletzungen</p>
               <ul className="card-list">
                 <li>Bandscheiben</li>
                 <li>Kreuzband</li>
@@ -99,10 +89,9 @@ export default function Home() {
 
             <FadeIn className="leistung-card" delay={0.3}>
               <div className="card-icon">
-                <Image src="/images/icon_02.svg" title="Leistungs-Sportler" alt="Leistungs-Sportler" width={60} height={60} />
+                <Image src="/images/icon_02.svg" title="Leistungs-Sportler" alt="Leistungs-Sportler" width={140} height={140} />
               </div>
               <h3>Leistungs-Sportler</h3>
-              <p className="card-description">Optimiere deine Performance</p>
               <ul className="card-list">
                 <li>Wettkampfvorbereitung</li>
                 <li>Ausdauertraining</li>
@@ -112,10 +101,9 @@ export default function Home() {
 
             <FadeIn className="leistung-card" delay={0.4}>
               <div className="card-icon">
-                <Image src="/images/icon_03.svg" title="Beratung" alt="Beratung" width={60} height={60} />
+                <Image src="/images/icon_03.svg" title="Beratung" alt="Beratung" width={140} height={140} />
               </div>
               <h3>Beratung</h3>
-              <p className="card-description">Individuelle Strategien für deinen Erfolg</p>
               <ul className="card-list">
                 <li>Ernährungsberatung</li>
                 <li>Trainingsplan</li>
@@ -124,10 +112,9 @@ export default function Home() {
 
             <FadeIn className="leistung-card" delay={0.5}>
               <div className="card-icon">
-                <Image src="/images/icon_04.svg" title="Fitness" alt="Fitness" width={60} height={60} />
+                <Image src="/images/icon_04.svg" title="Fitness" alt="Fitness" width={140} height={140} />
               </div>
               <h3>Fitness</h3>
-              <p className="card-description">Erreiche deine persönlichen Ziele</p>
               <ul className="card-list">
                 <li>Muskelaufbau</li>
                 <li>Beweglichkeit</li>
@@ -151,31 +138,60 @@ export default function Home() {
           <FadeIn direction="right">
             <div className="studio-content">
               <div className="studio-main">
-                <h3 className="studio-title">PERSONAL TRAINING STUDIO</h3>
-                <ul className="studio-features">
-                  <li>Training & Kurse nur mit Termin</li>
-                  <li>Klimatisierte Räume</li>
-                  <li>Outdoor Bereich</li>
-                </ul>
-                <a href="/kursplan.pdf" className="button ghost studio-btn" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-solid fa-download"></i>
-                  <span>KURSPLAN</span>
-                </a>
-              </div>
+                <h1 className="studio-title">PERSONAL TRAINING STUDIO</h1>
+                
+                <p className="studio-description">
+                  Unser modernes Studio im Herzen von Schwetzingen bietet dir die perfekte Umgebung für dein individuelles Training. Hier findest du alles, was du für deine Fitnessziele brauchst – von hochwertigen Trainingsgeräten bis hin zu einer motivierenden Atmosphäre.
+                </p>
 
-              <div className="studio-info-grid">
-                <div className="studio-info-item">
-                  <h4 className="studio-info-label">ÖFFNUNGSZEITEN</h4>
-                  <p className="studio-info-value">Nach Absprache</p>
-                  <p className="studio-info-note">(Keine regulären Öffnungszeiten)</p>
+                <div className="studio-features-section">
+                  <h3 className="studio-features-title">Ausstattung & Services</h3>
+                  <ul className="studio-features">
+                    <li>
+                      <i className="fa-solid fa-calendar-check"></i>
+                      <span>Training & Kurse nur mit Termin</span>
+                    </li>
+                    <li>
+                      <i className="fa-solid fa-snowflake"></i>
+                      <span>Klimatisierte Räume</span>
+                    </li>
+                    <li>
+                      <i className="fa-solid fa-sun"></i>
+                      <span>Outdoor Bereich</span>
+                    </li>
+                    <li>
+                      <i className="fa-solid fa-dumbbell"></i>
+                      <span>Moderne Trainingsgeräte</span>
+                    </li>
+                    <li>
+                      <i className="fa-solid fa-parking"></i>
+                      <span>Parkplätze in der Nähe</span>
+                    </li>
+                    <li>
+                      <i className="fa-solid fa-users"></i>
+                      <span>Individuelle Betreuung</span>
+                    </li>
+                  </ul>
                 </div>
 
-                <div className="studio-info-item">
-                  <h4 className="studio-info-label">ADRESSE</h4>
-                  <p className="studio-info-value">Marktplatz 28a<br/>68723 Schwetzingen</p>
-                  <a href="https://maps.app.goo.gl/19rmohZyWYcpoT5JA" target="_blank" className="button ghost studio-btn-small" rel="noopener noreferrer">
-                    <span>KOMM VORBEI</span>
+                <div className="studio-address-section">
+                  <h3 className="studio-address-label">Adresse</h3>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Marktplatz+28a,+68723+Schwetzingen" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="studio-address-value studio-address-link"
+                  >
+                    Marktplatz 28a, 68723 Schwetzingen
+                    <i className="fa-solid fa-external-link"></i>
                   </a>
+                </div>
+
+                <div className="studio-cta">
+                  <Link href="#kontakt" className="button key">
+                    <span>JETZT KONTAKTIEREN</span>
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -197,91 +213,132 @@ export default function Home() {
           </FadeIn>
           
           <div className="pricing-grid">
-          <FadeIn className="pricing-card" delay={0.1}>
-            <h3>Personal Training</h3>
-            <table>
-              <tbody>
-                <tr>
-                  <td >Einzelstunde</td>
-                  <td>99 €</td>
-                </tr>
-                <tr>
-                  <td>5er Karte</td>
-                  <td>95 €<br/>
-                    <span className="sub-text">pro Einheit</span><br/>
-                    <i>475 € gesamt</i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>10er Karte</td>
-                  <td>90 €<br/>
-                    <span className="sub-text">pro Einheit</span><br/>
-                    <i>900 € gesamt</i>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </FadeIn>
+            {/* Personal Training */}
+            <FadeIn className="pricing-card pricing-card-featured" delay={0.1}>
+              <div className="pricing-card-header">
+                <h3>Personal Training</h3>
+                <p className="pricing-card-description">Individuelles Einzeltraining</p>
+              </div>
+              <div className="pricing-list">
+                <div className="pricing-item">
+                  <span className="pricing-label">Einzelstunde</span>
+                  <span className="pricing-price">99 €</span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">5er Karte</span>
+                  <span className="pricing-price">99 € <small>pro Einheit</small> <small style={{display: 'block', marginTop: '0.25rem'}}>475 € gesamt</small></span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">10er Karte</span>
+                  <span className="pricing-price">90 € <small>pro Einheit</small> <small style={{display: 'block', marginTop: '0.25rem'}}>900 € gesamt</small></span>
+                </div>
+              </div>
+            </FadeIn>
 
-          <FadeIn className="pricing-card" delay={0.2}>
-            <h3>Kurse</h3>
-            <table>
-              <tbody>
-                <tr>
-                  <td>5er Karte</td>
-                  <td>5 Einheiten</td>
-                  <td>60 €</td>
-                </tr>
-                <tr>
-                  <td>10er Karte</td>
-                  <td>10 Einheiten</td>
-                  <td>99 €</td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <div style={{marginTop: "2rem"}}>
-               <a href="/kursplan.pdf" className="button ghost fluid" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-download"></i><span>Kursplan</span></a>
-            </div>
-          </FadeIn>
+            {/* Group Courses */}
+            <FadeIn className="pricing-card" delay={0.2}>
+              <div className="pricing-card-header">
+                <h3>Gruppenkurse</h3>
+                <p className="pricing-card-description">Yoga, Pilates & mehr</p>
+              </div>
+              <div className="pricing-list">
+                <div className="pricing-item">
+                  <span className="pricing-label">5er Karte</span>
+                  <span className="pricing-price">60 € <small>12 €/Einheit</small></span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">10er Karte</span>
+                  <span className="pricing-price">99 € <small>9,90 €/Einheit</small></span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">Mitgliedschaft <small>6 Monate</small></span>
+                  <span className="pricing-price">60 € <small>pro Monat</small></span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">Mitgliedschaft <small>12 Monate</small></span>
+                  <span className="pricing-price">50 € <small>pro Monat</small></span>
+                </div>
+              </div>
+              
+            </FadeIn>
 
-          <FadeIn className="pricing-card" delay={0.3}>
-            <h3>Beratung</h3>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Ernährungsberatung</td>
-                  <td>99 €</td>
-                </tr>
-                <tr>
-                  <td>Trainingsplanung</td>
-                  <td>99 €</td>
-                </tr>
-              </tbody>
-            </table>
-          </FadeIn>
+            {/* Consultations */}
+            <FadeIn className="pricing-card" delay={0.3}>
+              <div className="pricing-card-header">
+                <h3>Beratung</h3>
+                <p className="pricing-card-description">Professionelle Unterstützung</p>
+              </div>
+              <div className="pricing-list">
+                <div className="pricing-item">
+                  <span className="pricing-label">Ernährungsberatung</span>
+                  <span className="pricing-price">99 €</span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">Trainingsplanung</span>
+                  <span className="pricing-price">99 €</span>
+                </div>
+              </div>
+            </FadeIn>
 
-          <FadeIn className="pricing-card" delay={0.4}>
-            <h3>Buche den Trainer</h3>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Einzeltraining</td>
-                  <td>99 €</td>
-                </tr>
-                <tr>
-                  <td>Gruppentraining</td>
-                  <td>150 €</td>
-                </tr>
-              </tbody>
-            </table>
-          </FadeIn>
+            {/* Group Training */}
+            <FadeIn className="pricing-card" delay={0.4}>
+              <div className="pricing-card-header">
+                <h3>Gruppentraining</h3>
+                <p className="pricing-card-description">Training mit deiner Gruppe</p>
+              </div>
+              <div className="pricing-list">
+                <div className="pricing-item">
+                  <span className="pricing-label">Einzeltraining</span>
+                  <span className="pricing-price">99 €</span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">Gruppentraining</span>
+                  <span className="pricing-price">150 €</span>
+                </div>
+              </div>
+            </FadeIn>
 
-          <FadeIn className="pricing-card dark" delay={0.5}>
-            <h3>Mietbares Studio</h3>
-            <p style={{marginBottom: "1rem"}}>Für dein Training mit deiner eigenen Gruppe oder zum Filmen für deinen Social Media Content.</p>
-            <p className="sub-text">(Preise auf Anfrage je nach Dauer und Nutzung)</p>
-          </FadeIn>
+            {/* Studio Rental */}
+            <FadeIn className="pricing-card" delay={0.5}>
+              <div className="pricing-card-header">
+                <h3>Studio mieten</h3>
+                <p className="pricing-card-description">Für dein Training oder Content</p>
+              </div>
+              <div className="pricing-card-content">
+                <p>Perfekt für dein Training mit deiner eigenen Gruppe oder zum Filmen für deinen Social Media Content.</p>
+                <p className="pricing-card-note">Preise auf Anfrage je nach Dauer und Nutzung</p>
+                <p>Melde dich bei uns per Kontaktformular, Mail oder Telefon.</p>
+
+              </div>
+             
+            </FadeIn>
+          </div>
+
+          {/* Special Packages */}
+          <div className="special-packages">
+            <FadeIn className="special-package-card special-package-light" delay={0.6}>
+              <div className="special-package-badge">Startpaket</div>
+              <h3 className="special-package-title">Light</h3>
+              <div className="special-package-price">475 €</div>
+              <ul className="special-package-features">
+                <li><i className="fa-solid fa-check"></i> 4 Personal Trainings</li>
+                <li><i className="fa-solid fa-check"></i> Startgespräch (Anamnese)</li>
+                <li><i className="fa-solid fa-check"></i> 1 Ernährungsberatung</li>
+                <li><i className="fa-solid fa-check"></i> 1 Monat Gruppenkurse kostenlos</li>
+              </ul>
+            </FadeIn>
+
+            <FadeIn className="special-package-card special-package-premium" delay={0.65}>
+              <div className="special-package-badge">Startpaket</div>
+              <h3 className="special-package-title">Premium</h3>
+              <div className="special-package-price">900 €</div>
+              <ul className="special-package-features">
+                <li><i className="fa-solid fa-check"></i> 9 Personal Trainings</li>
+                <li><i className="fa-solid fa-check"></i> Startgespräch (Anamnese)</li>
+                <li><i className="fa-solid fa-check"></i> 1 Ernährungsberatung</li>
+                <li><i className="fa-solid fa-check"></i> 2 Monate Gruppenkurse kostenlos</li>
+              </ul>
+            </FadeIn>
           </div>
         </div>
       </section>

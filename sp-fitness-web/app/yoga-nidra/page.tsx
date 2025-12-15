@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import TrainerTeaser from "@/components/TrainerTeaser";
 
 export const metadata: Metadata = {
   title: "Yoga Nidra – SP Fitness by Sebastian Pfau | Meditation und Entspannung",
@@ -176,7 +175,7 @@ export default function YogaNidra() {
                 </p>
                 <div className="closing-cta">
                   <Link href="#kontakt" className="button key cta-large">
-                    <span>JETZT KONTAKT AUFNEHMEN</span>
+                    <span>Jetzt kostenfreien Termin sichern</span>
                     <i className="fa-solid fa-arrow-right"></i>
                   </Link>
                 </div>
@@ -186,9 +185,6 @@ export default function YogaNidra() {
         </div>
       </section>
 
-      {/* Trainer Teaser */}
-      <TrainerTeaser />
-    
     </main>
   );
 }

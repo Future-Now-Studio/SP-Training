@@ -8,6 +8,9 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [dropdownClicked, setDropdownClicked] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
+  const [kurseDropdownOpen, setKurseDropdownOpen] = useState(false);
+  const [kurseDropdownClicked, setKurseDropdownClicked] = useState(false);
+  const kurseDropdownRef = useRef<HTMLLIElement>(null);
 
   const toggleMenu = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -18,31 +21,53 @@ export default function Header() {
     setMenuOpen(false);
     setDropdownOpen(false);
     setDropdownClicked(false);
+    setKurseDropdownOpen(false);
+    setKurseDropdownClicked(false);
   };
 
   const handleDropdownClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setDropdownClicked(true);
     setDropdownOpen(!dropdownOpen);
+    // Close other dropdown when opening this one
+    if (!dropdownOpen) {
+      setKurseDropdownOpen(false);
+      setKurseDropdownClicked(false);
+    }
   };
 
-  // Close dropdown when clicking outside
+  const handleKurseDropdownClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setKurseDropdownClicked(true);
+    setKurseDropdownOpen(!kurseDropdownOpen);
+    // Close other dropdown when opening this one
+    if (!kurseDropdownOpen) {
+      setDropdownOpen(false);
+      setDropdownClicked(false);
+    }
+  };
+
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setDropdownOpen(false);
         setDropdownClicked(false);
       }
+      if (kurseDropdownRef.current && !kurseDropdownRef.current.contains(event.target as Node)) {
+        setKurseDropdownOpen(false);
+        setKurseDropdownClicked(false);
+      }
     };
 
-    if (dropdownOpen) {
+    if (dropdownOpen || kurseDropdownOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [dropdownOpen]);
+  }, [dropdownOpen, kurseDropdownOpen]);
 
   return (
     <header>
@@ -102,6 +127,43 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/ernaehrungsberatung" className="button flat" onClick={closeMenu}>
+                    Ernährungsberatung
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li 
+              ref={kurseDropdownRef}
+              className="dropdown-container"
+              onMouseEnter={() => {
+                // Auto-open on hover for desktop (when mobile menu is closed and not manually clicked)
+                if (!menuOpen && !kurseDropdownClicked) {
+                  setKurseDropdownOpen(true);
+                }
+              }}
+              onMouseLeave={() => {
+                // Auto-close on hover leave for desktop (when mobile menu is closed and not manually clicked)
+                if (!menuOpen && !kurseDropdownClicked) {
+                  setKurseDropdownOpen(false);
+                }
+              }}
+            >
+              <a 
+                href="#" 
+                className="button flat dropdown-toggle" 
+                onClick={handleKurseDropdownClick}
+              >
+                Kurse
+                <i className={`fa-solid ${kurseDropdownOpen ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
+              </a>
+              <ul className={`dropdown-menu ${kurseDropdownOpen ? "active" : ""}`}>
+                <li>
+                  <Link href="/kurse" className="button flat" onClick={closeMenu}>
+                    Kursplan
+                  </Link>
+                </li>
+                <li>
                   <Link href="/hatha-yoga" className="button flat" onClick={closeMenu}>
                     Hatha Yoga
                   </Link>
@@ -117,8 +179,13 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/ernaehrungsberatung" className="button flat" onClick={closeMenu}>
-                    Ernährungsberatung
+                  <Link href="/wirbelsaeulengymnastik" className="button flat" onClick={closeMenu}>
+                    Wirbelsäulengymnastik
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/zirkeltraining" className="button flat" onClick={closeMenu}>
+                    Zirkeltraining
                   </Link>
                 </li>
               </ul>
@@ -127,13 +194,12 @@ export default function Header() {
             <li><Link href="/#preise" className="button flat" onClick={closeMenu}>Preise</Link></li>
             <li><Link href="/#kontakt" className="button flat" onClick={closeMenu}>Kontakt</Link></li>
             <li><Link href="/#trainer" className="button flat" onClick={closeMenu}>Trainer</Link></li>
-            <li><Link href="/#impressum" className="button flat" onClick={closeMenu}>Impressum</Link></li>
           </ul>
           
           {/* Social Icons on the right */}
           <ul className="links">
             <li><a className="phone-link" href="tel:+4917696252517"><i className="fa-solid fa-phone"></i></a></li>
-            <li><a className="email-link" href="mailto:kontakt@sp-fitness.de"><i className="fa-solid fa-envelope"></i></a></li>
+            <li><a className="email-link" href="mailto:KONTAKT@SP-FITNESS.DE"><i className="fa-solid fa-envelope"></i></a></li>
             <li><a href="https://wa.me/4917696252517" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i></a></li>
             <li><a href="https://www.instagram.com/sp_fitness.personal_training/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
           </ul>

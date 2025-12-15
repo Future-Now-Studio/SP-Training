@@ -42,7 +42,7 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       {/* Contact CTA Section */}
-      <section className="footer-cta">
+      <section id="kontakt" className="footer-cta">
         <div className="wrapper">
           <FadeIn direction="up" delay={0.1}>
             <h2 className="footer-cta-title">Bereit durchzustarten?</h2>
@@ -134,7 +134,7 @@ export default function Footer() {
 
             {/* Quick Contact Buttons */}
             <FadeIn direction="left" delay={0.3} className="footer-quick-contact">
-              <h3 className="quick-contact-title">Oder kontaktiere uns direkt:</h3>
+              <h3 className="quick-contact-title">Oder kontaktiere uns direkt</h3>
               <div className="quick-contact-buttons">
                 <a
                   href="https://wa.me/4917696252517"

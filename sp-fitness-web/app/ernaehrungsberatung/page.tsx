@@ -96,8 +96,8 @@ export default function Ernaehrungsberatung() {
             <FadeIn direction="left" className="nutrition-intro-image">
               <div className="nutrition-image-wrapper">
                 <Image
-                  src="/images/studio.jpg"
-                  alt="Ernährungsberatung"
+                  src="/images/anna-pelzer-ernaehrung.jpg"
+                  alt="Ganzheitliche Ernährungsberatung"
                   fill
                   style={{objectFit: "cover"}}
                   quality={90}
@@ -108,185 +108,68 @@ export default function Ernaehrungsberatung() {
         </div>
       </section>
 
-      {/* Individual Approach Section */}
-      <section id="nutrition-individual">
+      {/* Combined Individual & Holistic Approach Section */}
+      <section id="nutrition-approach">
         <div className="wrapper">
           <FadeIn direction="down">
             <div className="section-header">
-              <h2 className="section-title">Individuell statt pauschal</h2>
-              <p className="section-subtitle">Ernährung, die wirklich zu Ihnen passt</p>
+              <h2 className="section-title">Individuell & Ganzheitlich</h2>
+              <p className="section-subtitle">Ihr persönliches Konzept für nachhaltige Erfolge</p>
               <p className="section-intro">
-                Unser Ansatz beginnt immer mit Ihnen. Wir entwickeln kein Schema F – wir entwickeln Ihr persönliches Ernährungskonzept.
+                Wir entwickeln kein Schema F – wir entwickeln Ihr persönliches Ernährungskonzept. Ernährung ist nur ein Teil des Ganzen. Wir verbinden fundiertes Ernährungswissen mit einem abgestimmten Trainingskonzept, das auf Ihre körperliche Ausgangslage und Ihre Ziele zugeschnitten ist.
               </p>
             </div>
           </FadeIn>
 
-          <div className="nutrition-approach-list">
-            <FadeIn direction="right" delay={0.1} className="nutrition-approach-item">
-              <div className="approach-item-content">
-                <div className="approach-icon-wrapper">
-                  <div className="approach-icon">
-                    <i className="fa-solid fa-user"></i>
-                  </div>
-                </div>
-                <div className="approach-text">
-                  <h3>Ihre Lebenssituation</h3>
-                  <p>Wir berücksichtigen Ihren Alltag, Arbeitszeiten, familiäre Situation und alle Faktoren, die Ihre Ernährung beeinflussen.</p>
-                </div>
+          <div className="nutrition-approach-grid">
+            {/* Individual Factors */}
+            <FadeIn direction="up" delay={0.1} className="approach-card">
+              <div className="approach-card-icon">
+                <i className="fa-solid fa-user"></i>
               </div>
+              <h3>Ihre Lebenssituation</h3>
+              <p>Wir berücksichtigen Ihren Alltag, Arbeitszeiten, familiäre Situation und alle Faktoren, die Ihre Ernährung beeinflussen.</p>
             </FadeIn>
 
-            <FadeIn direction="left" delay={0.2} className="nutrition-approach-item">
-              <div className="approach-item-content">
-                <div className="approach-icon-wrapper">
-                  <div className="approach-icon">
-                    <i className="fa-solid fa-heart-pulse"></i>
-                  </div>
-                </div>
-                <div className="approach-text">
-                  <h3>Gesundheitliche Voraussetzungen</h3>
-                  <p>Gesundheitliche Besonderheiten, Unverträglichkeiten und medizinische Aspekte werden in Ihr Konzept integriert.</p>
-                </div>
+            <FadeIn direction="up" delay={0.2} className="approach-card">
+              <div className="approach-card-icon">
+                <i className="fa-solid fa-heart-pulse"></i>
               </div>
+              <h3>Gesundheitliche Voraussetzungen</h3>
+              <p>Gesundheitliche Besonderheiten, Unverträglichkeiten und medizinische Aspekte werden in Ihr Konzept integriert.</p>
             </FadeIn>
 
-            <FadeIn direction="right" delay={0.3} className="nutrition-approach-item">
-              <div className="approach-item-content">
-                <div className="approach-icon-wrapper">
-                  <div className="approach-icon">
-                    <i className="fa-solid fa-utensils"></i>
-                  </div>
-                </div>
-                <div className="approach-text">
-                  <h3>Ihre Ernährungsgewohnheiten</h3>
-                  <p>Wir schauen auf das, was bereits gut funktioniert, und integrieren es in Ihren individuellen Plan.</p>
-                </div>
+            <FadeIn direction="up" delay={0.3} className="approach-card">
+              <div className="approach-card-icon">
+                <i className="fa-solid fa-bullseye"></i>
               </div>
+              <h3>Ihre persönlichen Ziele</h3>
+              <p>Ob Gewichtsreduktion, Muskelaufbau, mehr Energie im Alltag oder Unterstützung bei Unverträglichkeiten – wir erstellen einen maßgeschneiderten Plan.</p>
             </FadeIn>
 
-            <FadeIn direction="left" delay={0.4} className="nutrition-approach-item">
-              <div className="approach-item-content">
-                <div className="approach-icon-wrapper">
-                  <div className="approach-icon">
-                    <i className="fa-solid fa-clock"></i>
-                  </div>
-                </div>
-                <div className="approach-text">
-                  <h3>Zeitliche Möglichkeiten</h3>
-                  <p>Realistische Zeitpläne, die zu Ihrem Leben passen – ohne Stress und Überforderung.</p>
-                </div>
+            {/* Holistic Pillars */}
+            <FadeIn direction="up" delay={0.4} className="approach-card">
+              <div className="approach-card-icon">
+                <i className="fa-solid fa-apple-whole"></i>
               </div>
+              <h3>Ernährung</h3>
+              <p>Individuelle Ernährungskonzepte, die zu Ihrem Alltag passen und langfristig umsetzbar sind.</p>
             </FadeIn>
 
-            <FadeIn direction="right" delay={0.5} className="nutrition-approach-item">
-              <div className="approach-item-content">
-                <div className="approach-icon-wrapper">
-                  <div className="approach-icon">
-                    <i className="fa-solid fa-bullseye"></i>
-                  </div>
-                </div>
-                <div className="approach-text">
-                  <h3>Ihre persönlichen Ziele</h3>
-                  <p>Ob Gewichtsreduktion, Muskelaufbau, mehr Energie im Alltag oder Unterstützung bei Unverträglichkeiten – wir erstellen einen maßgeschneiderten Plan, der zu Ihrem Alltag passt und langfristig umsetzbar ist.</p>
-                </div>
+            <FadeIn direction="up" delay={0.5} className="approach-card">
+              <div className="approach-card-icon">
+                <i className="fa-solid fa-dumbbell"></i>
               </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Holistic Approach Section */}
-      <section id="nutrition-holistic">
-        <div className="wrapper">
-          <div className="holistic-layout">
-            <FadeIn direction="right" className="holistic-content">
-              <h2 className="section-title">Ganzheitlich denken – nachhaltige Erfolge erleben</h2>
-              <p className="holistic-text">
-                Ernährung ist nur ein Teil des Ganzen. Wir verbinden fundiertes Ernährungswissen mit einem abgestimmtem Trainingskonzept, das auf Ihre körperliche Ausgangslage und Ihre Ziele zugeschnitten ist. So entsteht ein Rundum-Programm, das alle relevanten Bereiche berücksichtigt.
-              </p>
-              <p className="holistic-conclusion">
-                Dieses Zusammenspiel sorgt dafür, dass Veränderungen nicht nur spürbar, sondern dauerhaft sind.
-              </p>
+              <h3>Bewegung & Training</h3>
+              <p>Abgestimmtes Trainingskonzept, das auf Ihre körperliche Ausgangslage und Ihre Ziele zugeschnitten ist.</p>
             </FadeIn>
 
-            <FadeIn direction="left" className="holistic-pillars">
-              <div className="pillar-item">
-                <div className="pillar-icon">
-                  <i className="fa-solid fa-apple-whole"></i>
-                </div>
-                <h4>Ernährung</h4>
+            <FadeIn direction="up" delay={0.6} className="approach-card">
+              <div className="approach-card-icon">
+                <i className="fa-solid fa-bed"></i>
               </div>
-              <div className="pillar-item">
-                <div className="pillar-icon">
-                  <i className="fa-solid fa-dumbbell"></i>
-                </div>
-                <h4>Bewegung & Training</h4>
-              </div>
-              <div className="pillar-item">
-                <div className="pillar-icon">
-                  <i className="fa-solid fa-bed"></i>
-                </div>
-                <h4>Regeneration</h4>
-              </div>
-              <div className="pillar-item">
-                <div className="pillar-icon">
-                  <i className="fa-solid fa-repeat"></i>
-                </div>
-                <h4>Routinen</h4>
-              </div>
-              <div className="pillar-item">
-                <div className="pillar-icon">
-                  <i className="fa-solid fa-brain"></i>
-                </div>
-                <h4>Mindset</h4>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Training Section */}
-      <section id="nutrition-training">
-        <div className="wrapper">
-          <div className="training-layout">
-            <FadeIn direction="right" className="training-image">
-              <div className="training-image-wrapper">
-                <Image
-                  src="/images/VG8_4216.jpg"
-                  alt="Training"
-                  fill
-                  style={{objectFit: "cover"}}
-                  quality={90}
-                />
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="left" className="training-content">
-              <h2 className="section-title">Training abgestimmt auf Ihren Lebensstil</h2>
-              <p className="training-text">
-                Ihr Körper ist einzigartig – und Ihr Training sollte es auch sein. Ob im Fitnessstudio, zu Hause oder unterwegs: Wir entwickeln ein effektives Trainingsprogramm, das sich flexibel in Ihren Alltag integrieren lässt.
-              </p>
-              <div className="training-points">
-                <div className="training-point">
-                  <i className="fa-solid fa-check"></i>
-                  <span>Ihre körperliche Fitness</span>
-                </div>
-                <div className="training-point">
-                  <i className="fa-solid fa-check"></i>
-                  <span>Ihre Ziele (Abnehmen, Straffen, Aufbau, Leistung)</span>
-                </div>
-                <div className="training-point">
-                  <i className="fa-solid fa-check"></i>
-                  <span>Mögliche Einschränkungen</span>
-                </div>
-                <div className="training-point">
-                  <i className="fa-solid fa-check"></i>
-                  <span>Ihre verfügbaren Trainingsmöglichkeiten</span>
-                </div>
-              </div>
-              <p className="training-conclusion">
-                So wird Training nicht zur Belastung, sondern zu einem festen, motivierenden Bestandteil Ihres Lebens.
-              </p>
+              <h3>Regeneration</h3>
+              <p>Ausreichend Erholung und Regeneration für nachhaltige Erfolge und langfristige Gesundheit.</p>
             </FadeIn>
           </div>
         </div>
@@ -372,7 +255,9 @@ export default function Ernaehrungsberatung() {
       </section>
 
       {/* Trainer Teaser */}
-      <TrainerTeaser />
+      <div className="ernaehrungsberatung-trainer-wrapper">
+        <TrainerTeaser />
+      </div>
     
     </main>
   );

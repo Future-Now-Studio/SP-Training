@@ -1,8 +1,32 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
+import { trainers } from "@/data/trainers";
 
 export default function TrainerTeaser() {
+  const [showQualifications, setShowQualifications] = useState(false);
+  // Use Sebastian Pfau as the main trainer
+  const sebastian = trainers.find(t => t.name === "Sebastian Pfau") || trainers[0];
+
+  const qualifications = [
+    { title: "Fitness Trainer A-Lizenz", institution: "IFAA Fitnessakademie" },
+    { title: "Übungsleiter B-Lizenz (Sport in der Rehabilitation, Profil: Orthopädie)", institution: "Deutscher Olympischer Sportbund" },
+    { title: "Personal Trainer", institution: "IFAA Fitnessakademie" },
+    { title: "Ernährungstrainer A-Lizenz", institution: "IFAA Fitnessakademie" },
+    { title: "Gelernter Sport- und Fitnesskaufmann", institution: "IHK" },
+    { title: "Fitness und Gesundheitstrainer", institution: "IFAA Fitnessakademie" },
+    { title: "Group Fitness Workout Instructor", institution: "IFAA Fitnessakademie" },
+    { title: "Sport-Reha-Trainer", institution: "IFAA Fitnessakademie" },
+    { title: "3D Rückenkonzept", institution: "IFAA Fitnessakademie" },
+    { title: "Body Coach", institution: "IFAA Fitnessakademie" },
+    { title: "Funktional Trainer", institution: "IFAA Fitnessakademie" },
+    { title: "Sport Taping", institution: "IFAA Fitnessakademie" },
+    { title: "TRX Trainer", institution: "TRX" },
+  ];
+
   return (
     <section id="trainer">
       <div className="wrapper">
@@ -14,7 +38,7 @@ export default function TrainerTeaser() {
           </h2>
           
           <p className="trainer-description">
-            Mit über 10 Jahren Erfahrung im Fitness- und Rehabilitationsbereich bin ich dein Partner auf dem Weg zu deinen Zielen. Egal ob Muskelaufbau, Abnehmen, Rehabilitation nach Verletzungen oder Leistungssteigerung – ich begleite dich mit professioneller Betreuung und individuellen Trainingsplänen.
+            {sebastian.intro}
           </p>
 
           {/* Feature Boxes Grid */}
@@ -60,6 +84,17 @@ export default function TrainerTeaser() {
             </div>
           </div>
 
+          {/* Qualifications Link */}
+          <div className="qualifications-link-wrapper">
+            <button 
+              className="qualifications-link"
+              onClick={() => setShowQualifications(true)}
+            >
+              Meine Qualifikationen
+              <i className="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
           {/* Quote Section */}
           <div className="trainer-quote">
             <div className="quote-line"></div>
@@ -69,21 +104,14 @@ export default function TrainerTeaser() {
             <p className="quote-author">— Sebastian Pfau</p>
           </div>
 
-          {/* Learn More Button */}
-          <div className="trainer-cta">
-            <Link href="/trainer" className="button key">
-              <span>Mehr über das Team erfahren</span>
-              <i className="fa-solid fa-arrow-right"></i>
-            </Link>
-          </div>
         </FadeIn>
 
         {/* Right Side - Image */}
         <FadeIn className="trainer-image-wrapper" direction="left" delay={0.4}>
           <div className="trainer-image-frame">
             <Image 
-              src="/images/Trainer.png" 
-              alt="Sebastian Pfau - Personal Trainer" 
+              src={sebastian.image} 
+              alt={sebastian.imageAlt} 
               fill
               style={{objectFit: "contain", objectPosition: "center"}}
               priority
@@ -91,6 +119,32 @@ export default function TrainerTeaser() {
           </div>
         </FadeIn>
       </div>
+
+      {/* Qualifications Modal */}
+      {showQualifications && (
+        <div className="qualifications-modal-overlay" onClick={() => setShowQualifications(false)}>
+          <div className="qualifications-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="qualifications-modal-header">
+              <h2 className="qualifications-modal-title">Meine Qualifikationen</h2>
+              <button 
+                className="qualifications-modal-close"
+                onClick={() => setShowQualifications(false)}
+                aria-label="Schließen"
+              >
+                <i className="fa-solid fa-times"></i>
+              </button>
+            </div>
+            <div className="qualifications-list">
+              {qualifications.map((qual, index) => (
+                <div key={index} className="qualification-item">
+                  <div className="qualification-title">{qual.title}</div>
+                  <div className="qualification-institution">{qual.institution}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

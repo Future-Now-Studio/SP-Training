@@ -164,7 +164,7 @@ a.button {
     min-height: 3.5rem;
     padding: 0.75rem 2rem;
     
-    border-radius: 50px; /* Modern rounded pill shape */
+    border-radius: 0.375rem; /* Slightly rounded */
 
     cursor: pointer;
 
@@ -249,7 +249,7 @@ a.button.flat:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1.25rem;
-    border-radius: 50px;
+    border-radius: 0.375rem;
     font-family: var(--font-lato), system-ui;
     font-weight: 700;
     font-size: 0.875rem;
@@ -399,6 +399,7 @@ header .wrapper .end ul.navigation li .dropdown-menu {
     transform: translateX(-50%) translateY(-10px);
     transition: all 0.3s ease;
     z-index: 1000;
+    text-align: center;
 }
 header .wrapper .end ul.navigation li .dropdown-menu.active {
     opacity: 1;
@@ -408,6 +409,7 @@ header .wrapper .end ul.navigation li .dropdown-menu.active {
 header .wrapper .end ul.navigation li .dropdown-menu li {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 header .wrapper .end ul.navigation li .dropdown-menu li a {
     display: block;
@@ -420,11 +422,14 @@ header .wrapper .end ul.navigation li .dropdown-menu li a {
     text-decoration: none;
     transition: all 0.3s ease;
     border-radius: 0;
+    text-align: center;
+    width: 100%;
 }
 header .wrapper .end ul.navigation li .dropdown-menu li a:hover {
     background-color: rgba(0, 90, 255, 0.1);
     color: var(--brand-blue-hover);
-    padding-left: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 /* Social Icons on Right */
 header .wrapper .end ul.links {
@@ -636,7 +641,7 @@ header #menu-toggle {
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 #start .hero-tagline {
-    font-family: "Jockey One";
+    font-family: var(--font-jockey-one), system-ui;
     font-size: 2.75rem;
     font-weight: 400;
     color: #ffffff;
@@ -752,7 +757,7 @@ header #menu-toggle {
     background: var(--brand-dark);
     position: relative;
     overflow: hidden;
-    padding: 6rem 2rem;
+    padding: 2.5rem 1rem;
 }
 #leistungen .wrapper {
     display: flex;
@@ -761,7 +766,7 @@ header #menu-toggle {
     align-items: center;
     width: 100%;
     max-width: 100rem;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 /* Header Section */
@@ -770,8 +775,8 @@ header #menu-toggle {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
 }
 .ziel-icon {
     width: 2rem;
@@ -794,7 +799,7 @@ header #menu-toggle {
 }
 .ziel-heading {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 400;
     color: #ffffff;
     text-transform: none;
@@ -827,7 +832,7 @@ header #menu-toggle {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    border-radius: 50px;
+    border-radius: 0.375rem;
     border: 2px solid rgba(255, 255, 255, 0.3);
     background: transparent;
     color: #ffffff;
@@ -868,9 +873,10 @@ header #menu-toggle {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     transition: all 0.3s ease;
     height: 100%;
+    align-items: flex-start;
 }
 .leistung-card:hover {
     transform: translateY(-5px);
@@ -883,61 +889,57 @@ header #menu-toggle {
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 .leistung-card .card-icon img {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 140px;
+    height: 140px;
     filter: brightness(0) invert(1); /* Make icons white */
+    object-fit: contain;
 }
 .leistung-card h3 {
-    font-family: var(--font-jockey-one), system-ui;
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 700;
     color: #ffffff;
     text-align: left;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.25rem 0;
     text-transform: uppercase;
-    line-height: 1.3;
-}
-.leistung-card .card-description {
-    font-family: var(--font-lato), system-ui;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    text-align: left;
-    margin: 0 0 1.5rem 0;
-    line-height: 1.5;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
 }
 .leistung-card .card-list {
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
 }
 .leistung-card .card-list li {
     font-family: var(--font-lato), system-ui;
-    font-size: 0.95rem;
+    font-size: 0.9375rem;
     color: #ffffff;
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
+    margin-bottom: 0;
+    padding-left: 0;
     position: relative;
-    line-height: 1.5;
+    line-height: 1.6;
+    text-align: left;
 }
 .leistung-card .card-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.5rem;
-    width: 0.5rem;
-    height: 0.5rem;
-    background: var(--brand-blue-hover);
-    border-radius: 50%;
+    content: "•";
+    margin-right: 0.5rem;
+    color: #ffffff;
 }
 
 /* Call to Action */
 .ziel-cta {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 .button.cta-large {
     min-height: 4rem;
@@ -954,28 +956,31 @@ header #menu-toggle {
 @media screen and (max-width: 100rem) {
     #leistungen .leistungen-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 }
 @media screen and (max-width: 60rem) {
     #leistungen {
-        padding: 4rem 1.5rem;
+        padding: 2rem 1rem;
     }
     .ziel-heading {
-        font-size: 2rem;
-    }
-    .training-type-selector {
-        gap: 0.75rem;
-    }
-    .training-type-btn {
-        padding: 0.625rem 1.25rem;
-        font-size: 0.75rem;
+        font-size: 1.75rem;
     }
     #leistungen .leistungen-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
     }
     .leistung-card {
-        padding: 1.5rem;
+        padding: 1.75rem 1.25rem;
+    }
+}
+@media screen and (max-width: 40rem) {
+    #leistungen .leistungen-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .leistung-card {
+        padding: 1.75rem 1.25rem;
     }
 }
 
@@ -996,34 +1001,73 @@ header #menu-toggle {
 }
 .studio-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 400;
     color: var(--brand-dark);
     text-transform: uppercase;
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 2rem 0;
     line-height: 1.2;
 }
+
+.studio-description {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    color: rgba(0, 9, 49, 0.8);
+    line-height: 1.8;
+    margin: 0 0 2.5rem 0;
+}
+
+.studio-features-section {
+    margin-top: 2.5rem;
+}
+
+.studio-features-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    text-transform: uppercase;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.3;
+}
+
 .studio-features {
     list-style: none;
     padding: 0;
-    margin: 0 0 3rem 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
 }
+
 .studio-features li {
     font-family: var(--font-lato), system-ui;
     font-size: 1rem;
     color: var(--brand-dark);
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
+    margin-bottom: 0;
+    padding-left: 2rem;
     position: relative;
     line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
-.studio-features li::before {
-    content: "•";
+
+.studio-features li i {
     position: absolute;
     left: 0;
-    color: var(--brand-dark);
-    font-size: 1.5rem;
-    line-height: 1;
+    color: var(--brand-blue);
+    font-size: 1.125rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.studio-features li span {
+    flex: 1;
+}
+
+.studio-cta {
+    margin-top: 2.5rem;
 }
 .studio-btn {
     border: 2px solid var(--brand-dark);
@@ -1057,20 +1101,82 @@ header #menu-toggle {
     font-style: italic;
     line-height: 1.6;
 }
-#studio .adresse .details {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
+
+/* Studio Address Section */
+.studio-address-section {
+    margin-top: 3rem;
 }
-#studio .adresse .details p {
+
+.studio-address-label {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    text-transform: uppercase;
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+}
+
+.studio-address-value {
     font-family: var(--font-lato), system-ui;
     font-size: 1rem;
     color: var(--brand-dark);
-    margin: 0;
+    margin: 0 0 1.5rem 0;
     line-height: 1.6;
+}
+
+.studio-address-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--brand-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.studio-address-link:hover {
+    color: var(--brand-blue-hover);
+    text-decoration: underline;
+}
+
+.studio-address-link i {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.studio-address-link:hover i {
+    opacity: 1;
+}
+
+.studio-map-container {
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.studio-map-container iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+.studio-btn-small {
+    border: 2px solid var(--brand-dark);
+    color: var(--brand-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.5rem;
+    min-height: auto;
+}
+
+.studio-btn-small:hover {
+    background-color: var(--brand-dark);
+    color: #ffffff;
 }
 #studio .end {
     position: relative;
@@ -1174,6 +1280,25 @@ header #menu-toggle {
         padding: 4rem 2rem;
         gap: 2.5rem;
     }
+    .studio-title {
+        font-size: 2.5rem;
+    }
+    .studio-description {
+        font-size: 1rem;
+    }
+    .studio-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .studio-features-title {
+        font-size: 1.25rem;
+    }
+    .studio-address-label {
+        font-size: 1.25rem;
+    }
+    .studio-map-container iframe {
+        height: 250px;
+    }
     #studio .end {
         height: 30rem;
         min-height: 30rem;
@@ -1213,113 +1338,523 @@ header #menu-toggle {
 
 /* Modern Pricing Section */
 #preise {
-    padding: 6rem 2rem;
-    background-color: #f8f9fa; /* Light grey for contrast against dark footer */
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
 }
-#preise .wrapper {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
-    max-width: 100rem;
-    margin: 0 auto;
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
 }
-.pricing-card {
-    background: #ffffff;
-    border-radius: 1.5rem;
-    padding: 2.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
+
+.pricing-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
-.pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.pricing-card h3 {
-    color: var(--brand-dark);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid var(--brand-blue);
-    padding-bottom: 1rem;
-    display: inline-block;
-}
-.pricing-card table {
-    width: 100%;
-}
-.pricing-card td {
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
-    color: #555;
-    font-size: 1.1rem;
-}
-.pricing-card td:last-child {
-    text-align: right;
-    font-weight: 700;
-    color: var(--brand-dark);
-}
-.pricing-card .sub-text {
-    font-size: 0.85rem;
-    color: #888;
+
+.pricing-subtitle {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
 }
-.pricing-card.dark {
-    background: var(--brand-dark);
+
+#preise .wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* Special Packages */
+.special-packages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.special-package-card {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 9, 49, 0.1);
+    color: var(--brand-dark);
+}
+
+.special-package-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-blue);
+    box-shadow: 0 8px 24px rgba(0, 90, 255, 0.2);
+}
+
+.special-package-badge {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+}
+
+.special-package-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    text-transform: uppercase;
+    margin: 0 0 1rem 0;
+}
+
+.special-package-price {
+    font-family: var(--font-lato), system-ui;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--brand-blue);
+    margin-bottom: 1.5rem;
+}
+
+.special-package-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.special-package-features li {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.95rem;
+    color: var(--brand-dark);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.special-package-features li i {
+    color: var(--brand-blue);
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.special-package-premium {
+    border-color: var(--brand-blue);
+    border-width: 3px;
+    box-shadow: 0 6px 20px rgba(0, 90, 255, 0.25);
+}
+
+.special-package-premium::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.special-package-premium:hover {
+    border-color: var(--brand-blue-hover);
+    box-shadow: 0 10px 30px rgba(0, 90, 255, 0.35);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: 0 4px 16px rgba(0, 9, 49, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    color: var(--brand-dark);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 90, 255, 0.2);
+    border-color: var(--brand-blue);
+}
+
+.pricing-card-featured {
+    border-color: var(--brand-blue);
+    border-width: 3px;
+    box-shadow: 0 6px 20px rgba(0, 90, 255, 0.25);
+    position: relative;
+}
+
+.pricing-card-featured::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.pricing-card-featured:hover {
+    border-color: var(--brand-blue-hover);
+    box-shadow: 0 10px 30px rgba(0, 90, 255, 0.35);
+}
+
+.pricing-card-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 90, 255, 0.15);
+}
+
+.pricing-card-header h3 {
+    font-family: var(--font-jockey-one), system-ui;
+    color: var(--brand-dark);
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.pricing-card-featured .pricing-card-header {
+    border-bottom-color: var(--brand-blue);
+}
+
+.pricing-card-description {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.95rem;
+    color: rgba(0, 9, 49, 0.7);
+    font-weight: 400;
+    margin: 0;
+}
+
+.pricing-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pricing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 90, 255, 0.1);
+}
+
+.pricing-item:last-child {
+    border-bottom: none;
+}
+
+.pricing-item-highlight {
+    background: linear-gradient(135deg, rgba(0, 90, 255, 0.1) 0%, rgba(0, 90, 255, 0.05) 100%);
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    margin: 0.25rem 0;
+    border: 2px solid var(--brand-blue);
+}
+
+.pricing-label {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.pricing-label small {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(0, 9, 49, 0.6);
+}
+
+.pricing-item-highlight .pricing-label {
+    color: var(--brand-blue);
+    font-weight: 700;
+}
+
+.pricing-price {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-blue);
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+}
+
+.pricing-price small {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(0, 9, 49, 0.6);
+}
+
+.pricing-item-highlight .pricing-price {
+    color: var(--brand-blue);
+    font-weight: 800;
+}
+
+.pricing-card-content {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-card-content p {
+    font-family: var(--font-lato), system-ui;
+    color: rgba(0, 9, 49, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.pricing-card-note {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.9rem;
+    color: rgba(0, 9, 49, 0.6);
+    font-style: italic;
+}
+
+.pricing-card-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+/* Ghost button styles for pricing section */
+#preise .button.ghost {
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+    background: transparent;
+}
+
+#preise .button.ghost:hover {
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
     color: #ffffff;
 }
-.pricing-card.dark h3 {
-    color: #ffffff;
+
+#preise .button.ghost * {
+    color: inherit;
 }
-.pricing-card.dark td {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.8);
-}
-.pricing-card.dark td:last-child {
+
+#preise .button.ghost:hover * {
     color: #ffffff;
 }
 
 /* Responsive Pricing Section */
-@media screen and (max-width: 120rem) {
-    #preise .wrapper {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1rem;
-    }
-    .pricing-card {
-        padding: 2rem 1.5rem;
-    }
-    .pricing-card h3 {
-        font-size: 1.75rem;
-    }
-}
 @media screen and (max-width: 80rem) {
-    #preise .wrapper {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+    .special-packages {
+        max-width: 100%;
     }
-}
-@media screen and (max-width: 60rem) {
-    #preise .wrapper {
+    
+    .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media screen and (max-width: 60rem) {
+    .special-packages {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .special-package-card {
+        padding: 1.75rem;
+    }
+    
+    .special-package-title {
+        font-size: 1.75rem;
+    }
+    
+    .special-package-price {
+        font-size: 2.25rem;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    .pricing-title {
+        font-size: 2.5rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 @media screen and (max-width: 40rem) {
     #preise {
         padding: 4rem 1.5rem;
     }
-    #preise .wrapper {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    
+    .pricing-header {
+        margin-bottom: 3rem;
     }
+    
+    .pricing-title {
+        font-size: 2rem;
+    }
+    
+    .pricing-subtitle {
+        font-size: 1.1rem;
+    }
+    
     .pricing-card {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .pricing-card-header h3 {
+        font-size: 1.5rem;
     }
 }
 
 /* Trainer Section - Modern Design */
+/* Default: White background (for homepage after dark #preise section) */
 #trainer {
     padding: 6rem 2rem;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     color: var(--brand-dark);
+}
+#trainer .trainer-subtitle {
+    color: var(--brand-blue);
+}
+#trainer .trainer-name .name-white {
+    color: var(--brand-dark);
+}
+#trainer .trainer-name .name-blue {
+    color: var(--brand-blue);
+}
+#trainer .trainer-description {
+    color: var(--brand-dark);
+}
+#trainer .trainer-quote blockquote,
+#trainer .quote-author {
+    color: var(--brand-dark);
+}
+#trainer .feature-text strong {
+    color: var(--brand-dark);
+}
+#trainer .feature-text span {
+    color: rgba(0, 9, 49, 0.7);
+}
+.ernaehrungsberatung-trainer-wrapper #trainer {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--brand-dark);
+}
+.ernaehrungsberatung-trainer-wrapper #trainer .trainer-subtitle {
+    color: var(--brand-blue);
+}
+.ernaehrungsberatung-trainer-wrapper #trainer .trainer-name .name-white {
+    color: var(--brand-dark);
+}
+.ernaehrungsberatung-trainer-wrapper #trainer .trainer-name .name-blue {
+    color: var(--brand-blue);
+}
+.ernaehrungsberatung-trainer-wrapper #trainer .trainer-description,
+.ernaehrungsberatung-trainer-wrapper #trainer .trainer-quote blockquote,
+.ernaehrungsberatung-trainer-wrapper #trainer .quote-author {
+    color: rgba(0, 9, 49, 0.8);
+}
+.ernaehrungsberatung-trainer-wrapper #trainer .feature-text strong {
+    color: var(--brand-dark);
+}
+.ernaehrungsberatung-trainer-wrapper #trainer .feature-text span {
+    color: rgba(0, 9, 49, 0.7);
+}
+.personaltraining-trainer-wrapper #trainer {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--brand-dark);
+}
+.personaltraining-trainer-wrapper #trainer .trainer-subtitle {
+    color: var(--brand-blue);
+}
+.personaltraining-trainer-wrapper #trainer .trainer-name .name-white {
+    color: var(--brand-dark);
+}
+.personaltraining-trainer-wrapper #trainer .trainer-name .name-blue {
+    color: var(--brand-blue);
+}
+.personaltraining-trainer-wrapper #trainer .trainer-description,
+.personaltraining-trainer-wrapper #trainer .trainer-quote blockquote,
+.personaltraining-trainer-wrapper #trainer .quote-author {
+    color: var(--brand-dark);
+}
+.personaltraining-trainer-wrapper #trainer .feature-text strong {
+    color: var(--brand-dark);
+}
+.personaltraining-trainer-wrapper #trainer .feature-text span {
+    color: rgba(0, 9, 49, 0.7);
+}
+.wirbelsaeulengymnastik-trainer-wrapper #trainer {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+.wirbelsaeulengymnastik-trainer-wrapper #trainer .trainer-subtitle {
+    color: var(--brand-blue-hover);
+}
+.wirbelsaeulengymnastik-trainer-wrapper #trainer .trainer-name .name-white {
+    color: #ffffff;
+}
+.wirbelsaeulengymnastik-trainer-wrapper #trainer .trainer-name .name-blue {
+    color: var(--brand-blue-hover);
+}
+.wirbelsaeulengymnastik-trainer-wrapper #trainer .trainer-description,
+.wirbelsaeulengymnastik-trainer-wrapper #trainer .trainer-quote blockquote,
+.wirbelsaeulengymnastik-trainer-wrapper #trainer .quote-author {
+    color: rgba(255, 255, 255, 0.9);
+}
+.wirbelsaeulengymnastik-trainer-wrapper #trainer .feature-text strong {
+    color: #ffffff;
+}
+.wirbelsaeulengymnastik-trainer-wrapper #trainer .feature-text span {
+    color: rgba(255, 255, 255, 0.7);
+}
+.zirkeltraining-trainer-wrapper #trainer {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--brand-dark);
+}
+.zirkeltraining-trainer-wrapper #trainer .trainer-subtitle {
+    color: var(--brand-blue);
+}
+.zirkeltraining-trainer-wrapper #trainer .trainer-name .name-white {
+    color: var(--brand-dark);
+}
+.zirkeltraining-trainer-wrapper #trainer .trainer-name .name-blue {
+    color: var(--brand-blue);
+}
+.zirkeltraining-trainer-wrapper #trainer .trainer-description,
+.zirkeltraining-trainer-wrapper #trainer .trainer-quote blockquote,
+.zirkeltraining-trainer-wrapper #trainer .quote-author {
+    color: var(--brand-dark);
+}
+.zirkeltraining-trainer-wrapper #trainer .feature-text strong {
+    color: var(--brand-dark);
+}
+.zirkeltraining-trainer-wrapper #trainer .feature-text span {
+    color: rgba(0, 9, 49, 0.7);
 }
 #trainer .trainer-subtitle {
     color: var(--brand-blue);
@@ -1489,6 +2024,263 @@ header #menu-toggle {
     gap: 0.75rem;
 }
 
+/* Qualifications Button */
+/* Qualifications Link - Small read more style */
+.qualifications-link-wrapper {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.qualifications-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.qualifications-link i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.qualifications-link:hover i {
+    transform: translateX(3px);
+}
+
+/* White background */
+#trainer .qualifications-link {
+    color: var(--brand-blue);
+}
+
+#trainer .qualifications-link:hover {
+    color: var(--brand-blue-hover);
+    text-decoration: underline;
+}
+
+#trainer .qualifications-link i {
+    color: var(--brand-blue);
+}
+
+#trainer .qualifications-link:hover i {
+    color: var(--brand-blue-hover);
+}
+
+/* Dark background */
+.ernaehrungsberatung-trainer-wrapper #trainer .qualifications-link {
+    color: var(--brand-blue);
+}
+
+.ernaehrungsberatung-trainer-wrapper #trainer .qualifications-link:hover {
+    color: var(--brand-blue-hover);
+    text-decoration: underline;
+}
+
+.ernaehrungsberatung-trainer-wrapper #trainer .qualifications-link i {
+    color: var(--brand-blue);
+}
+
+.ernaehrungsberatung-trainer-wrapper #trainer .qualifications-link:hover i {
+    color: var(--brand-blue-hover);
+}
+
+.personaltraining-trainer-wrapper #trainer .qualifications-link {
+    color: var(--brand-blue);
+}
+
+.personaltraining-trainer-wrapper #trainer .qualifications-link:hover {
+    color: var(--brand-blue-hover);
+    text-decoration: underline;
+}
+
+.personaltraining-trainer-wrapper #trainer .qualifications-link i {
+    color: var(--brand-blue);
+}
+
+.personaltraining-trainer-wrapper #trainer .qualifications-link:hover i {
+    color: var(--brand-blue-hover);
+}
+
+/* Qualifications Modal */
+.qualifications-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 9, 49, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.qualifications-modal {
+    background: #ffffff;
+    border-radius: 1rem;
+    max-width: 50rem;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.qualifications-modal-header {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    padding: 1.5rem 3rem;
+    border-bottom: 2px solid rgba(0, 90, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.qualifications-modal-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    text-transform: uppercase;
+    margin: 0;
+    flex: 1;
+}
+
+.qualifications-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--brand-dark);
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.qualifications-modal-close:hover {
+    background: rgba(0, 9, 49, 0.1);
+    color: var(--brand-blue);
+}
+
+.qualifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.qualification-item {
+    padding: 1.25rem;
+    background: linear-gradient(135deg, rgba(0, 90, 255, 0.05) 0%, rgba(0, 90, 255, 0.02) 100%);
+    border-left: 3px solid var(--brand-blue);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.qualification-item:hover {
+    background: linear-gradient(135deg, rgba(0, 90, 255, 0.1) 0%, rgba(0, 90, 255, 0.05) 100%);
+    transform: translateX(5px);
+}
+
+.qualification-title {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin-bottom: 0.5rem;
+}
+
+.qualification-institution {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.9rem;
+    color: rgba(0, 9, 49, 0.7);
+    font-weight: 400;
+}
+
+/* Responsive Qualifications Modal */
+@media screen and (max-width: 60rem) {
+    .qualifications-modal {
+        margin: 1rem;
+        max-height: 95vh;
+    }
+    
+    .qualifications-modal-header {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .qualifications-modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .qualifications-modal-close {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.25rem;
+        margin-left: 0.75rem;
+    }
+    
+    .qualifications-list {
+        padding: 2rem 1.5rem;
+    }
+    
+    .qualification-item {
+        padding: 1rem;
+    }
+    
+    .qualification-title {
+        font-size: 0.95rem;
+    }
+    
+    .qualification-institution {
+        font-size: 0.85rem;
+    }
+}
+
 /* Right Side - Image */
 .trainer-image-wrapper {
     display: flex;
@@ -1508,7 +2300,8 @@ header #menu-toggle {
     outline: none !important;
 }
 .trainer-image-frame img,
-.trainer-image-frame * {
+.trainer-image-frame *,
+.trainer-image-frame {
     border: none !important;
     outline: none !important;
 }
@@ -1554,6 +2347,10 @@ header #menu-toggle {
     padding: 6rem 2rem;
     background: #ffffff;
     text-align: center;
+}
+#kontakt.footer-cta {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
 }
 .contact-title {
     font-family: var(--font-jockey-one), system-ui;
@@ -1612,10 +2409,11 @@ header #menu-toggle {
 /* Personal Training Intro Section */
 #personaltraining-intro {
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
     text-align: center;
     position: relative;
     overflow: hidden;
+    color: #ffffff;
 }
 #personaltraining-intro::before {
     content: "";
@@ -1636,16 +2434,19 @@ header #menu-toggle {
     line-height: 1.9;
     max-width: 65rem;
     margin: 0 auto;
-    color: var(--brand-dark);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
     padding: 0;
+}
+#personaltraining-intro .intro-text {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Warum Personal Training Section */
 #warum-personaltraining {
-    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     padding: 6rem 2rem;
-    color: #ffffff;
+    color: var(--brand-dark);
 }
 #warum-personaltraining .wrapper {
     max-width: 100rem;
@@ -1657,7 +2458,7 @@ header #menu-toggle {
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
-    color: #ffffff;
+    color: var(--brand-dark);
     margin: 0 0 4rem 0;
 }
 #warum-personaltraining .features-grid {
@@ -1666,19 +2467,20 @@ header #menu-toggle {
     gap: 2rem;
 }
 .feature-card {
-    background: rgba(255, 255, 255, 0.08);
-    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
     padding: 2.5rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
     position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 9, 49, 0.08);
     overflow: visible;
 }
 .feature-card:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    border-color: var(--brand-blue-hover);
+    box-shadow: 0 4px 16px rgba(0, 90, 255, 0.15);
+    transform: translateY(-3px);
 }
 .feature-icon-wrapper {
     display: flex;
@@ -1689,7 +2491,7 @@ header #menu-toggle {
 .feature-icon-circle {
     width: 4rem;
     height: 4rem;
-    background: var(--brand-blue-hover);
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -1699,7 +2501,7 @@ header #menu-toggle {
     position: relative;
 }
 .feature-card:hover .feature-icon-circle {
-    background: var(--brand-blue);
+    background: linear-gradient(135deg, var(--brand-blue-hover) 0%, var(--brand-blue) 100%);
 }
 .feature-icon-circle i {
     font-size: 1.5rem;
@@ -1710,7 +2512,7 @@ header #menu-toggle {
     font-size: 1.375rem;
     font-weight: 700;
     margin: 0 0 1rem 0;
-    color: #ffffff;
+    color: var(--brand-dark);
     line-height: 1.4;
     text-align: left;
 }
@@ -1718,7 +2520,7 @@ header #menu-toggle {
     font-family: var(--font-lato), system-ui;
     font-size: 1rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 9, 49, 0.8);
     margin: 0;
     text-align: left;
 }
@@ -1732,6 +2534,33 @@ header #menu-toggle {
 }
 #personaltraining-closing .closing-title,
 #personaltraining-closing .closing-text {
+    color: #ffffff;
+}
+.closing-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+.closing-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.closing-icon-circle {
+    width: 5rem;
+    height: 5rem;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 90, 255, 0.2);
+}
+.closing-icon-circle i {
+    font-size: 2rem;
     color: #ffffff;
 }
 .closing-content {
@@ -1781,6 +2610,48 @@ header #menu-toggle {
     background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
 }
 #hatha-yoga-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Pilates Sections */
+#pilates-intro {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+#pilates-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#pilates-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Yoga Nidra Sections */
+#yoga-nidra-intro {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+#yoga-nidra-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#yoga-nidra-intro .wrapper {
     position: relative;
     z-index: 1;
 }
@@ -1920,52 +2791,361 @@ header #menu-toggle {
     color: rgba(0, 9, 49, 0.8);
     margin: 0;
 }
-#warum-hatha-yoga {
+#warum-hatha-yoga,
+#warum-pilates,
+#warum-yoga-nidra {
     background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     color: #ffffff;
 }
-#warum-hatha-yoga .wrapper {
+#warum-hatha-yoga .wrapper,
+#warum-pilates .wrapper,
+#warum-yoga-nidra .wrapper {
     max-width: 100rem;
     margin: 0 auto;
 }
-#warum-hatha-yoga .section-title {
+#warum-hatha-yoga .section-title,
+#warum-pilates .section-title,
+#warum-yoga-nidra .section-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 2.25rem;
+    font-size: 3rem;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
     color: #ffffff;
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 4rem 0;
 }
-#warum-hatha-yoga .features-grid {
+#warum-hatha-yoga .features-grid,
+#warum-pilates .features-grid,
+#warum-yoga-nidra .features-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
 }
-#warum-hatha-yoga .feature-card {
-    padding: 2rem;
+#warum-hatha-yoga .feature-card,
+#warum-pilates .feature-card,
+#warum-yoga-nidra .feature-card {
+    padding: 2.5rem;
 }
-#warum-hatha-yoga .feature-icon-wrapper {
-    margin-bottom: 1rem;
+#warum-hatha-yoga .feature-icon-wrapper,
+#warum-pilates .feature-icon-wrapper,
+#warum-yoga-nidra .feature-icon-wrapper {
+    margin-bottom: 1.5rem;
 }
-#warum-hatha-yoga .feature-card h4 {
-    font-size: 1.25rem;
-    margin: 0 0 0.75rem 0;
+#warum-hatha-yoga .feature-card h4,
+#warum-pilates .feature-card h4,
+#warum-yoga-nidra .feature-card h4 {
+    font-size: 1.375rem;
+    margin: 0 0 1rem 0;
 }
-#warum-hatha-yoga .feature-card p {
-    font-size: 0.9375rem;
-    line-height: 1.6;
+#warum-hatha-yoga .feature-card p,
+#warum-pilates .feature-card p,
+#warum-yoga-nidra .feature-card p {
+    font-size: 1rem;
+    line-height: 1.7;
 }
-#hatha-yoga-closing {
+#hatha-yoga-closing,
+#pilates-closing,
+#yoga-nidra-closing {
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     text-align: center;
-    color: #ffffff;
+    color: var(--brand-dark);
 }
 #hatha-yoga-closing .closing-title,
-#hatha-yoga-closing .closing-text {
+#hatha-yoga-closing .closing-text,
+#pilates-closing .closing-title,
+#pilates-closing .closing-text,
+#yoga-nidra-closing .closing-title,
+#yoga-nidra-closing .closing-text {
+    color: var(--brand-dark);
+}
+
+/* Wirbelsäulengymnastik Sections */
+#wirbelsaeulengymnastik-intro {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+#wirbelsaeulengymnastik-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#wirbelsaeulengymnastik-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+#was-dich-erwartet {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    padding: 6rem 2rem;
     color: #ffffff;
+}
+#was-dich-erwartet .section-title,
+#was-dich-erwartet .section-subtitle,
+#was-dich-erwartet .section-intro {
+    color: #ffffff;
+}
+
+#warum-wirbelsaeulengymnastik {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--brand-dark);
+}
+#warum-wirbelsaeulengymnastik .wrapper {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+#warum-wirbelsaeulengymnastik .section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--brand-dark);
+    margin: 0 0 4rem 0;
+}
+#warum-wirbelsaeulengymnastik .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+#warum-wirbelsaeulengymnastik .feature-card {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 9, 49, 0.08);
+}
+#warum-wirbelsaeulengymnastik .feature-card:hover {
+    border-color: var(--brand-blue-hover);
+    box-shadow: 0 4px 16px rgba(0, 90, 255, 0.15);
+    transform: translateY(-3px);
+}
+#warum-wirbelsaeulengymnastik .feature-icon-wrapper {
+    margin-bottom: 1.5rem;
+}
+#warum-wirbelsaeulengymnastik .feature-icon-circle {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#warum-wirbelsaeulengymnastik .feature-card h4 {
+    font-size: 1.375rem;
+    margin: 0 0 1rem 0;
+    color: var(--brand-dark);
+}
+#warum-wirbelsaeulengymnastik .feature-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(0, 9, 49, 0.8);
+}
+
+#fuer-wen-geeignet {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    padding: 6rem 2rem;
+    color: #ffffff;
+}
+#fuer-wen-geeignet .wrapper {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+#fuer-wen-geeignet .section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 0 4rem 0;
+}
+#fuer-wen-geeignet .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+#fuer-wen-geeignet .feature-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+#fuer-wen-geeignet .feature-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+#fuer-wen-geeignet .feature-icon-wrapper {
+    margin-bottom: 1.5rem;
+}
+#fuer-wen-geeignet .feature-icon-circle {
+    background: var(--brand-blue-hover);
+}
+#fuer-wen-geeignet .feature-card h4 {
+    font-size: 1.375rem;
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+}
+#fuer-wen-geeignet .feature-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#wirbelsaeulengymnastik-closing {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    text-align: center;
+    color: var(--brand-dark);
+}
+#wirbelsaeulengymnastik-closing .closing-title,
+#wirbelsaeulengymnastik-closing .closing-text {
+    color: var(--brand-dark);
+}
+
+/* Zirkeltraining Sections */
+#zirkeltraining-intro {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+#zirkeltraining-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+#zirkeltraining-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+#warum-effektiv {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    padding: 6rem 2rem;
+    color: #ffffff;
+}
+#warum-effektiv .section-title {
+    color: #ffffff;
+}
+#warum-effektiv .yoga-intro-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#power-tools {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--brand-dark);
+}
+#power-tools .section-title {
+    color: var(--brand-dark);
+}
+#power-tools .section-subtitle {
+    color: rgba(0, 9, 49, 0.8);
+}
+#power-tools .section-intro {
+    color: rgba(0, 9, 49, 0.7);
+}
+
+#vorteile-zirkel {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    padding: 6rem 2rem;
+    color: #ffffff;
+}
+#vorteile-zirkel .wrapper {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+#vorteile-zirkel .section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 0 4rem 0;
+}
+#vorteile-zirkel .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+#vorteile-zirkel .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+#vorteile-zirkel .feature-card {
+    padding: 2.5rem;
+}
+#vorteile-zirkel .feature-icon-wrapper {
+    margin-bottom: 1.5rem;
+}
+#vorteile-zirkel .feature-card h4 {
+    font-size: 1.375rem;
+    margin: 0 0 1rem 0;
+}
+#vorteile-zirkel .feature-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+#fuer-wen-zirkel {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--brand-dark);
+}
+#fuer-wen-zirkel .wrapper {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+#fuer-wen-zirkel .section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--brand-dark);
+    margin: 0 0 4rem 0;
+}
+#fuer-wen-zirkel .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+#fuer-wen-zirkel .feature-card {
+    padding: 2.5rem;
+}
+#fuer-wen-zirkel .feature-icon-wrapper {
+    margin-bottom: 1.5rem;
+}
+#fuer-wen-zirkel .feature-card h4 {
+    font-size: 1.375rem;
+    margin: 0 0 1rem 0;
+}
+#fuer-wen-zirkel .feature-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+#zirkeltraining-closing {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    color: var(--brand-dark);
+}
+#zirkeltraining-closing .closing-title,
+#zirkeltraining-closing .closing-text {
+    color: var(--brand-dark);
 }
 
 /* Ernährungsberatung Sections - New Clean Design */
@@ -2042,6 +3222,15 @@ header #menu-toggle {
     text-align: center;
     margin-bottom: 4rem;
 }
+.section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 2rem 0;
+    line-height: 1.2;
+}
 .section-subtitle {
     font-family: var(--font-lato), system-ui;
     font-size: 1.25rem;
@@ -2051,6 +3240,7 @@ header #menu-toggle {
     max-width: 60rem;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 .section-intro {
     font-family: var(--font-lato), system-ui;
@@ -2060,70 +3250,80 @@ header #menu-toggle {
     margin: 1.5rem auto 0 auto;
     max-width: 60rem;
     font-style: italic;
+    text-align: center;
 }
 
-/* Nutrition Individual Approach - New Design */
-#nutrition-individual {
+/* Combined Nutrition Approach Section */
+#nutrition-approach {
     background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
     padding: 6rem 2rem;
     color: #ffffff;
 }
-.nutrition-approach-list {
+
+.nutrition-approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.approach-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    max-width: 80rem;
-    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
 }
-.nutrition-approach-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 4px solid var(--brand-blue-hover);
-    border-radius: 0.5rem;
-    padding: 2.5rem;
-    transition: all 0.3s ease;
+
+.approach-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--brand-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 90, 255, 0.2);
 }
-.nutrition-approach-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-left-color: var(--brand-blue);
-    transform: translateX(5px);
-}
-.approach-item-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-}
-.approach-icon-wrapper {
-    flex-shrink: 0;
-}
-.approach-icon {
-    width: 4rem;
-    height: 4rem;
-    background: var(--brand-blue-hover);
-    border-radius: 0.5rem;
+
+.approach-card-icon {
+    width: 5rem;
+    height: 5rem;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease;
 }
-.nutrition-approach-item:hover .approach-icon {
-    background: var(--brand-blue);
-    transform: scale(1.1);
+
+.approach-card:hover .approach-card-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(0, 90, 255, 0.4);
 }
-.approach-icon i {
+
+.approach-card-icon i {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.approach-card h3 {
+    font-family: var(--font-jockey-one), system-ui;
     font-size: 1.5rem;
+    font-weight: 400;
     color: #ffffff;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    line-height: 1.3;
 }
-.approach-text {
-    flex: 1;
-}
-.approach-text h3 {
-    font-family: var(--font-lato), system-ui;
-    font-size: 1.375rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 0.75rem 0;
-}
-.approach-text p {
+
+.approach-card p {
     font-family: var(--font-lato), system-ui;
     font-size: 1rem;
     line-height: 1.7;
@@ -2131,97 +3331,60 @@ header #menu-toggle {
     margin: 0;
 }
 
-/* Holistic Approach */
-#nutrition-holistic {
-    padding: 6rem 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+/* Responsive Nutrition Approach */
+@media screen and (max-width: 60rem) {
+    #nutrition-approach {
+        padding: 4rem 1.5rem;
+    }
+    
+    .nutrition-approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        justify-items: center;
+    }
+    
+    .approach-card {
+        padding: 2rem;
+    }
 }
-.holistic-layout {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-.holistic-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-.holistic-content .section-title {
-    font-family: var(--font-jockey-one), system-ui;
-    font-size: 2.5rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: var(--brand-dark);
-    margin: 0;
-    line-height: 1.2;
-    text-align: left;
-}
-.holistic-text {
-    font-family: var(--font-lato), system-ui;
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--brand-dark);
-    margin: 0;
-}
-.holistic-conclusion {
-    font-family: var(--font-lato), system-ui;
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--brand-dark);
-    margin: 1rem 0 0 0;
-    font-weight: 600;
-    padding-top: 1.5rem;
-    border-top: 2px solid rgba(0, 90, 255, 0.2);
-}
-.holistic-pillars {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-.pillar-item {
-    background: #ffffff;
-    border: 2px solid rgba(0, 90, 255, 0.1);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 9, 49, 0.08);
-}
-.pillar-item:hover {
-    border-color: var(--brand-blue-hover);
-    box-shadow: 0 4px 16px rgba(0, 90, 255, 0.15);
-    transform: translateY(-3px);
-}
-.pillar-icon {
-    width: 4rem;
-    height: 4rem;
-    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
-    border-radius: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem auto;
-}
-.pillar-icon i {
-    font-size: 1.75rem;
-    color: #ffffff;
-}
-.pillar-item h4 {
-    font-family: var(--font-lato), system-ui;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--brand-dark);
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+
+@media screen and (max-width: 40rem) {
+    #nutrition-approach {
+        padding: 3rem 1rem;
+    }
+    
+    .nutrition-approach-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .approach-card {
+        padding: 1.5rem;
+    }
+    
+    .approach-card-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .approach-card-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .approach-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .approach-card p {
+        font-size: 0.875rem;
+    }
 }
 
 /* Training Section */
 #nutrition-training {
-    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     padding: 6rem 2rem;
-    color: #ffffff;
+    color: var(--brand-dark);
 }
 .training-layout {
     display: grid;
@@ -2247,7 +3410,7 @@ header #menu-toggle {
     font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--brand-dark);
     margin: 0;
     line-height: 1.2;
     text-align: left;
@@ -2256,7 +3419,7 @@ header #menu-toggle {
     font-family: var(--font-lato), system-ui;
     font-size: 1.125rem;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 9, 49, 0.8);
     margin: 0;
 }
 .training-points {
@@ -2271,10 +3434,10 @@ header #menu-toggle {
     gap: 1rem;
     font-family: var(--font-lato), system-ui;
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 9, 49, 0.8);
 }
 .training-point i {
-    color: var(--brand-blue-hover);
+    color: var(--brand-blue);
     font-size: 1.25rem;
     flex-shrink: 0;
 }
@@ -2282,17 +3445,21 @@ header #menu-toggle {
     font-family: var(--font-lato), system-ui;
     font-size: 1.125rem;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 9, 49, 0.8);
     margin: 1rem 0 0 0;
     font-weight: 600;
     padding-top: 1.5rem;
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid rgba(0, 90, 255, 0.1);
 }
 
 /* Practical Approach */
 #nutrition-practical {
     padding: 6rem 2rem;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--brand-dark);
+}
+#nutrition-practical .section-title {
+    color: var(--brand-dark);
 }
 .practical-grid {
     display: grid;
@@ -2301,18 +3468,19 @@ header #menu-toggle {
     margin-bottom: 3rem;
 }
 .practical-card {
-    background: #ffffff;
-    border: 2px solid rgba(0, 90, 255, 0.1);
+    background: rgba(0, 9, 49, 0.03);
+    border: 2px solid rgba(0, 90, 255, 0.15);
     border-radius: 1rem;
     padding: 2.5rem;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 9, 49, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 .practical-card:hover {
-    border-color: var(--brand-blue-hover);
+    border-color: var(--brand-blue);
     box-shadow: 0 4px 16px rgba(0, 90, 255, 0.15);
     transform: translateY(-3px);
+    background: rgba(0, 9, 49, 0.05);
 }
 .practical-icon {
     width: 4rem;
@@ -2328,7 +3496,7 @@ header #menu-toggle {
     font-size: 1.75rem;
     color: #ffffff;
 }
-.practical-card h3 {
+#nutrition-practical .practical-card h3 {
     font-family: var(--font-lato), system-ui;
     font-size: 1.125rem;
     font-weight: 700;
@@ -2337,14 +3505,14 @@ header #menu-toggle {
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
-.practical-card p {
+#nutrition-practical .practical-card p {
     font-family: var(--font-lato), system-ui;
     font-size: 0.9375rem;
     line-height: 1.7;
     color: rgba(0, 9, 49, 0.8);
     margin: 0;
 }
-.practical-conclusion {
+#nutrition-practical .practical-conclusion {
     font-family: var(--font-lato), system-ui;
     font-size: 1.25rem;
     line-height: 1.8;
@@ -2374,7 +3542,11 @@ header #menu-toggle {
 @media screen and (max-width: 60rem) {
     #personaltraining-intro,
     #hatha-yoga-intro,
-    #ernaehrungsberatung-intro {
+    #pilates-intro,
+    #yoga-nidra-intro,
+    #ernaehrungsberatung-intro,
+    #wirbelsaeulengymnastik-intro,
+    #zirkeltraining-intro {
         padding: 4rem 1.5rem;
     }
     .nutrition-intro-layout {
@@ -2421,55 +3593,74 @@ header #menu-toggle {
     }
     #warum-personaltraining,
     #warum-hatha-yoga,
-    #nutrition-individual,
-    #nutrition-holistic,
+    #warum-pilates,
+    #warum-yoga-nidra,
+    #nutrition-approach,
     #nutrition-training,
-    #nutrition-practical {
+    #nutrition-practical,
+    #was-dich-erwartet,
+    #warum-wirbelsaeulengymnastik,
+    #fuer-wen-geeignet,
+    #warum-effektiv,
+    #power-tools,
+    #vorteile-zirkel,
+    #fuer-wen-zirkel {
         padding: 3rem 1.5rem;
     }
     #warum-personaltraining .section-title,
     #warum-hatha-yoga .section-title,
+    #warum-pilates .section-title,
+    #warum-yoga-nidra .section-title,
+    #warum-wirbelsaeulengymnastik .section-title,
+    #fuer-wen-geeignet .section-title,
+    #vorteile-zirkel .section-title,
+    #fuer-wen-zirkel .section-title,
     .section-title {
         font-size: 1.75rem;
         margin-bottom: 2rem;
     }
-    #warum-hatha-yoga .features-grid {
+    #warum-hatha-yoga .features-grid,
+    #warum-pilates .features-grid,
+    #warum-yoga-nidra .features-grid,
+    #warum-wirbelsaeulengymnastik .features-grid,
+    #fuer-wen-geeignet .features-grid,
+    #vorteile-zirkel .features-grid,
+    #fuer-wen-zirkel .features-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
-    #warum-hatha-yoga .feature-card {
+    #warum-hatha-yoga .feature-card,
+    #warum-pilates .feature-card,
+    #warum-yoga-nidra .feature-card,
+    #warum-wirbelsaeulengymnastik .feature-card,
+    #fuer-wen-geeignet .feature-card,
+    #vorteile-zirkel .feature-card,
+    #fuer-wen-zirkel .feature-card {
         padding: 1.5rem;
     }
     .section-subtitle {
         font-size: 1.125rem;
     }
-    .nutrition-approach-list {
+    .nutrition-approach-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
     }
-    .nutrition-approach-item {
+    .approach-card {
         padding: 2rem 1.5rem;
     }
-    .approach-item-content {
-        gap: 1.5rem;
+    .approach-card-icon {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 1.25rem;
     }
-    .approach-icon {
-        width: 3.5rem;
-        height: 3.5rem;
+    .approach-card-icon i {
+        font-size: 1.75rem;
     }
-    .approach-text h3 {
+    .approach-card h3 {
         font-size: 1.25rem;
     }
-    .holistic-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .holistic-content .section-title {
-        text-align: center;
-        font-size: 2rem;
-    }
-    .holistic-pillars {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+    .approach-card p {
+        font-size: 0.9375rem;
     }
     .training-layout {
         grid-template-columns: 1fr;
@@ -2499,7 +3690,11 @@ header #menu-toggle {
     }
     #personaltraining-closing,
     #hatha-yoga-closing,
-    #ernaehrungsberatung-closing {
+    #pilates-closing,
+    #yoga-nidra-closing,
+    #ernaehrungsberatung-closing,
+    #wirbelsaeulengymnastik-closing,
+    #zirkeltraining-closing {
         padding: 4rem 1.5rem;
     }
     .closing-title {
@@ -2653,10 +3848,14 @@ header #menu-toggle {
     width: 100%;
     height: 20rem;
     overflow: hidden;
+    border: none !important;
+    outline: none !important;
 }
 .trainer-card-compact-image img {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    border: none !important;
+    outline: none !important;
 }
 .trainer-card-compact-inner:hover .trainer-card-compact-image img {
     transform: scale(1.1);
@@ -2882,7 +4081,8 @@ header #menu-toggle {
     width: 100%;
     background: #ffffff;
 }
-.footer-cta {
+.footer-cta,
+#kontakt.footer-cta {
     padding: 6rem 2rem;
     background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
     color: #ffffff;
@@ -2941,6 +4141,7 @@ header #menu-toggle {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
     letter-spacing: 0.05em;
+    text-align: left;
 }
 .form-group input,
 .form-group textarea {
@@ -3090,6 +4291,8 @@ header #menu-toggle {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    text-align: left;
+    align-items: flex-start;
 }
 .quick-contact-label {
     font-family: var(--font-lato), system-ui;
@@ -3098,22 +4301,24 @@ header #menu-toggle {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     opacity: 0.8;
+    text-align: left;
 }
 .quick-contact-value {
     font-family: var(--font-lato), system-ui;
     font-size: 1rem;
     font-weight: 700;
+    text-align: left;
 }
 
 /* Footer Bottom */
 .footer-bottom {
     background: #ffffff;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
 }
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
+    gap: 2rem;
     align-items: start;
 }
 .footer-column {
@@ -3126,8 +4331,8 @@ header #menu-toggle {
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--brand-dark);
-    margin: 0 0 1.5rem 0;
+    color: #000000;
+    margin: 0 0 0.75rem 0;
     letter-spacing: 0.05em;
     line-height: 1.4;
 }
@@ -3135,46 +4340,46 @@ header #menu-toggle {
     font-family: var(--font-lato), system-ui;
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--brand-blue);
+    color: #000000;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
     display: block;
     line-height: 1.3;
     text-transform: uppercase;
 }
 .footer-contact-value:hover {
-    color: var(--brand-blue-hover);
+    opacity: 0.7;
 }
 .footer-company-details {
     font-family: var(--font-lato), system-ui;
     font-size: 0.9375rem;
-    line-height: 1.8;
-    color: var(--brand-dark);
+    line-height: 1.6;
+    color: #000000;
     margin: 0;
 }
 .footer-company-details p {
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.5rem 0;
 }
 .footer-company-details br {
     display: block;
     content: "";
-    margin: 1rem 0;
+    margin: 0.75rem 0;
 }
 .footer-company-details strong {
     font-weight: 700;
-    color: var(--brand-dark);
+    color: #000000;
 }
 .footer-datenschutz-link {
     font-family: var(--font-lato), system-ui;
     font-size: 0.9375rem;
-    color: var(--brand-blue);
+    color: #000000;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
     display: inline-block;
     margin-top: 0.5rem;
 }
 .footer-datenschutz-link:hover {
-    color: var(--brand-blue-hover);
+    opacity: 0.7;
 }
 
 /* Responsive Footer */
@@ -3185,7 +4390,7 @@ header #menu-toggle {
     }
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
+        gap: 2rem;
     }
 }
 @media screen and (max-width: 60rem) {
@@ -3202,15 +4407,15 @@ header #menu-toggle {
         grid-template-columns: 1fr;
     }
     .footer-bottom {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1.5rem;
     }
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
     }
     .footer-section-heading {
         font-size: 0.9375rem;
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.75rem;
     }
     .footer-contact-value {
         font-size: 1.5rem;
@@ -3487,6 +4692,779 @@ header #menu-toggle {
     }
     .trainer-detail-cta-text {
         font-size: 1rem;
+    }
+}
+
+/* Kurse Page - Timetable Section */
+#kurse-hero {
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+
+.kurse-header {
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.kurse-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.05em;
+}
+
+.kurse-subtitle {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    margin: 0;
+}
+
+#timetable-section {
+    padding: 6rem 2rem;
+    background: #f8f9fa;
+}
+
+.timetable-container {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow-x: auto;
+    margin-bottom: 4rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.timetable-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timetable-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.timetable-container::-webkit-scrollbar-thumb {
+    background: var(--brand-blue);
+    border-radius: 4px;
+}
+
+.timetable-container::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-blue-hover);
+}
+
+.timetable-grid {
+    display: grid;
+    grid-template-columns: 80px repeat(6, 1fr);
+    gap: 2px;
+    min-width: 900px;
+    background: #e0e0e0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.timetable-cell {
+    background: #ffffff;
+    padding: 1rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.timetable-header {
+    background: var(--brand-dark);
+    color: #ffffff;
+    font-family: var(--font-lato), system-ui;
+    font-weight: 700;
+    padding: 1.5rem 1rem;
+    min-height: 100px;
+}
+
+.timetable-corner {
+    background: var(--brand-dark);
+}
+
+.timetable-day-header {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.day-name {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.timetable-time-label {
+    background: #f8f9fa;
+    font-family: var(--font-lato), system-ui;
+    font-weight: 600;
+    color: var(--brand-dark);
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+}
+
+.time-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.95rem;
+}
+
+.timetable-empty {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+}
+
+.timetable-placeholder {
+    background: transparent;
+    border: none;
+    padding: 0;
+    min-height: 0;
+}
+
+.timetable-course {
+    background: var(--brand-blue);
+    color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.timetable-course:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 90, 255, 0.3);
+    z-index: 10;
+}
+
+.timetable-course-default {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, #0050d4 100%);
+}
+
+.timetable-course-blue {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, #0050d4 100%);
+}
+
+.timetable-course-blue-medium {
+    background: linear-gradient(135deg, #0066ff 0%, #0047b3 100%);
+}
+
+.timetable-course-blue-dark {
+    background: linear-gradient(135deg, #003d99 0%, #002d73 100%);
+}
+
+.timetable-course-green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.timetable-course-purple {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.timetable-course-orange {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.timetable-course-pink {
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+}
+
+.course-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.course-name {
+    font-family: var(--font-lato), system-ui;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.course-instructor {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+}
+
+.course-time {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.75rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* Timetable Info Cards */
+.timetable-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.timetable-info-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.timetable-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.timetable-info-card .info-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+.timetable-info-card .info-icon i {
+    color: #ffffff;
+}
+
+.timetable-info-card h3 {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.5rem;
+    color: var(--brand-dark);
+    margin: 0 0 1rem 0;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.timetable-info-card p {
+    font-family: var(--font-lato), system-ui;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Timetable CTA */
+.timetable-cta {
+    text-align: center;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    border-radius: 1.5rem;
+    padding: 4rem 2rem;
+    color: #ffffff;
+}
+
+.timetable-cta h2 {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.timetable-cta p {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 2rem 0;
+}
+
+/* Responsive Timetable */
+@media screen and (max-width: 80rem) {
+    .timetable-grid {
+        min-width: 800px;
+    }
+    
+    .timetable-cell {
+        padding: 0.75rem;
+        min-height: 70px;
+    }
+    
+    .timetable-header {
+        padding: 1.25rem 0.75rem;
+        min-height: 90px;
+    }
+    
+    .day-name {
+        font-size: 1rem;
+    }
+    
+    .course-name {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    .kurse-title {
+        font-size: 3rem;
+    }
+    
+    .kurse-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    #timetable-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .timetable-container {
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .timetable-grid {
+        min-width: 700px;
+        gap: 1px;
+    }
+    
+    .timetable-cell {
+        padding: 0.5rem;
+        min-height: 60px;
+    }
+    
+    .timetable-header {
+        padding: 1rem 0.5rem;
+        min-height: 80px;
+    }
+    
+    .day-name {
+        font-size: 0.9rem;
+    }
+    
+    .time-text {
+        font-size: 0.85rem;
+    }
+    
+    .course-name {
+        font-size: 0.85rem;
+    }
+    
+    .course-instructor {
+        font-size: 0.75rem;
+    }
+    
+    .course-time {
+        font-size: 0.7rem;
+    }
+    
+    .timetable-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .timetable-cta {
+        padding: 3rem 1.5rem;
+    }
+    
+    .timetable-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .timetable-cta p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    #kurse-hero {
+        padding: 4rem 1.5rem 3rem;
+    }
+    
+    .kurse-title {
+        font-size: 2.5rem;
+    }
+    
+    .kurse-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    #timetable-section {
+        padding: 2rem 0.5rem;
+    }
+    
+    .timetable-container {
+        padding: 0.75rem;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .timetable-grid {
+        min-width: 550px;
+        gap: 1px;
+    }
+    
+    .timetable-cell {
+        padding: 0.5rem 0.4rem;
+        min-height: 55px;
+    }
+    
+    .timetable-header {
+        padding: 0.75rem 0.4rem;
+        min-height: 75px;
+    }
+    
+    .timetable-day-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .day-name {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+    
+    .timetable-time-label {
+        padding-left: 0.5rem;
+        justify-content: flex-start;
+    }
+    
+    .time-text {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    
+    .timetable-course {
+        padding: 0.5rem 0.4rem;
+        border-radius: 0.25rem;
+    }
+    
+    .course-name {
+        font-size: 0.7rem;
+        margin-bottom: 0.15rem;
+        line-height: 1.2;
+    }
+    
+    .course-instructor {
+        font-size: 0.65rem;
+        margin-bottom: 0.15rem;
+        opacity: 0.95;
+    }
+    
+    .course-time {
+        font-size: 0.6rem;
+        opacity: 0.85;
+    }
+    
+    .timetable-info {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+    
+    .timetable-info-card {
+        padding: 1.5rem 1.25rem;
+    }
+    
+    .timetable-info-card .info-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .timetable-info-card h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .timetable-info-card p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+}
+
+/* Trainer Preview Section */
+#trainer-preview {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.trainer-preview-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.trainer-preview-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--brand-dark);
+    margin: 0 0 1rem 0;
+}
+
+.trainer-preview-subtitle {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    color: #666;
+    margin: 0;
+}
+
+.trainer-preview-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.trainer-preview-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 0;
+    min-height: 400px;
+}
+
+.trainer-preview-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    border: none !important;
+    outline: none !important;
+}
+
+.trainer-preview-image-wrapper img {
+    border: none !important;
+    outline: none !important;
+}
+
+.trainer-preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 9, 49, 0.3) 0%, rgba(0, 45, 245, 0.2) 100%);
+    z-index: 1;
+}
+
+.trainer-preview-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.trainer-preview-name {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.trainer-preview-title-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--brand-blue);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.trainer-preview-intro {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+.trainer-preview-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.trainer-preview-tag {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 90, 255, 0.1);
+    color: var(--brand-blue);
+    border-radius: 0.375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.trainer-preview-link {
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.trainer-preview-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.trainer-preview-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--brand-blue);
+    background: #ffffff;
+    color: var(--brand-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+}
+
+.trainer-preview-nav-btn:hover {
+    background: var(--brand-blue);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.trainer-preview-dots {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.trainer-preview-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--brand-blue);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.trainer-preview-dot:hover {
+    background: rgba(0, 90, 255, 0.3);
+}
+
+.trainer-preview-dot.active {
+    background: var(--brand-blue);
+    width: 14px;
+    height: 14px;
+}
+
+/* Responsive Trainer Preview */
+@media screen and (max-width: 80rem) {
+    .trainer-preview-card {
+        grid-template-columns: 350px 1fr;
+    }
+    
+    .trainer-preview-content {
+        padding: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    #trainer-preview {
+        padding: 4rem 1.5rem;
+    }
+    
+    .trainer-preview-title {
+        font-size: 2.5rem;
+    }
+    
+    .trainer-preview-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .trainer-preview-image-wrapper {
+        min-height: 300px;
+    }
+    
+    .trainer-preview-content {
+        padding: 2rem;
+    }
+    
+    .trainer-preview-name {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    #trainer-preview {
+        padding: 3rem 1rem;
+    }
+    
+    .trainer-preview-header {
+        margin-bottom: 3rem;
+    }
+    
+    .trainer-preview-title {
+        font-size: 2rem;
+    }
+    
+    .trainer-preview-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .trainer-preview-image-wrapper {
+        min-height: 250px;
+    }
+    
+    .trainer-preview-content {
+        padding: 1.5rem;
+    }
+    
+    .trainer-preview-name {
+        font-size: 1.75rem;
+    }
+    
+    .trainer-preview-title-text {
+        font-size: 1rem;
+    }
+    
+    .trainer-preview-intro {
+        font-size: 0.9375rem;
+    }
+    
+    .trainer-preview-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
     }
 }
 
