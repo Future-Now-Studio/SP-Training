@@ -4855,15 +4855,15 @@ header #menu-toggle {
 }
 
 .timetable-course-blue {
-    background: linear-gradient(135deg, var(--brand-blue) 0%, #0050d4 100%);
+    background: linear-gradient(135deg, #0066ff 0%, #0047cc 100%);
 }
 
 .timetable-course-blue-medium {
-    background: linear-gradient(135deg, #0066ff 0%, #0047b3 100%);
+    background: linear-gradient(135deg, #00a3cc 0%, #007399 100%);
 }
 
 .timetable-course-blue-dark {
-    background: linear-gradient(135deg, #003d99 0%, #002d73 100%);
+    background: linear-gradient(135deg, #4a00cc 0%, #330099 100%);
 }
 
 .timetable-course-green {
