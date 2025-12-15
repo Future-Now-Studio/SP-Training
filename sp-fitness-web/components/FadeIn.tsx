@@ -11,7 +11,7 @@ interface FadeInProps {
 }
 
 export default function FadeIn({ children, delay = 0, direction = "up", className = "" }: FadeInProps) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [shouldAnimate, setShouldAnimate] = useState(false);
   
