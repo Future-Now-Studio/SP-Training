@@ -24,28 +24,25 @@ export default function FadeIn({ children, delay = 0, direction = "up", classNam
 
   // Check if element is in viewport on mount
   useEffect(() => {
-    if (ref.current) {
-      const checkVisibility = () => {
-        const element = ref.current as HTMLElement;
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-          const isVisible = rect.top < windowHeight + 100 && rect.bottom > -100;
-          
-          if (isVisible) {
-            setShouldAnimate(true);
-          }
-        }
-      };
+    const checkVisibility = () => {
+      const element = ref.current;
+      if (!element) return;
+      const rect = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      const isVisible = rect.top < windowHeight + 100 && rect.bottom > -100;
+      
+      if (isVisible) {
+        setShouldAnimate(true);
+      }
+    };
 
-      // Check immediately
-      checkVisibility();
-      
-      // Also check after a short delay to catch any layout shifts
-      const timeout = setTimeout(checkVisibility, 100);
-      
-      return () => clearTimeout(timeout);
-    }
+    // Check immediately
+    checkVisibility();
+    
+    // Also check after a short delay to catch any layout shifts
+    const timeout = setTimeout(checkVisibility, 100);
+    
+    return () => clearTimeout(timeout);
   }, []);
 
   // Update shouldAnimate when isInView changes
