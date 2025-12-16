@@ -161,7 +161,7 @@ export default function Home() {
                     </li>
                     <li>
                       <i className="fa-solid fa-dumbbell"></i>
-                      <span>Moderne Trainingsgeräte</span>
+                      <span>Modernes Equipment</span>
                     </li>
                     <li>
                       <i className="fa-solid fa-parking"></i>
