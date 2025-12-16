@@ -182,7 +182,7 @@ export default function Zirkeltraining() {
             <FadeIn direction="up" delay={0.3} className="yoga-pillar-card">
               <div className="pillar-image-container">
                 <Image
-                  src="/images/VG8_4216.jpg"
+                  src="/images/VG8_4173.jpg"
                   alt="Battleropes"
                   fill
                   style={{objectFit: "cover"}}
