@@ -142,7 +142,7 @@ export default function Zirkeltraining() {
             <FadeIn direction="up" delay={0.1} className="yoga-pillar-card">
               <div className="pillar-image-container">
                 <Image
-                  src="/images/VG8_4216.jpg"
+                  src="/img/studio/VG8_4250.webp"
                   alt="TRX Schlingentrainer"
                   fill
                   style={{objectFit: "cover"}}
