@@ -202,7 +202,7 @@ export default function Zirkeltraining() {
             <FadeIn direction="up" delay={0.4} className="yoga-pillar-card">
               <div className="pillar-image-container">
                 <Image
-                  src="/images/VG8_4216.jpg"
+                  src="/images/delaney-van-Mzu7qcmP5tk-unsplash.jpg"
                   alt="Tubes & Widerstandsbänder"
                   fill
                   style={{objectFit: "cover"}}
