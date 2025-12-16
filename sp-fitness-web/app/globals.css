@@ -487,8 +487,8 @@ header #menu-toggle:focus {
         height: 100vh;
         background-color: #f5f5f5;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
         gap: 0;
         padding: 5rem 2rem 2rem;
         z-index: 1001;
@@ -500,12 +500,12 @@ header #menu-toggle:focus {
     header .wrapper .end .mobile-menu-logo {
         width: 100%;
         margin-bottom: 3rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 0;
+        border-bottom: none;
     }
     header .wrapper .end .mobile-menu-logo .logo-link {
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
     }
     header .wrapper .end .mobile-menu-logo .header-logo {
         height: 80px !important;
@@ -516,9 +516,9 @@ header #menu-toggle:focus {
         transform: none;
         flex-direction: column;
         gap: 0;
-        text-align: left;
+        text-align: center;
         width: 100%;
-        align-items: flex-start;
+        align-items: center;
         margin: 0;
         padding: 0;
     }
@@ -535,7 +535,7 @@ header #menu-toggle:focus {
         padding: 1rem 0;
         display: block;
         width: 100%;
-        text-align: left;
+        text-align: center;
         color: var(--brand-dark);
     }
     header .wrapper .end ul.navigation li.dropdown-container {
@@ -543,7 +543,7 @@ header #menu-toggle:focus {
     }
     header .wrapper .end ul.navigation li .dropdown-toggle {
         width: 100%;
-        justify-content: space-between;
+        justify-content: center;
         padding: 1rem 0;
     }
     header .wrapper .end ul.navigation li .dropdown-menu {
@@ -569,21 +569,22 @@ header #menu-toggle:focus {
         padding: 0;
     }
     header .wrapper .end ul.navigation li .dropdown-menu li a {
-        padding: 0.75rem 0 0.75rem 1.5rem;
+        padding: 0.75rem 0;
         font-size: 0.875rem;
         text-transform: none;
         font-weight: 700;
+        text-align: center;
     }
     header .wrapper .end ul.navigation li .dropdown-menu li a:hover {
-        padding-left: 1.5rem;
+        padding-left: 0;
     }
     header .wrapper .end ul.links {
         flex-direction: row;
         margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding-top: 0;
+        border-top: none;
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
         gap: 1rem;
     }
     header #menu-toggle {
