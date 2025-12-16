@@ -595,7 +595,9 @@ header #menu-toggle:focus {
 /* Modern Hero Section - Gym Background with Text Overlay */
 #start {
     position: relative;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     height: 100vh;
     min-height: 40rem;
     max-height: 60rem;
@@ -609,6 +611,12 @@ header #menu-toggle:focus {
     width: 100%;
     height: 100%;
     z-index: 0;
+}
+#start .hero-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 /* Blue Gradient Overlay - Dark Blue on Right Side */
 #start .hero-blue-overlay {
@@ -803,6 +811,12 @@ header #menu-toggle:focus {
     #start .hero-buttons {
         flex-direction: column;
         width: 100%;
+    }
+    #start .hero-fitness-title {
+        font-size: 2.5rem;
+    }
+    #start .hero-tagline {
+        font-size: 1.75rem;
     }
     #start .hero-cta-primary,
     #start .hero-cta-secondary {
@@ -3606,6 +3620,13 @@ header #menu-toggle:focus {
 }
 
 /* Responsive Personal Training Sections */
+@media screen and (max-width: 80rem) {
+    .yoga-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
 @media screen and (max-width: 60rem) {
     #personaltraining-intro,
     #hatha-yoga-intro,
@@ -5148,6 +5169,10 @@ header #menu-toggle:focus {
         gap: 1.5rem;
     }
     
+    .timetable-info-card {
+        padding: 2rem 1.5rem;
+    }
+    
     .timetable-cta {
         padding: 3rem 1.5rem;
     }
@@ -5158,6 +5183,45 @@ header #menu-toggle:focus {
     
     .timetable-cta p {
         font-size: 1.1rem;
+    }
+    
+    /* Course pages responsive at 60rem */
+    #hatha-yoga-intro,
+    #pilates-intro,
+    #yoga-nidra-intro,
+    #wirbelsaeulengymnastik-intro,
+    #zirkeltraining-intro {
+        padding: 4rem 1.5rem;
+    }
+    
+    .yoga-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    #was-dich-erwartet,
+    #warum-hatha-yoga,
+    #warum-pilates,
+    #warum-yoga-nidra,
+    #warum-wirbelsaeulengymnastik,
+    #fuer-wen-geeignet,
+    #warum-effektiv,
+    #power-tools,
+    #vorteile-zirkel,
+    #fuer-wen-zirkel {
+        padding: 4rem 1.5rem;
+    }
+    
+    #hatha-yoga-closing,
+    #pilates-closing,
+    #yoga-nidra-closing,
+    #wirbelsaeulengymnastik-closing,
+    #zirkeltraining-closing {
+        padding: 4rem 1.5rem;
+    }
+    
+    #kurse-hero {
+        padding: 4rem 1.5rem 3rem;
     }
 }
 
@@ -5266,6 +5330,122 @@ header #menu-toggle:focus {
     .timetable-info-card p {
         font-size: 0.875rem;
         line-height: 1.5;
+    }
+    
+    /* Course pages responsive improvements */
+    #hatha-yoga-intro,
+    #pilates-intro,
+    #yoga-nidra-intro,
+    #wirbelsaeulengymnastik-intro,
+    #zirkeltraining-intro {
+        padding: 3rem 1rem;
+    }
+    
+    .yoga-intro-title {
+        font-size: 1.75rem;
+    }
+    
+    .yoga-intro-lead {
+        font-size: 1rem;
+    }
+    
+    .yoga-intro-text {
+        font-size: 0.9375rem;
+    }
+    
+    #was-dich-erwartet,
+    #warum-hatha-yoga,
+    #warum-pilates,
+    #warum-yoga-nidra,
+    #warum-wirbelsaeulengymnastik,
+    #fuer-wen-geeignet,
+    #warum-effektiv,
+    #power-tools,
+    #vorteile-zirkel,
+    #fuer-wen-zirkel {
+        padding: 3rem 1rem;
+    }
+    
+    #was-dich-erwartet .section-title,
+    #warum-hatha-yoga .section-title,
+    #warum-pilates .section-title,
+    #warum-yoga-nidra .section-title,
+    #warum-wirbelsaeulengymnastik .section-title,
+    #fuer-wen-geeignet .section-title,
+    #warum-effektiv .section-title,
+    #power-tools .section-title,
+    #vorteile-zirkel .section-title,
+    #fuer-wen-zirkel .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .yoga-pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pillar-content {
+        padding: 1.5rem;
+    }
+    
+    .pillar-icon-large {
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .pillar-icon-large i {
+        font-size: 1.75rem;
+    }
+    
+    .pillar-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    #warum-hatha-yoga .features-grid,
+    #warum-pilates .features-grid,
+    #warum-yoga-nidra .features-grid,
+    #warum-wirbelsaeulengymnastik .features-grid,
+    #fuer-wen-geeignet .features-grid,
+    #vorteile-zirkel .features-grid,
+    #fuer-wen-zirkel .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #warum-hatha-yoga .feature-card,
+    #warum-pilates .feature-card,
+    #warum-yoga-nidra .feature-card,
+    #warum-wirbelsaeulengymnastik .feature-card,
+    #fuer-wen-geeignet .feature-card,
+    #vorteile-zirkel .feature-card,
+    #fuer-wen-zirkel .feature-card {
+        padding: 1.25rem;
+    }
+    
+    #hatha-yoga-closing,
+    #pilates-closing,
+    #yoga-nidra-closing,
+    #wirbelsaeulengymnastik-closing,
+    #zirkeltraining-closing {
+        padding: 3rem 1rem;
+    }
+    
+    .closing-title {
+        font-size: 1.75rem;
+    }
+    
+    .closing-text {
+        font-size: 0.9375rem;
+    }
+    
+    .closing-icon-circle {
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .closing-icon-circle i {
+        font-size: 1.75rem;
     }
 }
 
