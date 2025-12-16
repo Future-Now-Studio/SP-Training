@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import TrainerTeaser from "@/components/TrainerTeaser";
 
 export const metadata: Metadata = {
   title: "Ganzheitliche Ernährungsberatung – SP Fitness by Sebastian Pfau | Individuell, alltagsnah und nachhaltig",
@@ -253,11 +252,6 @@ export default function Ernaehrungsberatung() {
           </FadeIn>
         </div>
       </section>
-
-      {/* Trainer Teaser */}
-      <div className="ernaehrungsberatung-trainer-wrapper">
-        <TrainerTeaser />
-      </div>
     
     </main>
   );
