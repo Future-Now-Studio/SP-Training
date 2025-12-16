@@ -461,9 +461,19 @@ header .wrapper .end ul.links li a:hover {
 }
 header #menu-toggle {
     display: none;
-    z-index: 1000;
+    z-index: 1002;
     font-size: 1.5rem;
     color: var(--brand-dark);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+header #menu-toggle:focus {
+    outline: 2px solid var(--brand-blue);
+    outline-offset: 2px;
 }
 
 @media screen and (max-width: 80rem) {
@@ -481,7 +491,8 @@ header #menu-toggle {
         align-items: center;
         gap: 2rem;
         padding: 2rem;
-        z-index: 999;
+        z-index: 1001;
+        overflow-y: auto;
     }
     header .wrapper .end.active {
         display: flex;

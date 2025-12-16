@@ -69,6 +69,18 @@ export default function Header() {
     };
   }, [dropdownOpen, kurseDropdownOpen]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   return (
     <header>
       <div className="wrapper">
@@ -87,9 +99,9 @@ export default function Header() {
         </div>
 
         {/* Mobile menu toggle */}
-        <a id="menu-toggle" className="button flat" onClick={toggleMenu}>
+        <button id="menu-toggle" className="button flat" onClick={toggleMenu} aria-label="Toggle menu">
           <i className={`fa-solid ${menuOpen ? "fa-times" : "fa-bars"}`}></i>
-        </a>
+        </button>
 
         {/* Navigation and Social Icons */}
         <div className={`end ${menuOpen ? "active" : ""}`}>
