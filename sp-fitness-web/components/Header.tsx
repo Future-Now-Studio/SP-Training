@@ -105,6 +105,21 @@ export default function Header() {
 
         {/* Navigation and Social Icons */}
         <div className={`end ${menuOpen ? "active" : ""}`}>
+          {/* Logo in mobile menu */}
+          {menuOpen && (
+            <div className="mobile-menu-logo">
+              <Link href="/" onClick={closeMenu} className="logo-link">
+                <img
+                  src="/images/logo_header (1).svg"
+                  alt="SP Fitness by Sebastian Pfau"
+                  title="SP Fitness by Sebastian Pfau – Dein Trainer für Outdoor Kurse, Personal Training & Reha Sport in Schwetzingen"
+                  className="header-logo"
+                  height="100"
+                  width="auto"
+                />
+              </Link>
+            </div>
+          )}
           {/* Centered Navigation */}
           <ul className="navigation">
             <li><Link href="/#start" className="button flat" onClick={closeMenu}>Start</Link></li>
