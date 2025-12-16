@@ -5,13 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-  "/img/studio/VG8_4203.jpg",
-  "/img/studio/VG8_4216.jpg",
-  "/img/studio/VG8_4250.jpg",
-  "/img/studio/VG8_4271.jpg",
   "/img/studio/VG8_4135.jpg",
+  "/img/studio/VG8_4271.jpg",
   "/img/studio/VG8_4151.jpg",
-  "/img/studio/VG8_4191.jpg",
 ];
 
 export default function StudioGallery() {
