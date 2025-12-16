@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Sebastian Pfau" }],
   robots: "index, follow",
   icons: {
-    icon: "/images/fav.svg",
+    icon: "/icon.svg",
   },
   openGraph: {
     title: "SP Fitness by Sebastian Pfau in Schwetzingen",
