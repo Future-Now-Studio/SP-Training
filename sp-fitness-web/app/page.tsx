@@ -226,7 +226,7 @@ export default function Home() {
                 </div>
                 <div className="pricing-item">
                   <span className="pricing-label">5er Karte</span>
-                  <span className="pricing-price">99 € <small>pro Einheit</small> <small style={{display: 'block', marginTop: '0.25rem'}}>475 € gesamt</small></span>
+                  <span className="pricing-price">95 € <small>pro Einheit</small> <small style={{display: 'block', marginTop: '0.25rem'}}>475 € gesamt</small></span>
                 </div>
                 <div className="pricing-item">
                   <span className="pricing-label">10er Karte</span>
