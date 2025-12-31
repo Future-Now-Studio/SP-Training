@@ -154,6 +154,26 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/mobiles-personaltraining" className="button flat" onClick={closeMenu}>
+                    Mobiles Personal Training
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/firmenfitness" className="button flat" onClick={closeMenu}>
+                    Firmenfitness
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/vereinssport" className="button flat" onClick={closeMenu}>
+                    Vereinssport & Athletiktraining
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/outdoorkurse" className="button flat" onClick={closeMenu}>
+                    Outdoorkurse
+                  </Link>
+                </li>
+                <li>
                   <Link href="/ernaehrungsberatung" className="button flat" onClick={closeMenu}>
                     Ernährungsberatung
                   </Link>
@@ -220,7 +240,7 @@ export default function Header() {
             <li><Link href="/#studio" className="button flat" onClick={closeMenu}>Studio</Link></li>
             <li><Link href="/#preise" className="button flat" onClick={closeMenu}>Preise</Link></li>
             <li><Link href="/#kontakt" className="button flat" onClick={closeMenu}>Kontakt</Link></li>
-            <li><Link href="/#trainer" className="button flat" onClick={closeMenu}>Trainer</Link></li>
+            <li><Link href="/trainer" className="button flat" onClick={closeMenu}>Trainer</Link></li>
           </ul>
           
           {/* Social Icons on the right */}

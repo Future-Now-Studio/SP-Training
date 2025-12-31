@@ -8,8 +8,8 @@ import { trainers } from "@/data/trainers";
 
 export default function TrainerTeaser() {
   const [showQualifications, setShowQualifications] = useState(false);
-  // Use Sebastian Pfau as the main trainer
-  const sebastian = trainers.find(t => t.name === "Sebastian Pfau") || trainers[0];
+  // Use Sebastian as the main trainer
+  const sebastian = trainers.find(t => t.name === "Sebastian") || trainers[0];
 
   const qualifications = [
     { title: "Fitness Trainer A-Lizenz", institution: "IFAA Fitnessakademie" },
@@ -101,7 +101,7 @@ export default function TrainerTeaser() {
             <blockquote>
               "Mein Ziel ist es, dich nicht nur körperlich, sondern auch mental stärker zu machen. Zusammen erreichen wir, was du dir vorgenommen hast."
             </blockquote>
-            <p className="quote-author">— Sebastian Pfau</p>
+            <p className="quote-author">— Sebastian</p>
           </div>
 
         </FadeIn>

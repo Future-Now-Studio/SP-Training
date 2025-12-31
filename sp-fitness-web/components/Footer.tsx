@@ -209,7 +209,7 @@ export default function Footer() {
                 <p>Registernummer: <strong>HRA 712334</strong></p>
                 <p>USt-IdNr.: <strong>DE453720499</strong></p>
                 <br />
-                <Link href="/datenschutz.html" className="footer-datenschutz-link" target="_blank" rel="noopener noreferrer">
+                <Link href="/datenschutz" className="footer-datenschutz-link">
                   Datenschutz
                 </Link>
               </div>

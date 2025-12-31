@@ -67,13 +67,34 @@ export default function TrainerTeam() {
       {/* Trainers Grid */}
       <section className="trainer-team-grid">
         <div className="wrapper">
+          {/* Personaltrainer Section */}
+          <FadeIn direction="down">
+            <h2 className="trainer-section-title">Personaltrainer</h2>
+          </FadeIn>
           <div className="trainer-cards-container">
-            {trainers.map((trainer, index) => (
-              <TrainerCardCompact
-                key={index}
-                {...trainer}
-              />
-            ))}
+            {trainers
+              .filter(trainer => trainer.name === "Sebastian")
+              .map((trainer, index) => (
+                <TrainerCardCompact
+                  key={index}
+                  {...trainer}
+                />
+              ))}
+          </div>
+
+          {/* Kursleiter Section */}
+          <FadeIn direction="down" delay={0.2}>
+            <h2 className="trainer-section-title">Kursleiter</h2>
+          </FadeIn>
+          <div className="trainer-cards-container">
+            {trainers
+              .filter(trainer => trainer.name !== "Sebastian")
+              .map((trainer, index) => (
+                <TrainerCardCompact
+                  key={index}
+                  {...trainer}
+                />
+              ))}
           </div>
         </div>
       </section>

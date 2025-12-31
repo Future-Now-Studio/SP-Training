@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "./FadeIn";
@@ -15,6 +16,7 @@ interface TrainerCardCompactProps {
   highlights: string[];
   ctaText?: string;
   ctaLink?: string;
+  galleryImages?: string[];
 }
 
 export default function TrainerCardCompact({
@@ -28,20 +30,61 @@ export default function TrainerCardCompact({
   highlights,
   ctaText = "Jetzt Kontakt aufnehmen",
   ctaLink = "#kontakt",
+  galleryImages = [],
 }: TrainerCardCompactProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const hasGallery = galleryImages.length > 0;
+  const currentImageSrc = hasGallery ? galleryImages[currentImageIndex] : image;
+
+  const showPrevImage = () => {
+    if (!hasGallery) return;
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1
+    );
+  };
+
+  const showNextImage = () => {
+    if (!hasGallery) return;
+    setCurrentImageIndex((prev) =>
+      prev === galleryImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
   return (
     <FadeIn className="trainer-card-compact" direction="up">
       <div className="trainer-card-compact-inner">
         {/* Image Section */}
         <div className="trainer-card-compact-image">
           <Image
-            src={image}
+            src={currentImageSrc}
             alt={imageAlt}
             fill
-            style={{objectFit: "cover", objectPosition: "center"}}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: "cover", objectPosition: "center center" }}
+            sizes="(max-width: 768px) 100vw, 400px"
           />
           <div className="trainer-card-compact-overlay"></div>
+
+          {hasGallery && galleryImages.length > 1 && (
+            <>
+              <button
+                type="button"
+                className="button flat trainer-card-compact-slider-button prev"
+                onClick={showPrevImage}
+                aria-label="Vorheriges Bild"
+              >
+                <i className="fa-solid fa-chevron-left"></i>
+              </button>
+              <button
+                type="button"
+                className="button flat trainer-card-compact-slider-button next"
+                onClick={showNextImage}
+                aria-label="Nächstes Bild"
+              >
+                <i className="fa-solid fa-chevron-right"></i>
+              </button>
+            </>
+          )}
         </div>
 
         {/* Content Section */}

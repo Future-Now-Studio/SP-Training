@@ -355,6 +355,9 @@ header .wrapper .end ul.navigation {
     align-items: center;
 }
 header .wrapper .end ul.navigation li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-lato), system-ui;
     font-size: 0.875rem;
     font-weight: 900;
@@ -364,6 +367,7 @@ header .wrapper .end ul.navigation li a {
     text-decoration: none;
     transition: color 0.3s ease;
     padding: 0.5rem 0;
+    min-height: 3.5rem;
 }
 header .wrapper .end ul.navigation li a:hover {
     color: var(--brand-blue-hover);
@@ -412,7 +416,9 @@ header .wrapper .end ul.navigation li .dropdown-menu li {
     text-align: center;
 }
 header .wrapper .end ul.navigation li .dropdown-menu li a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
     font-weight: 700;
@@ -424,6 +430,7 @@ header .wrapper .end ul.navigation li .dropdown-menu li a {
     border-radius: 0;
     text-align: center;
     width: 100%;
+    min-height: 2.5rem;
 }
 header .wrapper .end ul.navigation li .dropdown-menu li a:hover {
     background-color: rgba(0, 90, 255, 0.1);
@@ -569,11 +576,15 @@ header #menu-toggle:focus {
         padding: 0;
     }
     header .wrapper .end ul.navigation li .dropdown-menu li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 0.75rem 0;
         font-size: 0.875rem;
         text-transform: none;
         font-weight: 700;
         text-align: center;
+        min-height: 2.5rem;
     }
     header .wrapper .end ul.navigation li .dropdown-menu li a:hover {
         padding-left: 0;
@@ -2507,7 +2518,7 @@ header #menu-toggle:focus {
 }
 .intro-text {
     font-family: var(--font-lato), system-ui;
-    font-size: 1.375rem;
+    font-size: 1.125rem;
     line-height: 1.9;
     max-width: 65rem;
     margin: 0 auto;
@@ -2531,7 +2542,7 @@ header #menu-toggle:focus {
 }
 #warum-personaltraining .section-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -2885,7 +2896,7 @@ header #menu-toggle:focus {
 #warum-pilates .section-title,
 #warum-yoga-nidra .section-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -2981,7 +2992,7 @@ header #menu-toggle:focus {
 }
 #warum-wirbelsaeulengymnastik .section-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -3033,7 +3044,7 @@ header #menu-toggle:focus {
 }
 #fuer-wen-geeignet .section-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -3145,7 +3156,7 @@ header #menu-toggle:focus {
 }
 #vorteile-zirkel .section-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -3187,7 +3198,7 @@ header #menu-toggle:focus {
 }
 #fuer-wen-zirkel .section-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -3302,7 +3313,7 @@ header #menu-toggle:focus {
 }
 .section-title {
     font-family: var(--font-jockey-one), system-ui;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
@@ -3314,7 +3325,7 @@ header #menu-toggle:focus {
 }
 .section-subtitle {
     font-family: var(--font-lato), system-ui;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.7;
     color: rgba(0, 9, 49, 0.8);
     margin: 1rem 0 0 0;
@@ -3905,10 +3916,25 @@ header #menu-toggle:focus {
     max-width: 100rem;
     margin: 0 auto;
 }
+.trainer-section-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 3rem 0;
+    letter-spacing: 0.05em;
+    padding-top: 4rem;
+}
+.trainer-section-title:first-of-type {
+    padding-top: 0;
+}
 .trainer-cards-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 3rem;
+    margin-bottom: 2rem;
 }
 
 /* Compact Trainer Card */
@@ -3917,36 +3943,28 @@ header #menu-toggle:focus {
 }
 .trainer-card-compact-inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background: #ffffff;
     border-radius: 1.5rem;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
     border: 2px solid transparent;
 }
-.trainer-card-compact-inner:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 50px rgba(0, 45, 245, 0.2);
-    border-color: var(--brand-blue);
-}
 .trainer-card-compact-image {
     position: relative;
-    width: 100%;
-    height: 20rem;
+    width: 400px;
+    height: 100%;
+    min-height: 400px;
     overflow: hidden;
     border: none !important;
     outline: none !important;
+    flex-shrink: 0;
+    border-radius: 1.5rem 0 0 1.5rem;
 }
 .trainer-card-compact-image img {
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
     border: none !important;
     outline: none !important;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-image img {
-    transform: scale(1.1);
 }
 .trainer-card-compact-overlay {
     position: absolute;
@@ -3954,12 +3972,8 @@ header #menu-toggle:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(0,9,49,0.3) 0%, transparent 100%);
+    background: linear-gradient(90deg, rgba(0,9,49,0.3) 0%, transparent 100%);
     z-index: 1;
-    transition: background 0.4s ease;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-overlay {
-    background: linear-gradient(0deg, rgba(0,9,49,0.5) 0%, rgba(0,45,245,0.2) 100%);
 }
 .trainer-card-compact-content {
     padding: 2rem;
@@ -3967,14 +3981,11 @@ header #menu-toggle:focus {
     flex-direction: column;
     gap: 1.5rem;
     flex: 1;
+    min-width: 0;
 }
 .trainer-card-compact-header {
     border-bottom: 2px solid var(--brand-blue);
     padding-bottom: 1rem;
-    transition: border-color 0.3s ease;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-header {
-    border-bottom-color: var(--brand-blue-hover);
 }
 .trainer-card-compact-name {
     font-family: var(--font-jockey-one), system-ui;
@@ -3984,10 +3995,6 @@ header #menu-toggle:focus {
     color: var(--brand-dark);
     margin: 0 0 0.5rem 0;
     line-height: 1.2;
-    transition: color 0.3s ease;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-name {
-    color: var(--brand-blue);
 }
 .trainer-card-compact-title {
     font-family: var(--font-lato), system-ui;
@@ -3997,10 +4004,6 @@ header #menu-toggle:focus {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: color 0.3s ease;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-title {
-    color: var(--brand-blue-hover);
 }
 .trainer-card-compact-intro {
     font-family: var(--font-lato), system-ui;
@@ -4008,7 +4011,6 @@ header #menu-toggle:focus {
     line-height: 1.7;
     color: var(--brand-dark);
     margin: 0;
-    transition: color 0.3s ease;
 }
 .trainer-card-compact-label {
     font-family: var(--font-lato), system-ui;
@@ -4036,14 +4038,8 @@ header #menu-toggle:focus {
     font-family: var(--font-lato), system-ui;
     font-size: 0.875rem;
     font-weight: 600;
-    transition: all 0.3s ease;
     transform: translateY(0);
     animation: fadeInUp 0.5s ease-out backwards;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-tag {
-    background: var(--brand-blue-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 45, 245, 0.3);
 }
 .trainer-card-compact-experience {
     margin-top: 0.5rem;
@@ -4074,44 +4070,61 @@ header #menu-toggle:focus {
     font-size: 0.9375rem;
     line-height: 1.5;
     color: var(--brand-dark);
-    transition: all 0.3s ease;
-    opacity: 0.9;
+    opacity: 1;
     transform: translateX(0);
     animation: fadeInLeft 0.5s ease-out backwards;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-highlight-item {
-    opacity: 1;
-    transform: translateX(4px);
 }
 .trainer-card-compact-highlight-item i {
     color: var(--brand-blue);
     font-size: 1rem;
     flex-shrink: 0;
     margin-top: 0.125rem;
-    transition: all 0.3s ease;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-highlight-item i {
-    color: var(--brand-blue-hover);
-    transform: scale(1.2);
 }
 .trainer-card-compact-cta {
     margin-top: auto;
     padding-top: 1rem;
-    opacity: 0.95;
-    transition: opacity 0.3s ease;
-}
-.trainer-card-compact-inner:hover .trainer-card-compact-cta {
     opacity: 1;
 }
 .trainer-card-compact-cta .button {
     width: 100%;
     justify-content: center;
-    transition: all 0.3s ease;
-    transform: scale(1);
 }
-.trainer-card-compact-inner:hover .trainer-card-compact-cta .button {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 45, 245, 0.3);
+
+/* Slider Controls */
+.trainer-card-compact-slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+.trainer-card-compact-slider-button:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.trainer-card-compact-slider-button.prev {
+    left: 1rem;
+}
+.trainer-card-compact-slider-button.next {
+    right: 1rem;
+}
+.trainer-card-compact-slider-button i {
+    font-size: 1.125rem;
+    color: #ffffff;
+    font-weight: 700;
 }
 
 /* Animations for Trainer Cards */
@@ -4530,11 +4543,25 @@ header #menu-toggle:focus {
     .trainer-team-grid {
         padding: 3rem 1.5rem;
     }
-    .trainer-card-compact-name {
-        font-size: 1.75rem;
+    .trainer-section-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        padding-top: 3rem;
+    }
+    .trainer-section-title:first-of-type {
+        padding-top: 0;
+    }
+    .trainer-card-compact-inner {
+        flex-direction: column;
     }
     .trainer-card-compact-image {
-        height: 18rem;
+        width: 100%;
+        min-width: unset;
+        height: 20rem;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+    .trainer-card-compact-name {
+        font-size: 1.75rem;
     }
     .trainer-card-compact-content {
         padding: 1.5rem;
@@ -5350,7 +5377,7 @@ header #menu-toggle:focus {
     }
     
     .yoga-intro-text {
-        font-size: 0.9375rem;
+        font-size: 1rem;
     }
     
     #was-dich-erwartet,
@@ -5712,6 +5739,2184 @@ header #menu-toggle:focus {
         width: 45px;
         height: 45px;
         font-size: 1.1rem;
+    }
+}
+
+/* Datenschutz Page */
+.datenschutz-hero {
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+
+.datenschutz-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+.datenschutz-subtitle {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+}
+
+.datenschutz-content {
+    padding: 4rem 2rem;
+    background: #ffffff;
+}
+
+.datenschutz-text {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.datenschutz-section {
+    margin-bottom: 3rem;
+}
+
+.datenschutz-section h2 {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.datenschutz-section h3 {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand-blue);
+    margin: 2rem 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.datenschutz-section p {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0 0 1rem 0;
+}
+
+.datenschutz-section ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.datenschutz-section li {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin-bottom: 0.75rem;
+}
+
+.datenschutz-section a {
+    color: var(--brand-blue);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.datenschutz-section a:hover {
+    color: var(--brand-blue-hover);
+}
+
+@media screen and (max-width: 60rem) {
+    .datenschutz-hero {
+        padding: 4rem 1.5rem 3rem;
+    }
+    
+    .datenschutz-title {
+        font-size: 3rem;
+    }
+    
+    .datenschutz-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .datenschutz-content {
+        padding: 3rem 1.5rem;
+    }
+    
+    .datenschutz-section {
+        margin-bottom: 2rem;
+    }
+    
+    .datenschutz-section h2 {
+        font-size: 1.75rem;
+    }
+    
+    .datenschutz-section h3 {
+        font-size: 1.125rem;
+    }
+    
+    .datenschutz-section p,
+    .datenschutz-section li {
+        font-size: 0.9375rem;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    .datenschutz-title {
+        font-size: 2.5rem;
+    }
+    
+    .datenschutz-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .datenschutz-content {
+        padding: 2rem 1rem;
+    }
+    
+    .datenschutz-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .datenschutz-section h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Firmenfitness Page */
+#firmenfitness-intro {
+    padding: 4rem 2rem;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+#firmenfitness-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+
+#firmenfitness-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+#firmenfitness-intro .intro-text {
+    color: var(--brand-dark);
+}
+
+#firmenfitness-angebote {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+
+#firmenfitness-angebote .section-title {
+    color: #ffffff;
+}
+
+#firmenfitness-angebote .feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+
+#firmenfitness-angebote .feature-title {
+    color: #ffffff;
+}
+
+#firmenfitness-angebote .feature-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#firmenfitness-angebote .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+#firmenfitness-angebote .feature-card {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+#firmenfitness-angebote .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+#firmenfitness-angebote .feature-icon i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+}
+
+#firmenfitness-angebote .feature-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#firmenfitness-angebote .feature-description {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--brand-dark);
+    margin: 0;
+}
+
+#firmenfitness-workouts {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+#firmenfitness-workouts .section-title {
+    color: var(--brand-dark);
+}
+
+#firmenfitness-workouts .workout-title-compact {
+    color: var(--brand-dark);
+}
+
+#firmenfitness-workouts .workout-description-compact {
+    color: var(--brand-dark);
+}
+
+#firmenfitness-workouts .workout-item-compact {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+}
+
+
+/* 50/50 Layout for Workouts Section */
+.firmenfitness-workouts-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.firmenfitness-workouts-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.workouts-list-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.workout-item-compact {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.workout-icon-compact {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.workout-icon-compact i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+}
+
+.workout-content-compact {
+    flex: 1;
+}
+
+.workout-title-compact {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.workout-description-compact {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--brand-dark);
+    margin: 0;
+}
+
+.firmenfitness-workouts-image {
+    position: relative;
+}
+
+.firmenfitness-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 9, 49, 0.12);
+}
+
+.workouts-list {
+    max-width: 65rem;
+    margin: 3rem auto 0;
+}
+
+.workout-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+
+.workout-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.workout-content {
+    flex: 1;
+}
+
+.workout-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.workout-description {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--brand-dark);
+    margin: 0;
+}
+
+#firmenfitness-benefits {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+
+#firmenfitness-benefits .section-title {
+    color: #ffffff;
+}
+
+#firmenfitness-benefits .benefit-item-compact {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+
+#firmenfitness-benefits .benefit-item-compact i {
+    color: #ffffff !important;
+}
+
+#firmenfitness-benefits .benefit-item-compact span {
+    color: #ffffff;
+}
+
+/* 50/50 Layout for Benefits Section */
+.firmenfitness-benefits-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.firmenfitness-benefits-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.firmenfitness-benefits-image {
+    position: relative;
+}
+
+.benefits-list-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.benefit-item-compact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+
+.benefit-item-compact i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.benefit-item-compact span {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Legacy styles for other pages */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.benefit-item i {
+    color: #ffffff;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.benefit-item span {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#firmenfitness-cta {
+    padding: 6rem 2rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+#firmenfitness-cta .cta-title {
+    color: var(--brand-dark);
+}
+
+#firmenfitness-cta .cta-text {
+    color: var(--brand-dark);
+}
+
+.cta-content {
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cta-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0 0 2.5rem 0;
+}
+
+.cta-content .button {
+    display: inline-flex;
+}
+
+@media screen and (max-width: 60rem) {
+    #firmenfitness-intro,
+    #firmenfitness-angebote,
+    #firmenfitness-workouts,
+    #firmenfitness-benefits {
+        padding: 3rem 1.5rem;
+    }
+    
+    #firmenfitness-angebote .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .firmenfitness-workouts-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .firmenfitness-workouts-image {
+        order: -1;
+    }
+    
+    .firmenfitness-workouts-content .section-title {
+        text-align: center;
+    }
+    
+    .workout-item-compact {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .workout-icon-compact {
+        margin: 0 auto;
+    }
+    
+    .firmenfitness-benefits-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .firmenfitness-benefits-image {
+        order: -1;
+    }
+    
+    .firmenfitness-benefits-content .section-title {
+        text-align: center;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-text {
+        font-size: 1rem;
+    }
+    
+    #firmenfitness-cta {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    #firmenfitness-angebote .feature-card {
+        padding: 2rem;
+    }
+    
+    #firmenfitness-angebote .feature-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.25rem;
+    }
+    
+    #firmenfitness-angebote .feature-icon i {
+        color: #ffffff !important;
+        font-size: 1.25rem;
+    }
+    
+    #firmenfitness-angebote .feature-title {
+        font-size: 1.25rem;
+    }
+    
+    .firmenfitness-workouts-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .firmenfitness-workouts-image {
+        order: -1;
+    }
+    
+    .firmenfitness-workouts-content .section-title {
+        text-align: center;
+    }
+    
+    .workout-item-compact {
+        padding: 1.25rem;
+    }
+    
+    .workout-title-compact {
+        font-size: 1.125rem;
+    }
+    
+    .benefit-item {
+        padding: 1.25rem;
+    }
+    
+    .benefit-item span {
+        font-size: 1rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-text {
+        font-size: 1rem;
+    }
+}
+
+/* Vereinssport Page - Hero Section */
+.vereinssport-hero {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: 100vh;
+    min-height: 40rem;
+    max-height: 60rem;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Full Width & Height Video Background */
+.vereinssport-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    z-index: 0;
+}
+
+.vereinssport-hero-video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Transparent Gradient Overlay - Stronger on Right with Company Blue */
+.vereinssport-hero-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        rgba(0, 9, 49, 1) 0%,
+        rgba(0, 9, 49, 0.98) 8%,
+        rgba(0, 9, 49, 0.95) 15%,
+        rgba(0, 9, 49, 0.9) 25%,
+        rgba(0, 9, 49, 0.8) 35%,
+        rgba(0, 9, 49, 0.65) 45%,
+        rgba(0, 9, 49, 0.45) 55%,
+        rgba(0, 9, 49, 0.25) 65%,
+        rgba(0, 9, 49, 0.1) 80%,
+        rgba(0, 9, 49, 0) 100%
+    );
+    z-index: 1;
+}
+
+/* Content Overlay on Right Side */
+.vereinssport-hero-content-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 4rem;
+    z-index: 10;
+}
+
+.vereinssport-hero-content-overlay .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+}
+
+.vereinssport-hero-content-overlay .hero-fitness-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.vereinssport-hero-content-overlay .hero-tagline {
+    color: #ffffff;
+    font-size: 1.25rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    line-height: 1.4;
+}
+
+.vereinssport-hero-content-overlay .hero-tagline .highlight-blue {
+    color: var(--brand-blue);
+    text-shadow: 0 2px 8px rgba(0, 90, 255, 0.6);
+}
+
+@media screen and (max-width: 60rem) {
+    .vereinssport-hero {
+        height: auto;
+        min-height: 50vh;
+        max-height: none;
+    }
+    
+    .vereinssport-hero-content-overlay {
+        width: 100%;
+        padding: 3rem 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-fitness-title {
+        font-size: 2rem;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-tagline {
+        font-size: 1.125rem;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-logo-container img {
+        width: 240px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    .vereinssport-hero {
+        min-height: 40vh;
+    }
+    
+    .vereinssport-hero-content-overlay {
+        padding: 2rem 1.5rem;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-fitness-title {
+        font-size: 1.75rem;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-tagline {
+        font-size: 1.125rem;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-logo-container img {
+        width: 180px;
+        height: auto;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-buttons .button {
+        width: 100%;
+    }
+}
+
+/* Vereinssport Page */
+#vereinssport-intro {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+#vereinssport-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+
+#vereinssport-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+#vereinssport-intro .intro-text {
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+#vereinssport-sportarten {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+#vereinssport-sportarten .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+#vereinssport-sportarten .features-grid .feature-card {
+    flex: 0 0 calc(33.333% - 1.34rem);
+    max-width: calc(33.333% - 1.34rem);
+}
+
+#vereinssport-sportarten .feature-card {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.15);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+#vereinssport-sportarten .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 90, 255, 0.3);
+}
+
+#vereinssport-sportarten .feature-icon i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+}
+
+#vereinssport-sportarten .feature-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.section-subtitle {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--brand-dark);
+}
+
+.section-note {
+    font-family: var(--font-lato), "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.8;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#vereinssport-modelle {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+
+#vereinssport-modelle .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+#vereinssport-modelle .feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+
+#vereinssport-modelle .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+#vereinssport-modelle .feature-icon i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+}
+
+#vereinssport-modelle .feature-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#vereinssport-modelle .feature-description {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+#vereinssport-inhalte {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+/* 50/50 Layout for Inhalte Section */
+.vereinssport-inhalte-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+}
+
+.vereinssport-inhalte-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Compact Workouts Grid */
+.workouts-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.workout-item-compact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem 1rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    gap: 0.75rem;
+}
+
+.workout-item-compact:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.workout-icon-compact {
+    width: 3rem;
+    height: 3rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.workout-icon-compact i {
+    color: #ffffff !important;
+    font-size: 1.25rem;
+}
+
+.workout-title-compact {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+}
+
+.vereinssport-inhalte-image {
+    position: relative;
+}
+
+.vereinssport-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 9, 49, 0.12);
+}
+
+#vereinssport-benefits {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+
+#vereinssport-benefits .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#vereinssport-benefits .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+
+#vereinssport-benefits .benefit-item i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+#vereinssport-benefits .benefit-item span {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#vereinssport-cta {
+    padding: 6rem 2rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+#vereinssport-cta .cta-content {
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+#vereinssport-cta .cta-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#vereinssport-cta .cta-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0 0 2.5rem 0;
+}
+
+#vereinssport-cta .button {
+    display: inline-flex;
+}
+
+@media screen and (max-width: 60rem) {
+    #vereinssport-intro,
+    #vereinssport-sportarten,
+    #vereinssport-modelle,
+    #vereinssport-inhalte,
+    #vereinssport-benefits {
+        padding: 3rem 1.5rem;
+    }
+    
+    #vereinssport-sportarten .features-grid .feature-card {
+        flex: 0 0 calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+    }
+    
+    #vereinssport-modelle .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .vereinssport-inhalte-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .workouts-grid-compact {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #vereinssport-benefits .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #vereinssport-cta .cta-title {
+        font-size: 2rem;
+    }
+    
+    #vereinssport-cta .cta-text {
+        font-size: 1rem;
+    }
+    
+    #vereinssport-cta {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    #vereinssport-sportarten .features-grid .feature-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    #vereinssport-sportarten .feature-card,
+    #vereinssport-modelle .feature-card {
+        padding: 2rem;
+    }
+    
+    #vereinssport-sportarten .feature-icon,
+    #vereinssport-modelle .feature-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.25rem;
+    }
+    
+    #vereinssport-sportarten .feature-title {
+        font-size: 1.125rem;
+    }
+    
+    #vereinssport-modelle .feature-title {
+        font-size: 1.125rem;
+    }
+    
+    .workout-item-compact {
+        padding: 1rem 0.75rem;
+    }
+    
+    .workout-title-compact {
+        font-size: 1rem;
+    }
+    
+    .workout-icon-compact {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+    
+    .workout-icon-compact i {
+        font-size: 1rem;
+    }
+    
+    #vereinssport-benefits .benefit-item {
+        padding: 1.25rem;
+    }
+    
+    #vereinssport-benefits .benefit-item span {
+        font-size: 1rem;
+    }
+    
+    #vereinssport-cta .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    #vereinssport-cta .cta-text {
+        font-size: 1rem;
+    }
+}
+
+/* Mobiles Personal Training Page */
+#mobiles-pt-intro {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+#mobiles-pt-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+
+#mobiles-pt-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+#mobiles-pt-intro .intro-text {
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+#mobiles-pt-locations {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+#mobiles-pt-locations .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+#mobiles-pt-locations .feature-card {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+#mobiles-pt-locations .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+#mobiles-pt-locations .feature-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#mobiles-pt-locations .feature-description {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--brand-dark);
+    margin: 0;
+}
+
+#mobiles-pt-locations .feature-icon i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+}
+
+#mobiles-pt-equipment {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+    text-align: center;
+}
+
+.equipment-content {
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+.equipment-icon-large {
+    width: 6rem;
+    height: 6rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 2.5rem;
+}
+
+.equipment-icon-large i {
+    color: #ffffff !important;
+    font-size: 2.5rem;
+}
+
+.equipment-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.equipment-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+#mobiles-pt-schwerpunkte {
+    padding: 4rem 2rem;
+    background: #ffffff;
+}
+
+#mobiles-pt-schwerpunkte .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+#mobiles-pt-schwerpunkte .feature-card {
+    background: #f8f9fa;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+#mobiles-pt-schwerpunkte .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+#mobiles-pt-schwerpunkte .feature-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#mobiles-pt-schwerpunkte .feature-icon i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+}
+
+#mobiles-pt-benefits {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+#mobiles-pt-benefits .section-title {
+    color: var(--brand-dark);
+}
+
+#mobiles-pt-benefits .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mobiles-pt-benefits .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+}
+
+#mobiles-pt-benefits .benefit-item i {
+    color: var(--brand-blue) !important;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+#mobiles-pt-benefits .benefit-item span {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+}
+
+#mobiles-pt-cta {
+    padding: 6rem 2rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+#mobiles-pt-cta .cta-content {
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+#mobiles-pt-cta .cta-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#mobiles-pt-cta .cta-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0 0 2.5rem 0;
+}
+
+#mobiles-pt-cta .button {
+    display: inline-flex;
+}
+
+@media screen and (max-width: 60rem) {
+    #mobiles-pt-intro,
+    #mobiles-pt-locations,
+    #mobiles-pt-equipment,
+    #mobiles-pt-schwerpunkte,
+    #mobiles-pt-benefits {
+        padding: 3rem 1.5rem;
+    }
+    
+    #mobiles-pt-locations .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    #mobiles-pt-schwerpunkte .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .equipment-icon-large {
+        width: 5rem;
+        height: 5rem;
+        font-size: 2rem;
+    }
+    
+    .equipment-icon-large i {
+        font-size: 2rem;
+    }
+    
+    .equipment-title {
+        font-size: 2rem;
+    }
+    
+    .equipment-text {
+        font-size: 1.125rem;
+    }
+    
+    #mobiles-pt-benefits .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #mobiles-pt-cta .cta-title {
+        font-size: 2.5rem;
+    }
+    
+    #mobiles-pt-cta .cta-text {
+        font-size: 1.125rem;
+    }
+    
+    #mobiles-pt-cta {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    #mobiles-pt-locations .feature-card,
+    #mobiles-pt-schwerpunkte .feature-card {
+        padding: 2rem;
+    }
+    
+    #mobiles-pt-locations .feature-icon,
+    #mobiles-pt-schwerpunkte .feature-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.25rem;
+    }
+    
+    #mobiles-pt-locations .feature-title {
+        font-size: 1.25rem;
+    }
+    
+    #mobiles-pt-schwerpunkte .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #mobiles-pt-schwerpunkte .feature-title {
+        font-size: 1.125rem;
+    }
+    
+    .equipment-icon-large {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.75rem;
+    }
+    
+    .equipment-icon-large i {
+        font-size: 1.75rem;
+    }
+    
+    .equipment-title {
+        font-size: 1.75rem;
+    }
+    
+    .equipment-text {
+        font-size: 1rem;
+    }
+    
+    #mobiles-pt-benefits .benefit-item {
+        padding: 1.25rem;
+    }
+    
+    #mobiles-pt-benefits .benefit-item span {
+        font-size: 1rem;
+    }
+    
+    #mobiles-pt-cta .cta-title {
+        font-size: 2rem;
+    }
+    
+    #mobiles-pt-cta .cta-text {
+        font-size: 1rem;
+    }
+}
+
+/* Outdoorkurse Page */
+#outdoorkurse-intro {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+#outdoorkurse-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+}
+
+#outdoorkurse-intro .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+#outdoorkurse-intro .intro-text {
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+#outdoorkurse-locations {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+/* 50/50 Layout for Locations Section */
+.outdoorkurse-locations-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.outdoorkurse-locations-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.locations-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.location-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.location-feature-item i {
+    color: var(--brand-blue);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.location-feature-item span {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+}
+
+.outdoorkurse-locations-image {
+    position: relative;
+}
+
+#outdoorkurse-flexible {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+
+#outdoorkurse-flexible .section-title {
+    color: #ffffff;
+}
+
+#outdoorkurse-flexible .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 50/50 Layout for Flexible Section */
+.outdoorkurse-flexible-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.outdoorkurse-flexible-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexible-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.flexible-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+
+.flexible-feature-item i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.flexible-feature-item span {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.outdoorkurse-flexible-image {
+    position: relative;
+}
+
+.outdoorkurse-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 9, 49, 0.12);
+}
+
+#outdoorkurse-inhalte {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+#outdoorkurse-inhalte .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+#outdoorkurse-inhalte .features-grid .feature-card {
+    flex: 0 0 calc(33.333% - 1.34rem);
+    max-width: calc(33.333% - 1.34rem);
+}
+
+#outdoorkurse-inhalte .feature-card {
+    background: #ffffff;
+    border: 2px solid rgba(0, 90, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+#outdoorkurse-inhalte .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+#outdoorkurse-inhalte .feature-icon i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+}
+
+#outdoorkurse-inhalte .feature-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#outdoorkurse-equipment {
+    padding: 6rem 2rem;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+#outdoorkurse-equipment .equipment-title {
+    color: var(--brand-dark);
+}
+
+#outdoorkurse-equipment .equipment-text {
+    color: var(--brand-dark);
+}
+
+#outdoorkurse-equipment .equipment-icon-large {
+    background: var(--brand-blue);
+    color: #ffffff;
+}
+
+#outdoorkurse-equipment .equipment-content {
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+#outdoorkurse-equipment .equipment-icon-large {
+    width: 6rem;
+    height: 6rem;
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 2.5rem;
+}
+
+#outdoorkurse-equipment .equipment-icon-large i {
+    color: #ffffff !important;
+    font-size: 2.5rem;
+}
+
+#outdoorkurse-equipment .equipment-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#outdoorkurse-equipment .equipment-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0;
+}
+
+#outdoorkurse-benefits {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
+}
+
+#outdoorkurse-benefits .section-title {
+    color: #ffffff;
+}
+
+#outdoorkurse-benefits .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#outdoorkurse-benefits .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+#outdoorkurse-benefits .benefit-item i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+#outdoorkurse-benefits .benefit-item span {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#outdoorkurse-cta {
+    padding: 6rem 2rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+#outdoorkurse-cta .cta-content {
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+#outdoorkurse-cta .cta-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--brand-dark);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#outdoorkurse-cta .cta-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--brand-dark);
+    margin: 0 0 2.5rem 0;
+}
+
+#outdoorkurse-cta .button {
+    display: inline-flex;
+}
+
+@media screen and (max-width: 60rem) {
+    #outdoorkurse-intro,
+    #outdoorkurse-locations,
+    #outdoorkurse-flexible,
+    #outdoorkurse-inhalte,
+    #outdoorkurse-equipment,
+    #outdoorkurse-benefits {
+        padding: 3rem 1.5rem;
+    }
+    
+    .outdoorkurse-locations-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .outdoorkurse-locations-image {
+        order: -1;
+    }
+    
+    .outdoorkurse-flexible-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .outdoorkurse-flexible-image {
+        order: -1;
+    }
+    
+    .outdoorkurse-flexible-content {
+        order: 2;
+    }
+    
+    #outdoorkurse-inhalte .features-grid .feature-card {
+        flex: 0 0 calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+    }
+    
+    #outdoorkurse-equipment .equipment-icon-large {
+        width: 5rem;
+        height: 5rem;
+        font-size: 2rem;
+    }
+    
+    #outdoorkurse-equipment .equipment-icon-large i {
+        font-size: 2rem;
+    }
+    
+    #outdoorkurse-equipment .equipment-title {
+        font-size: 2rem;
+    }
+    
+    #outdoorkurse-equipment .equipment-text {
+        font-size: 1.125rem;
+    }
+    
+    #outdoorkurse-benefits .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #outdoorkurse-cta .cta-title {
+        font-size: 2.5rem;
+    }
+    
+    #outdoorkurse-cta .cta-text {
+        font-size: 1.125rem;
+    }
+    
+    #outdoorkurse-cta {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 40rem) {
+    .location-feature-item {
+        padding: 0.75rem 1rem;
+    }
+    
+    .location-feature-item i {
+        font-size: 1.25rem;
+    }
+    
+    .location-feature-item span {
+        font-size: 1rem;
+    }
+    
+    .flexible-feature-item {
+        padding: 0.75rem;
+    }
+    
+    .flexible-feature-item i {
+        font-size: 1.25rem;
+    }
+    
+    .flexible-feature-item span {
+        font-size: 1rem;
+    }
+    
+    #outdoorkurse-inhalte .features-grid .feature-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    #outdoorkurse-inhalte .feature-card {
+        padding: 2rem;
+    }
+    
+    #outdoorkurse-inhalte .feature-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.25rem;
+    }
+    
+    #outdoorkurse-inhalte .feature-title {
+        font-size: 1.125rem;
+    }
+    
+    #outdoorkurse-equipment .equipment-icon-large {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.75rem;
+    }
+    
+    #outdoorkurse-equipment .equipment-icon-large i {
+        font-size: 1.75rem;
+    }
+    
+    #outdoorkurse-equipment .equipment-title {
+        font-size: 1.75rem;
+    }
+    
+    #outdoorkurse-equipment .equipment-text {
+        font-size: 1rem;
+    }
+    
+    #outdoorkurse-benefits .benefit-item {
+        padding: 1.25rem;
+    }
+    
+    #outdoorkurse-benefits .benefit-item span {
+        font-size: 1rem;
+    }
+    
+    #outdoorkurse-cta .cta-title {
+        font-size: 2rem;
+    }
+    
+    #outdoorkurse-cta .cta-text {
+        font-size: 1rem;
     }
 }
 
