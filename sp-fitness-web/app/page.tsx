@@ -44,7 +44,7 @@ export default function Home() {
               <h2 className="hero-tagline">
                 ICH MACH <span className="highlight-blue">DICH</span> WIEDER FIT
               </h2>
-              <p className="hero-subtitle">SEBASTIAN PFAU - PERSONAL TRAINER</p>
+              <p className="hero-subtitle">SEBASTIAN PFAU<br/>PERSONAL TRAINER</p>
               
               {/* Buttons */}
               <div className="hero-buttons">
