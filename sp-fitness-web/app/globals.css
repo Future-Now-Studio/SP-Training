@@ -7274,6 +7274,24 @@ header #menu-toggle:focus {
         padding-right: 0;
     }
     
+    #vereinssport-sportarten .section-subtitle {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    #vereinssport-sportarten .section-note {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    #vereinssport-inhalte .section-note {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
     #vereinssport-modelle .features-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -7297,6 +7315,18 @@ header #menu-toggle:focus {
         overflow-wrap: break-word;
     }
     
+    #vereinssport-sportarten .section-subtitle {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    #vereinssport-sportarten .section-note {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
     .vereinssport-inhalte-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -7304,6 +7334,12 @@ header #menu-toggle:focus {
     
     .vereinssport-inhalte-content {
         text-align: left;
+    }
+    
+    #vereinssport-inhalte .section-note {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .vereinssport-image-wrapper {
@@ -7387,6 +7423,24 @@ header #menu-toggle:focus {
     
     #vereinssport-sportarten .feature-title {
         font-size: 0.875rem;
+    }
+    
+    #vereinssport-sportarten .section-subtitle {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    #vereinssport-sportarten .section-note {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    #vereinssport-inhalte .section-note {
+        text-align: left !important;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     #vereinssport-modelle .feature-icon {
