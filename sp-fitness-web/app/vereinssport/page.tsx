@@ -156,7 +156,7 @@ export default function Vereinssport() {
             <h2 className="section-title">Flexible Trainingsmodelle für Vereine</h2>
           </FadeIn>
 
-          <div className="features-grid" style={{gridTemplateColumns: "repeat(2, 1fr)"}}>
+          <div className="features-grid">
             <FadeIn direction="up" delay={0.1} className="feature-card">
               <div className="feature-icon">
                 <i className="fa-solid fa-location-dot"></i>
