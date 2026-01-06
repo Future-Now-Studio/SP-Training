@@ -156,7 +156,7 @@ export default function MobilesPersonalTraining() {
             <h2 className="section-title">Individuelle Trainingsschwerpunkte</h2>
           </FadeIn>
 
-          <div className="features-grid" style={{gridTemplateColumns: "repeat(3, 1fr)"}}>
+          <div className="features-grid">
             <FadeIn direction="up" delay={0.1} className="feature-card">
               <div className="feature-icon">
                 <i className="fa-solid fa-dumbbell"></i>
