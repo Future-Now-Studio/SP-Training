@@ -141,7 +141,7 @@ export default function Home() {
                 <h1 className="studio-title">PERSONAL TRAINING STUDIO</h1>
                 
                 <p className="studio-description">
-                  Unser modernes Studio im Herzen von Schwetzingen bietet dir die perfekte Umgebung für dein individuelles Training. Hier findest du alles, was du für deine Fitnessziele brauchst – von hochwertigen Trainingsgeräten bis hin zu einer motivierenden Atmosphäre.
+                  Unser modernes Studio im Herzen von Schwetzingen bietet dir die perfekte Umgebung für dein individuelles Training. Hier findest du alles, was du für deine Fitnessziele brauchst – von Trainingstools bis hin zu einer motivierenden Atmosphäre.
                 </p>
 
                 <div className="studio-features-section">

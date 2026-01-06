@@ -791,19 +791,35 @@ header #menu-toggle:focus {
             rgba(0,9,49,0.9) 100%
         );
     }
+    #start .hero-bg-image {
+        overflow: hidden;
+    }
+    
+    #start .hero-bg-image img {
+        object-fit: cover;
+        object-position: center top;
+    }
+    
     #start .hero-trainer-image-wrapper {
         position: relative;
         width: 100%;
         height: 50vh;
         min-height: 20rem;
-        padding: 2rem;
+        padding: 0;
         justify-content: center;
+        overflow: hidden;
     }
+    
+    #start .hero-trainer-image-wrapper img {
+        object-fit: cover;
+        object-position: center top;
+    }
+    
     #start .hero-content-overlay {
         position: relative;
         width: 100%;
         height: auto;
-        padding: 4rem 2rem;
+        padding: 4rem 1.5rem;
         background: rgba(0,9,49,0.95);
     }
     #start .hero-content {
@@ -3662,11 +3678,32 @@ header #menu-toggle:focus {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+    
+    .yoga-intro-content {
+        text-align: left;
+    }
+    
+    .yoga-image-wrapper {
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+    }
+    
+    .yoga-image-wrapper img {
+        object-fit: cover;
+        object-position: center top;
+    }
+    
     .yoga-intro-title {
         font-size: 2rem;
+        text-align: left;
     }
     .yoga-intro-lead {
         font-size: 1.125rem;
+        text-align: left;
+    }
+    
+    .yoga-intro-text {
+        text-align: left;
     }
     .yoga-pillars-title {
         font-size: 1.75rem;
@@ -3786,6 +3823,17 @@ header #menu-toggle:focus {
     .intro-text {
         font-size: 1.125rem;
         padding: 0;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .section-note {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
     #personaltraining-closing,
     #hatha-yoga-closing,
@@ -5221,6 +5269,18 @@ header #menu-toggle:focus {
         padding: 4rem 1.5rem;
     }
     
+    #hatha-yoga-intro .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    #hatha-yoga-intro .yoga-intro-content,
+    #hatha-yoga-intro .yoga-intro-text {
+        text-align: left;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
     .yoga-pillars-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
@@ -6541,9 +6601,18 @@ header #menu-toggle:focus {
         max-height: none;
     }
     
+    .vereinssport-hero-video {
+        overflow: hidden;
+    }
+    
+    .vereinssport-hero-video-element {
+        object-fit: cover;
+        object-position: center top;
+    }
+    
     .vereinssport-hero-content-overlay {
         width: 100%;
-        padding: 3rem 2rem;
+        padding: 3rem 1.5rem;
         justify-content: center;
         align-items: center;
     }
@@ -6551,6 +6620,9 @@ header #menu-toggle:focus {
     .vereinssport-hero-content-overlay .hero-content {
         align-items: center;
         text-align: center;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .vereinssport-hero-content-overlay .hero-fitness-title {
@@ -6573,7 +6645,36 @@ header #menu-toggle:focus {
     }
     
     .vereinssport-hero-content-overlay {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1rem;
+    }
+    
+    .vereinssport-hero-content-overlay .hero-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    #vereinssport-intro .wrapper,
+    #mobiles-pt-intro .wrapper,
+    #hatha-yoga-intro .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    #vereinssport-intro .intro-text,
+    #mobiles-pt-intro .intro-text {
+        text-align: left;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .section-note {
+        text-align: left;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .vereinssport-hero-content-overlay .hero-fitness-title {
@@ -6939,6 +7040,12 @@ header #menu-toggle:focus {
         padding: 3rem 1.5rem;
     }
     
+    #vereinssport-intro .wrapper,
+    #mobiles-pt-intro .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
     #vereinssport-sportarten .features-grid .feature-card {
         flex: 0 0 calc(50% - 0.75rem);
         max-width: calc(50% - 0.75rem);
@@ -6952,6 +7059,20 @@ header #menu-toggle:focus {
     .vereinssport-inhalte-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    
+    .vereinssport-inhalte-content {
+        text-align: left;
+    }
+    
+    .vereinssport-image-wrapper {
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+    }
+    
+    .vereinssport-image-wrapper img {
+        object-fit: cover;
+        object-position: center top;
     }
     
     .workouts-grid-compact {
@@ -7309,6 +7430,22 @@ header #menu-toggle:focus {
         padding: 3rem 1.5rem;
     }
     
+    #mobiles-pt-intro .intro-text,
+    #vereinssport-intro .intro-text {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    #mobiles-pt-intro .content,
+    #vereinssport-intro .content {
+        text-align: left;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
     #mobiles-pt-locations .features-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -7356,6 +7493,23 @@ header #menu-toggle:focus {
 }
 
 @media screen and (max-width: 40rem) {
+    #mobiles-pt-intro,
+    #mobiles-pt-locations,
+    #mobiles-pt-equipment,
+    #mobiles-pt-schwerpunkte,
+    #mobiles-pt-benefits {
+        padding: 3rem 1rem;
+    }
+    
+    #mobiles-pt-intro .wrapper,
+    #mobiles-pt-locations .wrapper,
+    #mobiles-pt-equipment .wrapper,
+    #mobiles-pt-schwerpunkte .wrapper,
+    #mobiles-pt-benefits .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
     #mobiles-pt-locations .feature-card,
     #mobiles-pt-schwerpunkte .feature-card {
         padding: 2rem;

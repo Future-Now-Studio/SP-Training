@@ -138,7 +138,7 @@ export default function HathaYoga() {
             <FadeIn direction="up" delay={0.2} className="yoga-pillar-card">
               <div className="pillar-image-container">
                 <Image
-                  src="/images/hero_bg_2.jpg"
+                  src="/images/katerina-may-pranayama.jpg"
                   alt="Pranayama - Atemtechniken"
                   fill
                   style={{objectFit: "cover"}}

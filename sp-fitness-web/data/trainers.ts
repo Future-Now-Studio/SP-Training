@@ -19,7 +19,7 @@ export const trainers: Trainer[] = [
     image: "/images/sebastian-trainer.jpg",
     imageAlt: "Sebastian - Personal Trainer",
     intro: "Mit über 8 Jahren Berufserfahrung im professionellen Personal Training, umfassender Trainingspraxis seit 2006 und einer langjährigen Leidenschaft für Kraft- und Kampfsport begleitet Sebastian dich auf deinem Weg zu deinem besten Ich.",
-    specialties: ["Krafttraining", "Kampfsport", "Muskelaufbau", "Fettabbau", "Funktional Zirkeltraining", "Wirbelsäulengymastik"],
+    specialties: ["Krafttraining", "Muskelaufbau", "Körperfettreduzierung", "Funktionelles Training", "Athletik Training", "Training mit Einschränkungen und Verletzungen (Reha)"],
     experience: "Über 8 Jahre professionelle Berufserfahrung, eigene Trainingserfahrung seit 2006. Vielseitiger Hintergrund in Judo (10 Jahre), Thai Boxen (2 Jahre) und MMA (2 Jahre).",
     highlights: [
       "Über 8 Jahre Berufserfahrung",
@@ -48,18 +48,16 @@ export const trainers: Trainer[] = [
     ],
     galleryImages: [
       "/images/paula-portrait.jpg",
-      "/images/paula-group-1.jpg",
-      "/images/paula-group-2.jpg",
     ],
     ctaText: "Jetzt Kontakt aufnehmen",
     ctaLink: "#kontakt",
   },
   {
-    name: "Mariana",
+    name: "Mary",
     title: "Sport- und Fitnesskauffrau, Reha-Sporttrainerin & Hatha-Yoga-Lehrerin",
     image: "/images/2025_Maryoga-111.webp",
-    imageAlt: "Mariana - Sport- und Fitnesskauffrau, Reha-Sporttrainerin & Hatha-Yoga-Lehrerin",
-    intro: "Mariana ist ausgebildete Sport- und Fitnesskauffrau (3-jährige Ausbildung) mit über 10 Jahren Berufserfahrung im Trainings- und Gesundheitsbereich. Bereits seit ihrem 16. Lebensjahr ist sie im Fitnessstudio aktiv ausgebildet worden und arbeitet bis heute als Trainerin.",
+    imageAlt: "Mary - Sport- und Fitnesskauffrau, Reha-Sporttrainerin & Hatha-Yoga-Lehrerin",
+    intro: "Mary ist ausgebildete Sport- und Fitnesskauffrau (3-jährige Ausbildung) mit über 10 Jahren Berufserfahrung im Trainings- und Gesundheitsbereich. Bereits seit ihrem 16. Lebensjahr ist sie im Fitnessstudio aktiv ausgebildet worden und arbeitet bis heute als Trainerin.",
     specialties: ["Hatha Yoga", "Reha-Sport", "Outdoor-Fitness", "Yoga für Schwangere", "Sport- und Fitnesskauffrau", "Frauen-Fitness"],
     experience: "Über 10 Jahre Berufserfahrung im Trainings- und Gesundheitsbereich. Seit dem 16. Lebensjahr im Fitnessstudio aktiv ausgebildet und tätig. Zusätzlich ausgebildete Reha-Sporttrainerin sowie Hatha-Yoga-Lehrerin mit 450 Unterrichtseinheiten (2-jährige Ausbildung im Yogazentrum Mannheim). Seit Januar 2026 selbstständig als Yoga-Lehrerin tätig.",
     highlights: [

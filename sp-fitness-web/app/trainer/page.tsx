@@ -67,9 +67,9 @@ export default function TrainerTeam() {
       {/* Trainers Grid */}
       <section className="trainer-team-grid">
         <div className="wrapper">
-          {/* Personaltrainer Section */}
+          {/* Personal Trainer Section */}
           <FadeIn direction="down">
-            <h2 className="trainer-section-title">Personaltrainer</h2>
+            <h2 className="trainer-section-title">Personal Trainer</h2>
           </FadeIn>
           <div className="trainer-cards-container">
             {trainers
