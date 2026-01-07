@@ -119,7 +119,7 @@ export default function Outdoorkurse() {
             <FadeIn direction="left" className="outdoorkurse-locations-image">
               <div className="outdoorkurse-image-wrapper">
                 <Image
-                  src="/images/jim-luo-outdoor.jpg"
+                  src="/images/IMG_2973_compressed.jpeg"
                   alt="Outdoor Training Locations"
                   fill
                   style={{objectFit: "cover"}}
@@ -138,7 +138,7 @@ export default function Outdoorkurse() {
             <FadeIn direction="right" className="outdoorkurse-flexible-image">
               <div className="outdoorkurse-image-wrapper">
                 <Image
-                  src="/images/VG8_4216.jpg"
+                  src="/images/IMG_2999_compressed.jpeg"
                   alt="Outdoor Training"
                   fill
                   style={{objectFit: "cover"}}
