@@ -29,7 +29,7 @@ export default function Firmenfitness() {
         {/* Background Image */}
         <div className="hero-bg-image">
           <Image
-            src="/images/VG8_4216.jpg" 
+            src="/images/Hero-Sebastian.jpg" 
             alt="Firmenfitness Background" 
             fill 
             style={{objectFit: "cover"}}
@@ -213,7 +213,7 @@ export default function Firmenfitness() {
             <FadeIn direction="right" className="firmenfitness-benefits-image">
               <div className="firmenfitness-image-wrapper">
                 <Image
-                  src="/images/VG8_4216.jpg"
+                  src="/images/Hero-Sebastian.jpg"
                   alt="Firmenfitness Benefits"
                   fill
                   style={{objectFit: "cover"}}

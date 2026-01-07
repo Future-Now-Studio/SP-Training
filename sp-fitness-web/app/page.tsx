@@ -11,7 +11,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="hero-bg-image">
         <Image
-            src="/images/VG8_4216.jpg" 
+            src="/images/Hero-Sebastian.jpg" 
             alt="Gym Background" 
             fill 
             style={{objectFit: "cover"}}

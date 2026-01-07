@@ -33,7 +33,7 @@ export default function Vereinssport() {
             loop
             muted
             playsInline
-            poster="/images/VG8_4216.jpg"
+            poster="/images/Hero-Sebastian.jpg"
           >
             <source src="/videos/SP-Fit.mp4" type="video/mp4" />
             Ihr Browser unterstützt das Video-Element nicht.
@@ -240,7 +240,7 @@ export default function Vereinssport() {
             <FadeIn direction="left" className="vereinssport-inhalte-image">
               <div className="vereinssport-image-wrapper">
                 <Image
-                  src="/images/VG8_4216.jpg"
+                  src="/images/Hero-Sebastian.jpg"
                   alt="Athletiktraining Praxis"
                   fill
                   style={{objectFit: "cover"}}

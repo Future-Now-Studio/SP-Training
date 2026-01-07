@@ -29,7 +29,7 @@ export default function Outdoorkurse() {
         {/* Background Image */}
         <div className="hero-bg-image">
           <Image
-            src="/images/VG8_4216.jpg" 
+            src="/images/Hero-Sebastian.jpg" 
             alt="Outdoorkurse Background" 
             fill 
             style={{objectFit: "cover"}}

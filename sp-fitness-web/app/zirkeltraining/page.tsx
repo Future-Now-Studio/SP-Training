@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     description: "Funktionelles Zirkeltraining – effektiv, dynamisch und vielseitig. Erlebe ein Trainingskonzept, das dich ganzheitlich fordert, deine Leistung steigert und gleichzeitig Spaß macht.",
     url: "https://www.sp-fitness.de/zirkeltraining",
     type: "website",
-    images: ["https://www.sp-fitness.de/images/VG8_4216.jpg"],
+    images: ["https://www.sp-fitness.de/images/Hero-Sebastian.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Funktionelles Zirkeltraining – SP Fitness by Sebastian Pfau",
     description: "Funktionelles Zirkeltraining – effektiv, dynamisch und vielseitig. Erlebe ein Trainingskonzept, das dich ganzheitlich fordert, deine Leistung steigert und gleichzeitig Spaß macht.",
-    images: ["https://www.sp-fitness.de/images/VG8_4216.jpg"],
+    images: ["https://www.sp-fitness.de/images/Hero-Sebastian.jpg"],
   },
 };
 
@@ -29,7 +29,7 @@ export default function Zirkeltraining() {
         {/* Background Image */}
         <div className="hero-bg-image">
           <Image
-            src="/images/VG8_4216.jpg" 
+            src="/images/Hero-Sebastian.jpg" 
             alt="Zirkeltraining Background" 
             fill 
             style={{objectFit: "cover"}}
@@ -95,7 +95,7 @@ export default function Zirkeltraining() {
             <FadeIn direction="left" className="yoga-intro-image">
               <div className="yoga-image-wrapper">
                 <Image
-                  src="/images/VG8_4216.jpg"
+                  src="/images/Hero-Sebastian.jpg"
                   alt="Zirkeltraining Praxis"
                   fill
                   style={{objectFit: "cover"}}
