@@ -642,7 +642,8 @@ header #menu-toggle:focus {
     height: 100%;
     z-index: 0;
 }
-#start:not(.vereinssport-hero) .hero-bg-image img {
+#start:not(.vereinssport-hero) .hero-bg-image img,
+#start:not(.vereinssport-hero) .hero-bg-image video {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -822,7 +823,8 @@ header #menu-toggle:focus {
         overflow: hidden;
     }
     
-    #start:not(.vereinssport-hero) .hero-bg-image img {
+    #start:not(.vereinssport-hero) .hero-bg-image img,
+    #start:not(.vereinssport-hero) .hero-bg-image video {
         object-fit: cover;
         object-position: center center;
     }

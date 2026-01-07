@@ -25,15 +25,14 @@ export const metadata: Metadata = {
 export default function Vereinssport() {
   return (
     <main>
-      <section id="start" className="vereinssport-hero">
-        {/* Full Width & Height Video Background */}
-        <div className="vereinssport-hero-video">
+      <section id="start">
+        {/* Background Video (like other heroes, but with video instead of image) */}
+        <div className="hero-bg-image">
           <video 
             autoPlay
             loop
             muted
             playsInline
-            className="vereinssport-hero-video-element"
             poster="/images/VG8_4216.jpg"
           >
             <source src="/videos/SP-Fit.mp4" type="video/mp4" />
@@ -41,11 +40,11 @@ export default function Vereinssport() {
           </video>
         </div>
 
-        {/* Transparent Gradient Overlay */}
-        <div className="vereinssport-hero-gradient-overlay"></div>
+        {/* Blue Gradient Overlay - same as other pages */}
+        <div className="hero-blue-overlay"></div>
 
         {/* Content Overlay on Right Side */}
-        <div className="vereinssport-hero-content-overlay">
+        <div className="hero-content-overlay">
           <FadeIn className="hero-content" delay={0.3} direction="left">
             {/* SP Logo */}
             <div className="hero-logo-container">
