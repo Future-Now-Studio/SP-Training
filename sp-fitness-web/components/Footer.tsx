@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 import FadeIn from "./FadeIn";
 
 export default function Footer() {
@@ -26,13 +27,24 @@ export default function Footer() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // Simulate form submission (replace with actual API call)
     try {
-      // Here you would send the form data to your backend/email service
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_ztu0zmc",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_4nfx2lc",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || "Nicht angegeben",
+          message: formData.message,
+          to_email: "kontakt@sp-fitness.de",
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "nca4dQIm34TP9OD49"
+      );
+
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
+      console.error("Form submission error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
