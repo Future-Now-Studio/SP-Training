@@ -72,5 +72,22 @@ export const trainers: Trainer[] = [
     ctaText: "Jetzt Kontakt aufnehmen",
     ctaLink: "#kontakt",
   },
+  {
+    name: "Olya",
+    title: "Pilates-Trainerin und Ernährungsberaterin",
+    image: "/images/olya-portrait.jpg",
+    imageAlt: "Olya - Pilates-Trainerin und Ernährungsberaterin",
+    intro: "Ich unterrichte Pilates auf der Matte sowie Pilates mit Kleingeräten (Small weights, Ball, Magic Circle) und lege dabei besonderen Wert auf funktionelles, sanftes, atembewusstes Training und Core-Stabilität. Ich begleite meine Teilnehmerinnen auf ihrem Weg zu mehr Kraft, Beweglichkeit und Wohlbefinden. Über viele Jahre war ich im Tanzbereich aktiv – von Hip-Hop bis Salsa und Bachata – was bis heute mein Körpergefühl und meine Bewegungswahrnehmung prägt.",
+    specialties: ["Matten-Pilates", "Pilates mit Kleingeräten", "Core-Stabilität & Haltung", "Beweglichkeit & Mobilität", "Pilates für Frauen", "Ernährungsberatung"],
+    experience: "Matten-Pilates Ausbildung in Breslau (Schule Justyna Uran). Derzeit absolviere ich weiterführende Kurse und ein einjähriges Pilates-Programm, um meine Kenntnisse und Fähigkeiten kontinuierlich zu erweitern.",
+    highlights: [
+      "Matten-Pilates-Ausbildung bei Justyna Uran (Breslau, 2025)",
+      "Unterricht von Pilates mit Kleingeräten",
+      "Medizinischer & ernährungswissenschaftlicher Hintergrund",
+      "Ganzheitlicher Ansatz für Körper, Bewegung und Wohlbefinden",
+    ],
+    ctaText: "Jetzt Kontakt aufnehmen",
+    ctaLink: "#kontakt",
+  },
 ];
 
