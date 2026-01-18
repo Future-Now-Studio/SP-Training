@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CourseTimetable from "@/components/CourseTimetable";
 
@@ -31,7 +32,7 @@ export default function Kurse() {
               <h1 className="kurse-title">KURSE & STUNDENPLAN</h1>
               <p className="kurse-subtitle">
                 Finde den passenden Kurs für dich und melde dich mit einem Klick auf den Kurs an. 
-                </p><p>Anmeldungen sind immer maximal 1 Woche im Voraus möglich.
+                </p><p>Anmeldungen sind immer maximal 1 Woche im Voraus möglich. Bitte beachte, dass die Kurse nur für Mitglieder sind oder alternativ gegen eine <Link href="/#preise" style={{ color: "var(--brand-blue)", textDecoration: "underline" }}>Gebühr</Link> gebucht werden können.
                 </p>
             </div>
           </FadeIn>

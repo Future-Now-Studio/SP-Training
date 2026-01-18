@@ -125,6 +125,7 @@ export default function CourseBookingDialog({ course, isOpen, onClose }: CourseB
         "booking-date": bookingDate,
         timestamp: timestamp,
         email: formData.email,
+        consent: formData.consent,
       };
 
       const response = await fetch(
@@ -353,6 +354,11 @@ export default function CourseBookingDialog({ course, isOpen, onClose }: CourseB
               >
                 <i className="fa-solid fa-check-circle" style={{ marginRight: "0.5rem" }}></i>
                 Anmeldung erfolgreich gesendet!
+                {formData.consent && (
+                  <div style={{ marginTop: "0.75rem", fontSize: "0.875rem", lineHeight: "1.5" }}>
+                    Du erhältst in Kürze eine Bestätigungs-E-Mail. Bitte schaue auch in deinem Spam-Ordner nach.
+                  </div>
+                )}
               </div>
             )}
 
