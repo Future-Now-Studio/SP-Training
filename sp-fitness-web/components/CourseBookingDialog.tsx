@@ -106,7 +106,9 @@ export default function CourseBookingDialog({ course, isOpen, onClose }: CourseB
     setSubmitStatus("idle");
 
     try {
-      const bookingDate = calculateNextBookingDate(course.day, course.startTime);
+      const bookingDateISO = calculateNextBookingDate(course.day, course.startTime);
+      // Format booking date in German format with time: DD.MM.YYYY HH:MM
+      const bookingDateGerman = formatDateGerman(bookingDateISO) + " " + course.startTime;
       
       // Format timestamp for Google Sheets: YYYY-MM-DD HH:MM:SS
       const now = new Date();
@@ -122,7 +124,7 @@ export default function CourseBookingDialog({ course, isOpen, onClose }: CourseB
         name: formData.name,
         course: course.name,
         trainer: course.instructor || "",
-        "booking-date": bookingDate,
+        "booking-date": bookingDateGerman,
         timestamp: timestamp,
         email: formData.email,
         consent: formData.consent,
