@@ -28,8 +28,8 @@ export default function TrainerCardCompact({
   specialties,
   experience,
   highlights,
-  ctaText = "Jetzt Kontakt aufnehmen",
-  ctaLink = "#kontakt",
+  ctaText,
+  ctaLink,
   galleryImages = [],
 }: TrainerCardCompactProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -142,12 +142,14 @@ export default function TrainerCardCompact({
           )}
 
           {/* CTA */}
-          <div className="trainer-card-compact-cta">
-            <Link href={ctaLink} className="button key">
-              <span>{ctaText}</span>
-              <i className="fa-solid fa-arrow-right"></i>
-            </Link>
-          </div>
+          {ctaText && (
+            <div className="trainer-card-compact-cta">
+              <Link href={ctaLink || "#kontakt"} className="button key">
+                <span>{ctaText}</span>
+                <i className="fa-solid fa-arrow-right"></i>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </FadeIn>

@@ -28,8 +28,8 @@ export default function TrainerCard({
   background,
   approach,
   highlights,
-  ctaText = "Jetzt Kontakt aufnehmen",
-  ctaLink = "#kontakt",
+  ctaText,
+  ctaLink,
 }: TrainerCardProps) {
   return (
     <section className="trainer-detail-section">
@@ -103,20 +103,22 @@ export default function TrainerCard({
           </FadeIn>
 
           {/* CTA Section */}
-          <FadeIn direction="up" delay={0.5}>
-            <div className="trainer-detail-cta">
-              <h3 className="trainer-detail-cta-title">Bereit, den nächsten Schritt zu gehen?</h3>
-              <p className="trainer-detail-cta-text">
-                Starte jetzt mit deinem persönlichen Trainingsprogramm und entdecke, was du wirklich erreichen kannst.
-                <br />
-                <strong>{name}</strong> begleitet dich – mit Fachwissen, Leidenschaft und echter Begeisterung für deinen Erfolg.
-              </p>
-              <Link href={ctaLink} className="button key cta-large">
-                <span>{ctaText}</span>
-                <i className="fa-solid fa-arrow-right"></i>
-              </Link>
-            </div>
-          </FadeIn>
+          {ctaText && (
+            <FadeIn direction="up" delay={0.5}>
+              <div className="trainer-detail-cta">
+                <h3 className="trainer-detail-cta-title">Bereit, den nächsten Schritt zu gehen?</h3>
+                <p className="trainer-detail-cta-text">
+                  Starte jetzt mit deinem persönlichen Trainingsprogramm und entdecke, was du wirklich erreichen kannst.
+                  <br />
+                  <strong>{name}</strong> begleitet dich – mit Fachwissen, Leidenschaft und echter Begeisterung für deinen Erfolg.
+                </p>
+                <Link href={ctaLink || "#kontakt"} className="button key cta-large">
+                  <span>{ctaText}</span>
+                  <i className="fa-solid fa-arrow-right"></i>
+                </Link>
+              </div>
+            </FadeIn>
+          )}
         </div>
       </div>
     </section>

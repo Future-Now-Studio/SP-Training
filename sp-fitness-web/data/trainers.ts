@@ -49,8 +49,6 @@ export const trainers: Trainer[] = [
     galleryImages: [
       "/images/paula-portrait.jpg",
     ],
-    ctaText: "Jetzt Kontakt aufnehmen",
-    ctaLink: "#kontakt",
   },
   {
     name: "Mary",
@@ -69,8 +67,6 @@ export const trainers: Trainer[] = [
       "Outdoor-Fitnesskurse für Frauen",
       "Yoga für Schwangere",
     ],
-    ctaText: "Jetzt Kontakt aufnehmen",
-    ctaLink: "#kontakt",
   },
   {
     name: "Elisa",
@@ -95,8 +91,6 @@ export const trainers: Trainer[] = [
       "Kräftigende wie auch ruhige Einheiten – je nach Bedarf",
       "Spezialisierung auf Frauen im Coaching",
     ],
-    ctaText: "Jetzt Kontakt aufnehmen",
-    ctaLink: "#kontakt",
   },
   {
     name: "Olya",
@@ -112,8 +106,6 @@ export const trainers: Trainer[] = [
       "Medizinischer & ernährungswissenschaftlicher Hintergrund",
       "Ganzheitlicher Ansatz für Körper, Bewegung und Wohlbefinden",
     ],
-    ctaText: "Jetzt Kontakt aufnehmen",
-    ctaLink: "#kontakt",
   },
 ];
 

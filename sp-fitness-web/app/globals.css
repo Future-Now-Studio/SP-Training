@@ -215,6 +215,8 @@ button.button.key:hover {
     background-color: var(--brand-blue-hover);
     color: #ffffff;
     transform: translateY(-2px);
+    text-decoration: none;
+    border-bottom: none;
     box-shadow: 0 8px 25px rgba(0, 45, 245, 0.4);
 }
 a.button.key *,
@@ -233,6 +235,8 @@ a.button.ghost:hover {
     background-color: var(--brand-dark);
     color: #ffffff;
     transform: translateY(-2px);
+    text-decoration: none;
+    border-bottom: none;
     box-shadow: 0 4px 15px rgba(0, 9, 49, 0.2);
 }
 a.button.ghost:hover * {
@@ -301,6 +305,8 @@ header {
     height: 5rem;
     z-index: 1000;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 header .wrapper {
     display: flex;
@@ -422,6 +428,8 @@ header .wrapper .end ul.navigation li .dropdown-menu {
     visibility: hidden;
     transform: translateX(-50%) translateY(-10px);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     z-index: 1000;
     text-align: center;
 }
@@ -447,6 +455,8 @@ header .wrapper .end ul.navigation li .dropdown-menu li a {
     color: var(--brand-dark);
     text-decoration: none;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     border-radius: 0;
     text-align: center;
     width: 100%;
@@ -477,6 +487,10 @@ header .wrapper .end ul.links li a {
     background-color: var(--brand-dark);
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
+    text-decoration: none;
+    border-bottom: none;
 }
 header .wrapper .end ul.links li a i {
     color: #ffffff;
@@ -484,7 +498,11 @@ header .wrapper .end ul.links li a i {
 }
 header .wrapper .end ul.links li a:hover {
     background-color: var(--brand-blue-hover);
+    text-decoration: none;
+    border-bottom: none;
     transform: translateY(-2px);
+    text-decoration: none;
+    border-bottom: none;
 }
 header #menu-toggle {
     display: none;
@@ -815,6 +833,8 @@ header #menu-toggle:focus {
     background-color: rgba(255, 255, 255, 0.9);
     color: var(--brand-dark);
     transform: translateY(-2px);
+    text-decoration: none;
+    border-bottom: none;
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 #start .hero-cta-secondary i,
@@ -1204,6 +1224,8 @@ header #menu-toggle:focus {
     letter-spacing: 0.05em;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 .training-type-btn i {
     font-size: 1rem;
@@ -1236,6 +1258,8 @@ header #menu-toggle:focus {
     border-radius: 1rem;
     padding: 2rem 1.5rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     height: 100%;
     align-items: flex-start;
 }
@@ -1496,6 +1520,8 @@ header #menu-toggle:focus {
     color: var(--brand-blue);
     text-decoration: none;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 .studio-address-link:hover {
@@ -1586,6 +1612,8 @@ header #menu-toggle:focus {
     cursor: pointer;
     z-index: 20;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     color: var(--brand-dark);
     font-size: 1.25rem;
 }
@@ -1622,6 +1650,8 @@ header #menu-toggle:focus {
     background-color: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     padding: 0;
 }
 .studio-gallery-dot:hover {
@@ -1754,6 +1784,8 @@ header #menu-toggle:focus {
     text-align: center;
     position: relative;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     box-shadow: 0 4px 16px rgba(0, 9, 49, 0.1);
     color: var(--brand-dark);
 }
@@ -1848,6 +1880,8 @@ header #menu-toggle:focus {
     padding: 1.75rem;
     box-shadow: 0 4px 16px rgba(0, 9, 49, 0.1);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     display: flex;
     flex-direction: column;
     border: 2px solid rgba(0, 90, 255, 0.1);
@@ -2311,6 +2345,8 @@ header #menu-toggle:focus {
     border-radius: 1rem;
     padding: 1.5rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     box-shadow: 0 0 20px rgba(0, 90, 255, 0.1);
 }
 .feature-box:hover {
@@ -2318,6 +2354,8 @@ header #menu-toggle:focus {
     border-color: rgba(0, 90, 255, 0.5);
     box-shadow: 0 0 30px rgba(0, 90, 255, 0.2);
     transform: translateY(-2px);
+    text-decoration: none;
+    border-bottom: none;
 }
 .feature-icon {
     flex-shrink: 0;
@@ -2408,6 +2446,8 @@ header #menu-toggle:focus {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 .qualifications-link i {
@@ -2560,6 +2600,8 @@ header #menu-toggle:focus {
     justify-content: center;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     flex-shrink: 0;
     margin-left: 1rem;
 }
@@ -2584,6 +2626,8 @@ header #menu-toggle:focus {
     border-left: 3px solid var(--brand-blue);
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 .qualification-item:hover {
@@ -2736,11 +2780,15 @@ header #menu-toggle:focus {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 #kontakt .contact-icons a i {
     font-size: 4rem;
     color: var(--brand-dark);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 #kontakt .contact-icons a:hover i {
     color: var(--brand-blue);
@@ -2836,6 +2884,8 @@ header #menu-toggle:focus {
     padding: 2.5rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     position: relative;
     box-shadow: 0 2px 8px rgba(0, 9, 49, 0.08);
     overflow: visible;
@@ -2862,6 +2912,8 @@ header #menu-toggle:focus {
     justify-content: center;
     box-shadow: none;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     position: relative;
 }
 .feature-card:hover .feature-icon-circle {
@@ -3097,6 +3149,8 @@ header #menu-toggle:focus {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 9, 49, 0.1);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     display: flex;
     flex-direction: column;
 }
@@ -3646,6 +3700,8 @@ header #menu-toggle:focus {
     padding: 2.5rem;
     border: 2px solid rgba(0, 90, 255, 0.15);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -3671,6 +3727,8 @@ header #menu-toggle:focus {
     justify-content: center;
     margin-bottom: 1.5rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 .approach-card:hover .approach-card-icon {
@@ -3845,6 +3903,8 @@ header #menu-toggle:focus {
     padding: 2.5rem;
     text-align: center;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .practical-card:hover {
@@ -4206,6 +4266,8 @@ header #menu-toggle:focus {
     font-size: 2.5rem;
     color: var(--brand-blue-hover);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 .trainer-hero-feature:hover i {
     color: var(--brand-blue);
@@ -4419,6 +4481,8 @@ header #menu-toggle:focus {
     padding: 0;
     z-index: 10;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
 }
@@ -4616,6 +4680,8 @@ header #menu-toggle:focus {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     backdrop-filter: blur(10px);
 }
 /* Override invalid email styling */
@@ -4720,6 +4786,8 @@ header #menu-toggle:focus {
     color: #ffffff;
     text-decoration: none;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     backdrop-filter: blur(10px);
 }
 .quick-contact-btn:hover {
@@ -5320,6 +5388,8 @@ header #menu-toggle:focus {
     border-radius: 0.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     position: relative;
     overflow: hidden;
 }
@@ -6006,6 +6076,8 @@ header #menu-toggle:focus {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     font-size: 1.25rem;
 }
 
@@ -6029,6 +6101,8 @@ header #menu-toggle:focus {
     background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     padding: 0;
 }
 
@@ -6338,6 +6412,8 @@ header #menu-toggle:focus {
     padding: 2.5rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     text-align: center;
 }
 
@@ -6430,6 +6506,8 @@ header #menu-toggle:focus {
     border-radius: 0.75rem;
     border: 2px solid rgba(0, 90, 255, 0.1);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 
@@ -6500,6 +6578,8 @@ header #menu-toggle:focus {
     border-radius: 0.75rem;
     margin-bottom: 1.5rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 
@@ -6597,6 +6677,8 @@ header #menu-toggle:focus {
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 
@@ -6633,6 +6715,8 @@ header #menu-toggle:focus {
     border-radius: 0.75rem;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 .benefit-item:hover {
@@ -7136,6 +7220,8 @@ header #menu-toggle:focus {
     padding: 1.75rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -7211,6 +7297,8 @@ header #menu-toggle:focus {
     padding: 2.5rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     text-align: center;
     backdrop-filter: blur(10px);
 }
@@ -7287,6 +7375,8 @@ header #menu-toggle:focus {
     background: #ffffff;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     border: 2px solid rgba(0, 90, 255, 0.1);
     gap: 0.75rem;
 }
@@ -7365,6 +7455,8 @@ header #menu-toggle:focus {
     border-radius: 0.75rem;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 
@@ -7740,6 +7832,8 @@ header #menu-toggle:focus {
     padding: 2.5rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     text-align: center;
 }
 
@@ -7846,6 +7940,8 @@ header #menu-toggle:focus {
     padding: 2.5rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     text-align: center;
 }
 
@@ -7905,6 +8001,8 @@ header #menu-toggle:focus {
     background: #ffffff;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     border: 2px solid rgba(0, 90, 255, 0.1);
 }
 
@@ -8190,6 +8288,8 @@ header #menu-toggle:focus {
     border-radius: 0.75rem;
     border: 2px solid rgba(0, 90, 255, 0.1);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 
@@ -8255,6 +8355,8 @@ header #menu-toggle:focus {
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 
@@ -8308,6 +8410,8 @@ header #menu-toggle:focus {
     padding: 2.5rem;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     text-align: center;
 }
 
@@ -8428,6 +8532,8 @@ header #menu-toggle:focus {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0.75rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: none;
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
 }
@@ -8628,4 +8734,10 @@ header #menu-toggle:focus {
     #outdoorkurse-cta .cta-text {
         font-size: 1rem;
     }
+}
+/* Remove underline from social icons in header */
+header .wrapper .end ul.links li a,
+header .wrapper .end ul.links li a:hover {
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
