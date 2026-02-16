@@ -11,7 +11,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="hero-bg-image">
         <Image
-            src="/images/Hero-Sebastian.jpg" 
+            src="/images/hero-new.jpg" 
             alt="Gym Background" 
             fill 
             style={{objectFit: "cover"}}
@@ -27,24 +27,15 @@ export default function Home() {
         {/* Content Overlay on Right Side */}
         <div className="hero-content-overlay">
           <FadeIn className="hero-content" delay={0.2} direction="left">
-            {/* SP Logo */}
-            <div className="hero-logo-container">
-              <Image 
-                src="/images/logo.svg" 
-                alt="SP Fitness Logo" 
-                width={420} 
-                height={420} 
-                className="hero-logo" 
-                priority 
-              />
-            </div>
-
             {/* Text Content */}
             <div className="hero-text-content">
+              <h1 className="hero-welcome">Willkommen bei SP-Fitness</h1>
               <h2 className="hero-tagline">
-                ICH MACH <span className="highlight-blue">DICH</span> WIEDER FIT
+                WIR MACHEN <span className="highlight-blue">DICH</span> WIEDER FIT
               </h2>
-              <p className="hero-subtitle">SEBASTIAN PFAU<br/>PERSONAL TRAINER</p>
+              <p className="hero-description">
+                Qualität statt Quantität – persönliches Training auf höchstem Niveau, individuell auf dich, deine Ziele und deinen Alltag abgestimmt. Keine Massenabfertigung, sondern persönliche Betreuung mit nachhaltigen Ergebnissen.
+              </p>
               
               {/* Buttons */}
               <div className="hero-buttons">
@@ -59,6 +50,60 @@ export default function Home() {
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Welcome Section */}
+      <section id="welcome">
+        <div className="wrapper">
+
+          <div className="welcome-content">
+            <FadeIn direction="up" delay={0.1}>
+              <div className="welcome-text-block">
+                <p className="welcome-intro">
+                  Hallo, mein Name ist Sebastian Pfau und willkommen bei SP-Fitness.
+                </p>
+                <p className="welcome-text">
+                Mit über 8 Jahren Berufserfahrung im personal Training, 20 Jahren eigener Trainingserfahrung im Kraft- und funktionellem Training und meiner Zeit als sportlicher Leiter in einer großen Fitnesskette habe ich bereits vielen Menschen erfolgreich geholfen, ihre individuellen Ziele zu erreichen.
+                </p>
+                <p className="welcome-text">
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="up" delay={0.3}>
+              <div className="welcome-text-block">
+                <h3 className="welcome-section-title">Training & Kurse mit maximalem Fokus auf Qualität</h3>
+                <p className="welcome-text">
+                  Unser Angebot reicht von individuellem Personal Training im Studio oder bei dir vor Ort über Ernährungsberatung, Firmenfitness, Vereinssport und Athletiktraining bis hin zu abwechslungsreichen Outdoor-Kursen.
+                </p>
+                <p className="welcome-text">
+                  Ein besonderer Schwerpunkt liegt auf unserem hochwertigen Kursprogramm: Funktionelles Zirkeltraining, Wirbelsäulengymnastik sowie Yoga- und Pilateskurse mit erfahrenen, qualifizierten Trainern.
+                </p>
+                <p className="welcome-text welcome-text-highlight">
+                  Alle Kurse finden bewusst in kleinen Gruppen statt – für maximale Kontrolle, saubere Bewegungsausführung und persönliche Betreuung. Denn echte Qualität entsteht dort, wo der Trainer dich sieht – und nicht dort, wo du in der Masse untergehst.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="up" delay={0.4}>
+              <div className="welcome-text-block">
+                <h3 className="welcome-section-title">Dein Ziel. Unser Anspruch.</h3>
+                <p className="welcome-text">
+                  Du willst Körperfett reduzieren, Muskeln aufbauen, dich fitter und wohler fühlen, dich bewusster ernähren, deine Athletik verbessern oder suchst ein gezieltes Aufbautraining nach einer Verletzung?
+                </p>
+                <p className="welcome-text">
+                  Dann bist du bei SP-Fitness genau richtig. wir stehen für persönliche Betreuung, fundiertes Fachwissen und nachhaltige Ergebnisse. Qualität statt Quantität.
+                </p>
+                <div className="welcome-cta">
+                  <Link href="#kontakt" className="button key">
+                    <span>Starte jetzt und bringe deinen Körper auf das nächste Level</span>
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

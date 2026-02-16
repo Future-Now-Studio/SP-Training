@@ -36,3 +36,7 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=deine_template_id_hier
 
 Das war's! Das Formular sendet jetzt direkt an timobeyer_@outlook.de
 
+
+
+
+

@@ -50,3 +50,7 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=dein_public_key
 ## Fertig! 🎉
 Das Formular sendet jetzt direkt E-Mails an timobeyer_@outlook.de
 
+
+
+
+
