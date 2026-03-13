@@ -44,7 +44,6 @@ const courses: Array<{
   // Dienstag
   { day: 1, startTime: "09:00", endTime: "10:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
   { day: 1, startTime: "18:00", endTime: "19:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
-  { day: 1, startTime: "19:15", endTime: "20:15", name: "Yoga Nidra", instructor: "Paula", color: "blue-dark", icon: "fa-solid fa-moon" },
   
   // Mittwoch
   { day: 2, startTime: "09:00", endTime: "09:55", name: "Pilates", instructor: "Elisa", color: "purple", icon: "fa-solid fa-spa" },

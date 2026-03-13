@@ -216,11 +216,6 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/yoga-nidra" className="button flat" onClick={closeMenu}>
-                    Yoga Nidra
-                  </Link>
-                </li>
-                <li>
                   <Link href="/pilates" className="button flat" onClick={closeMenu}>
                     Pilates
                   </Link>
