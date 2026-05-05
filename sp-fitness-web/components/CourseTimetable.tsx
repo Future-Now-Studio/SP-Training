@@ -52,7 +52,7 @@ const courses: Array<{
   
   // Donnerstag
   { day: 3, startTime: "10:00", endTime: "11:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
-  { day: 3, startTime: "17:00", endTime: "18:00", name: "Hatha Yoga", instructor: "Elisa", color: "blue", icon: "fa-solid fa-om" },
+  { day: 3, startTime: "17:00", endTime: "18:00", name: "Rücken Yoga", instructor: "Elisa", color: "blue", icon: "fa-solid fa-om" },
   { day: 3, startTime: "18:15", endTime: "19:15", name: "Pilates", instructor: "Elisa", color: "purple", icon: "fa-solid fa-spa" },
   { day: 3, startTime: "19:30", endTime: "20:30", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
   
@@ -61,8 +61,8 @@ const courses: Array<{
   { day: 4, startTime: "18:00", endTime: "19:00", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
   
   // Samstag
-  { day: 5, startTime: "10:00", endTime: "11:00", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
-  { day: 5, startTime: "11:30", endTime: "12:30", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
+  { day: 5, startTime: "09:30", endTime: "10:30", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
+  { day: 5, startTime: "11:00", endTime: "12:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
 ];
 
 // Helper function to check if a time slot has a course
