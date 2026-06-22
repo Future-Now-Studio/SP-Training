@@ -50,17 +50,6 @@ export default function EmpChairPro() {
 
         <div className="hero-content-overlay">
           <FadeIn className="hero-content" delay={0.2} direction="left">
-            <div className="hero-logo-container">
-              <Image
-                src="/images/logo.svg"
-                alt="SP Fitness Logo"
-                width={320}
-                height={320}
-                className="hero-logo"
-                priority
-              />
-            </div>
-
             <div className="hero-text-content">
               <h1 className="hero-fitness-title">EMP CHAIR PRO</h1>
               <h2 className="hero-tagline">

@@ -8812,6 +8812,9 @@ header .wrapper .end ul.links li a:hover {
     color: #ffffff;
     font-size: 1.4rem;
 }
+#emp-facts .feature-icon i {
+    color: #ffffff;
+}
 #emp-facts .feature-title {
     font-family: var(--font-lato), system-ui;
     font-size: 1.05rem;
