@@ -58,7 +58,7 @@ export default function EmpChairPro() {
               </h2>
 
               <div className="hero-buttons">
-                <Link href="/#kontakt" className="button key hero-cta-primary">
+                <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key hero-cta-primary">
                   <span>KOSTENLOSE PROBESITZUNG SICHERN</span>
                   <i className="fa-solid fa-arrow-right"></i>
                 </Link>
@@ -93,7 +93,7 @@ export default function EmpChairPro() {
               </p>
 
               <div style={{ marginTop: "2rem" }}>
-                <Link href="/#kontakt" className="button key">
+                <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key">
                   <span>Jetzt unverbindlich Termin sichern</span>
                   <i className="fa-solid fa-arrow-right"></i>
                 </Link>
@@ -227,7 +227,7 @@ export default function EmpChairPro() {
 
           <FadeIn direction="up" delay={0.4}>
             <div style={{ textAlign: "center", marginTop: "3rem" }}>
-              <Link href="/#kontakt" className="button key cta-large">
+              <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key cta-large">
                 <span>Probesitzung kostenfrei buchen</span>
                 <i className="fa-solid fa-arrow-right"></i>
               </Link>
@@ -372,7 +372,7 @@ export default function EmpChairPro() {
                 <li>12.000 supramaximale Kontraktionen pro Sitzung</li>
                 <li>Spürbare Verbesserung oft schon nach der 1. Sitzung</li>
               </ul>
-              <Link href="/#kontakt" className="button key emp-faceoff-cta">
+              <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key emp-faceoff-cta">
                 <span>Probesitzung sichern</span>
                 <i className="fa-solid fa-arrow-right"></i>
               </Link>
@@ -428,7 +428,7 @@ export default function EmpChairPro() {
                   SP Fitness Studio in Schwetzingen und überzeuge dich selbst.
                 </p>
                 <div className="closing-cta">
-                  <Link href="/#kontakt" className="button key cta-large">
+                  <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key cta-large">
                     <span>Jetzt kostenfreie Probesitzung sichern</span>
                     <i className="fa-solid fa-arrow-right"></i>
                   </Link>
