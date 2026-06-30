@@ -26,7 +26,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Worauf muss ich achten?",
-    a: "Auf nichts Besonderes – du kannst bequem sitzen und lesen. Elektronische Geräte bitte aus den Hosentaschen nehmen.",
+    a: "Mögliche Kontraindikationen werden vorab im persönlichen Gespräch besprochen. Ansonsten gibt es nichts Besonderes zu beachten – bitte Handy, EC-Karte und andere elektronische Geräte aus den Hosentaschen nehmen.",
   },
   {
     q: "Was bedeutet EMP?",

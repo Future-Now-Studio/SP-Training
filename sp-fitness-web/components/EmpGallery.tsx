@@ -13,14 +13,9 @@ const IMAGES: GalleryImage[] = [
   { src: "/images/emp-chair/gallery/emp-03.jpg", alt: "Persönliche Beratung zum EMP Chair Pro" },
   { src: "/images/emp-chair/gallery/emp-19.jpg", alt: "Entspannt zurücklehnen während des Trainings" },
   { src: "/images/emp-chair/gallery/emp-43.jpg", alt: "Der EMP Chair Pro im Detail" },
-  { src: "/images/emp-chair/gallery/emp-22.jpg", alt: "Bequem sitzen – ganz nebenbei trainieren" },
   { src: "/images/emp-chair/gallery/emp-16.jpg", alt: "Individuelle Betreuung während der Sitzung" },
-  { src: "/images/emp-chair/gallery/emp-34.jpg", alt: "Vollständig bekleidet auf dem EMP Chair Pro" },
-  { src: "/images/emp-chair/gallery/emp-50.jpg", alt: "Steuerung per Knopfdruck" },
   { src: "/images/emp-chair/gallery/emp-07.jpg", alt: "Entspanntes Training auf dem EMP Chair Pro" },
   { src: "/images/emp-chair/gallery/emp-32.jpg", alt: "Training in entspannter Atmosphäre" },
-  { src: "/images/emp-chair/gallery/emp-41.jpg", alt: "Bedienfeld des EMP Chair Pro" },
-  { src: "/images/emp-chair/gallery/emp-46.jpg", alt: "EMP Chair Pro Beckenbodenstuhl" },
 ];
 
 export default function EmpGallery() {

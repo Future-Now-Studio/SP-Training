@@ -103,7 +103,7 @@ export default function EmpChairPro() {
             <FadeIn direction="left" className="yoga-intro-image">
               <div className="yoga-image-wrapper">
                 <Image
-                  src="/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Frau_01.jpg"
+                  src="/images/emp-chair/gallery/emp-03.jpg"
                   alt="EMP Chair Pro Beckenbodentraining"
                   fill
                   style={{ objectFit: "cover" }}
@@ -163,7 +163,7 @@ export default function EmpChairPro() {
       <section id="emp-ablauf">
         <div className="wrapper">
           <FadeIn direction="down">
-            <h2 className="section-title">So läuft dein Training ab</h2>
+            <h2 className="section-title">Wirkung des Trainings</h2>
             <p className="section-subtitle" style={{ textAlign: "center", marginTop: "1rem", marginBottom: "3rem" }}>
               Drei Phasen, ein klares Ergebnis: ein stabiler, leistungsfähiger Beckenboden.
             </p>
@@ -420,7 +420,8 @@ export default function EmpChairPro() {
               </div>
               <div className="closing-content">
                 <h2 className="closing-title">
-                  Probier es einfach aus – kostenfrei und unverbindlich
+                  Probier es einfach aus –{" "}
+                  <span style={{ whiteSpace: "nowrap" }}>kostenfrei und unverbindlich</span>
                 </h2>
                 <p className="closing-text">
                   Die meisten spüren in der ersten Sitzung etwas, was sie vorher nie gespürt
