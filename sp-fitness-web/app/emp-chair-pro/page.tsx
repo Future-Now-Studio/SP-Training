@@ -387,7 +387,7 @@ export default function EmpChairPro() {
             <FadeIn direction="right" className="emp-faq-image">
               <div className="emp-faq-image-wrapper">
                 <Image
-                  src="/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Mann_02.jpg"
+                  src="/images/emp-chair/gallery/emp-16.jpg"
                   alt="EMP Chair Pro – häufige Fragen"
                   fill
                   style={{ objectFit: "cover" }}
