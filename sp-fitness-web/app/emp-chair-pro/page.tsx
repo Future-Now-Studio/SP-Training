@@ -201,8 +201,8 @@ export default function EmpChairPro() {
               <h3 className="feature-title">2. Während des Trainings</h3>
               <p>
                 Auf Knopfdruck stimulieren Magnetwellen die gesamte Beckenbodenmuskulatur.
-                Du musst nichts tun – einfach bekleidet sitzen. Alle drei Muskelschichten
-                werden in 28 Minuten zu 12.000 Kontraktionen gebracht.
+                Du musst nichts tun – einfach bekleidet sitzen. Alle drei Muskelschichten werden in 28 Minuten zu{" "}
+                <span style={{ whiteSpace: "nowrap" }}>12.000 Kontraktionen gebracht.</span>
               </p>
             </FadeIn>
 
