@@ -9343,6 +9343,7 @@ header .wrapper .end ul.links li a:hover {
 #emp-closing .closing-title,
 #emp-closing .closing-text {
     color: var(--brand-dark);
+    text-align: center;
 }
 #emp-closing .closing-content a { color: var(--brand-blue); }
 
