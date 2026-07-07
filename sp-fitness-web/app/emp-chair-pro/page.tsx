@@ -350,7 +350,6 @@ export default function EmpChairPro() {
                 <li>Erfordert Disziplin, Konzentration & aktive Beteiligung</li>
                 <li>Drei Muskelschichten kaum gezielt ansteuerbar</li>
                 <li>Erfolge bleiben trotz Training oft aus</li>
-                <li>15 – 20 Minuten Konzentration pro Einheit</li>
               </ul>
             </FadeIn>
 
