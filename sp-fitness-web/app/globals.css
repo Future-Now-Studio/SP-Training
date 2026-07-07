@@ -9267,28 +9267,31 @@ header .wrapper .end ul.links li a:hover {
        Height driven by text; video fills its half edge-to-edge (cover). --- */
 #start.emp-split-hero {
     height: auto;
-    min-height: 620px;
+    min-height: 0;
     max-height: none;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     align-items: stretch;
     overflow: hidden;
     background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
 }
-/* video cell: fills its column completely, centered crop */
+/* video cell: natural size, no crop */
 #start.emp-split-hero .hero-bg-image {
     position: relative;
     inset: auto;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     overflow: hidden;
-    background: #000;
+    background: var(--brand-dark);
+    display: flex;
+    align-items: center;
 }
 #start.emp-split-hero .hero-bg-image video {
-    width: 100%;
+    width: auto;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    max-height: 700px;
+    object-fit: contain;
+    display: block;
 }
 #start.emp-split-hero .hero-blue-overlay {
     display: none;
