@@ -16,6 +16,7 @@ const IMAGES: GalleryImage[] = [
   { src: "/images/emp-chair/gallery/emp-16.jpg", alt: "Individuelle Betreuung während der Sitzung" },
   { src: "/images/emp-chair/gallery/emp-07.jpg", alt: "Entspanntes Training auf dem EMP Chair Pro" },
   { src: "/images/emp-chair/gallery/emp-32.jpg", alt: "Training in entspannter Atmosphäre" },
+  { src: "/images/emp-chair/gallery/emp-28.jpg", alt: "Beckenbodentraining auf dem EMP Chair Pro" },
 ];
 
 export default function EmpGallery() {

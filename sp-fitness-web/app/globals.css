@@ -4024,6 +4024,12 @@ header #menu-toggle:focus {
         object-fit: cover;
         object-position: center;
     }
+    /* CTA under intro text stretches full width on mobile */
+    #emp-intro .yoga-intro-content .button.key {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
     
     .yoga-intro-title {
         font-size: 2rem;
