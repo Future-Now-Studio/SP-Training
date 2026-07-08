@@ -4010,10 +4010,19 @@ header #menu-toggle:focus {
         overflow: hidden;
         aspect-ratio: 16 / 9;
     }
-    
+
     .yoga-image-wrapper img {
         object-fit: cover;
         object-position: center top;
+    }
+
+    /* EMP intro uses a real photo — show full frame, no crop on mobile */
+    #emp-intro .yoga-image-wrapper {
+        aspect-ratio: 3 / 4;
+    }
+    #emp-intro .yoga-image-wrapper img {
+        object-fit: cover;
+        object-position: center;
     }
     
     .yoga-intro-title {
