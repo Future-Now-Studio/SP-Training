@@ -4,10 +4,10 @@ import { useState } from "react";
 import FadeIn from "./FadeIn";
 import CourseBookingDialog from "./CourseBookingDialog";
 
-// Generate time slots from 9:00 to 20:00 (1 hour intervals)
+// Generate time slots from 8:00 to 20:00 (1 hour intervals)
 const generateTimeSlots = () => {
   const slots = [];
-  for (let hour = 9; hour < 20; hour++) {
+  for (let hour = 8; hour < 20; hour++) {
     slots.push(`${hour.toString().padStart(2, '0')}:00`);
   }
   return slots;
@@ -38,7 +38,6 @@ const courses: Array<{
   icon?: string;
 }> = [
   // Montag
-  { day: 0, startTime: "10:15", endTime: "11:15", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
   { day: 0, startTime: "17:00", endTime: "18:00", name: "Wirbelsäulengymnastik (WSG)", instructor: "Sebastian", color: "green", icon: "fa-solid fa-spine" },
   
   // Dienstag
@@ -46,8 +45,7 @@ const courses: Array<{
   { day: 1, startTime: "18:00", endTime: "19:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
   
   // Mittwoch
-  { day: 2, startTime: "09:00", endTime: "09:55", name: "Pilates", instructor: "Elisa", color: "purple", icon: "fa-solid fa-spa" },
-  { day: 2, startTime: "10:05", endTime: "11:00", name: "Vinyasa Yoga", instructor: "Elisa", color: "blue-medium", icon: "fa-solid fa-om" },
+  { day: 2, startTime: "08:30", endTime: "09:30", name: "Pilates", instructor: "Elisa", color: "purple", icon: "fa-solid fa-spa" },
   { day: 2, startTime: "18:00", endTime: "19:00", name: "Hatha Yoga", instructor: "Mary", color: "blue", icon: "fa-solid fa-om" },
   
   // Donnerstag

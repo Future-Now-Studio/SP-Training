@@ -364,7 +364,7 @@ export default function Home() {
             <FadeIn className="special-package-card special-package-light" delay={0.6}>
               <div className="special-package-badge">Startpaket</div>
               <h3 className="special-package-title">Light</h3>
-              <div className="special-package-price">475 €</div>
+              <div className="special-package-price">500 €</div>
               <ul className="special-package-features">
                 <li><i className="fa-solid fa-check"></i> 4 Personal Trainings</li>
                 <li><i className="fa-solid fa-check"></i> Startgespräch (Anamnese)</li>
@@ -376,7 +376,7 @@ export default function Home() {
             <FadeIn className="special-package-card special-package-premium" delay={0.65}>
               <div className="special-package-badge">Startpaket</div>
               <h3 className="special-package-title">Premium</h3>
-              <div className="special-package-price">900 €</div>
+              <div className="special-package-price">1.000 €</div>
               <ul className="special-package-features">
                 <li><i className="fa-solid fa-check"></i> 9 Personal Trainings</li>
                 <li><i className="fa-solid fa-check"></i> Startgespräch (Anamnese)</li>
