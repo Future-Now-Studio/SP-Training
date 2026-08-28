@@ -45,7 +45,6 @@ const courses: Array<{
   { day: 1, startTime: "18:00", endTime: "19:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
   
   // Mittwoch
-  { day: 2, startTime: "08:30", endTime: "09:30", name: "Pilates", instructor: "Elisa", color: "purple", icon: "fa-solid fa-spa" },
   { day: 2, startTime: "18:00", endTime: "19:00", name: "Hatha Yoga", instructor: "Mary", color: "blue", icon: "fa-solid fa-om" },
   
   // Donnerstag
@@ -55,6 +54,7 @@ const courses: Array<{
   { day: 3, startTime: "19:30", endTime: "20:30", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
   
   // Freitag
+  { day: 4, startTime: "09:00", endTime: "10:00", name: "Pilates", instructor: "Elisa", color: "purple", icon: "fa-solid fa-spa" },
   { day: 4, startTime: "10:15", endTime: "11:15", name: "Hatha Yoga", instructor: "Paula", color: "blue", icon: "fa-solid fa-om" },
   { day: 4, startTime: "18:00", endTime: "19:00", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
   

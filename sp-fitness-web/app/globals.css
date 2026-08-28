@@ -9278,76 +9278,296 @@ header .wrapper .end ul.links li a:hover {
 .emp-lightbox-prev { left: 1.5rem; }
 .emp-lightbox-next { right: 1.5rem; }
 
-/* --- SPLIT HERO: video left, content right.
-       Height driven by text; video fills its half edge-to-edge (cover). --- */
+/* --- SPLIT HERO: video left, content right ---
+   Balanced 1:1 grid, generous breathing room, layered background so
+   the video sits inside a soft glow rather than butting against a hard edge. */
 #start.emp-split-hero {
     height: auto;
-    min-height: 0;
+    min-height: min(720px, 88vh);
     max-height: none;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     align-items: stretch;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    background:
+        radial-gradient(ellipse 60% 80% at 78% 50%, rgba(30, 100, 255, 0.18), transparent 65%),
+        linear-gradient(135deg, #000a2a 0%, #001250 55%, #000821 100%);
+    position: relative;
 }
-/* video cell: natural size, no crop */
+/* subtle grid texture overlay for depth */
+#start.emp-split-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* video cell: framed with a soft blue glow */
 #start.emp-split-hero .hero-bg-image {
     position: relative;
     inset: auto;
     width: auto;
     height: auto;
-    overflow: hidden;
-    background: var(--brand-dark);
+    overflow: visible;
+    background: transparent;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 3rem 2.5rem;
+    z-index: 1;
+}
+#start.emp-split-hero .hero-bg-image::before {
+    content: "";
+    position: absolute;
+    inset: 12%;
+    background: radial-gradient(ellipse at center, rgba(30, 120, 255, 0.35), transparent 65%);
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
 }
 #start.emp-split-hero .hero-bg-image video {
-    width: auto;
-    height: 100%;
-    max-height: 700px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    max-height: 620px;
+    max-width: 100%;
     object-fit: contain;
     display: block;
+    border-radius: 1.25rem;
+    box-shadow:
+        0 30px 80px -20px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 #start.emp-split-hero .hero-blue-overlay {
     display: none;
 }
+
 /* content cell: dark panel, vertically centered, defines section height */
 #start.emp-split-hero .hero-content-overlay {
     position: relative;
     inset: auto;
     width: 100%;
     height: auto;
-    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    background: transparent;
     display: flex;
     align-items: center;
-    padding: 4rem 4.5rem;
+    /* fixed header is ~80px tall; keep eyebrow clear of it */
+    padding: calc(80px + 3rem) 4.5rem 4.5rem 1.5rem;
+    z-index: 1;
+}
+#start.emp-split-hero .hero-content {
+    width: 100%;
+}
+#start.emp-split-hero .hero-text-content {
+    max-width: 34rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-/* stack at the same breakpoint the global hero rules use (60rem),
-   and override their leaking values (cover/60vh/cropping) cleanly */
+/* Eyebrow pill */
+.emp-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+    font-family: var(--font-lato), system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.75rem;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+.emp-hero-eyebrow span {
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+}
+.emp-hero-eyebrow-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--brand-blue, #1e78ff);
+    box-shadow: 0 0 12px var(--brand-blue, #1e78ff);
+    animation: empHeroPulse 2.2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+@keyframes empHeroPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(0.75); }
+}
+
+/* Title & tagline overrides for the EMP hero */
+#start.emp-split-hero .emp-hero-title {
+    font-size: clamp(2.9rem, 4.6vw, 4.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+    white-space: nowrap;
+}
+#start.emp-split-hero .emp-hero-tagline {
+    font-size: clamp(1.35rem, 1.9vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.3;
+    text-transform: none;
+    color: rgba(255, 255, 255, 0.94);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.005em;
+}
+#start.emp-split-hero .emp-hero-tagline .highlight-blue {
+    color: var(--brand-blue, #1e78ff);
+    font-weight: 700;
+}
+
+.emp-hero-lead {
+    font-family: var(--font-lato), system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 2rem 0;
+    max-width: 30rem;
+}
+
+/* Trust chips */
+.emp-hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0 0 2.25rem 0;
+    padding: 0;
+    list-style: none;
+}
+.emp-hero-chips li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: var(--font-lato), system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+.emp-hero-chips li i {
+    color: var(--brand-blue, #1e78ff);
+    font-size: 0.85rem;
+}
+
+/* CTA row: primary button + inline secondary link */
+.emp-hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+.emp-hero-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-family: var(--font-lato), system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.emp-hero-link i {
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+.emp-hero-link:hover {
+    color: var(--brand-blue, #1e78ff);
+    border-bottom-color: var(--brand-blue, #1e78ff);
+}
+.emp-hero-link:hover i {
+    transform: translateY(3px);
+}
+
+/* Mobile: stack, keep video top with proper frame, everything centered */
 @media (max-width: 60rem) {
     #start.emp-split-hero {
         grid-template-columns: 1fr;
         align-items: stretch;
+        min-height: 0;
+        background:
+            radial-gradient(ellipse at center top, rgba(30, 100, 255, 0.22), transparent 60%),
+            linear-gradient(180deg, #000a2a 0%, #001250 70%, #000821 100%);
     }
     #start.emp-split-hero .hero-bg-image {
         width: 100%;
         height: auto;
-        aspect-ratio: 16 / 9;   /* full frame, no crop, on top */
+        aspect-ratio: 16 / 10;
+        padding: 1.5rem 1rem 0.5rem;
+    }
+    #start.emp-split-hero .hero-bg-image::before {
+        inset: 6%;
     }
     #start.emp-split-hero .hero-bg-image video {
-        height: 100%;
-        object-fit: cover;       /* matches 16:9 box → nothing cut */
+        max-height: 100%;
+        border-radius: 0.85rem;
     }
     #start.emp-split-hero .hero-content-overlay {
         justify-content: center;
         text-align: center;
         min-height: 0;
-        padding: 2.75rem 1.5rem 3.25rem;
+        padding: 2rem 1.5rem 3.25rem;
     }
-    #start.emp-split-hero .hero-content {
+    #start.emp-split-hero .hero-text-content {
+        max-width: 34rem;
+        margin: 0 auto;
         align-items: center;
-        text-align: center;
+    }
+    #start.emp-split-hero .emp-hero-title {
+        white-space: normal;
+    }
+    .emp-hero-lead {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .emp-hero-chips,
+    .emp-hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 30rem) {
+    .emp-hero-eyebrow {
+        font-size: 0.72rem;
+        padding: 0.4rem 0.85rem;
+    }
+    .emp-hero-chips li {
+        font-size: 0.78rem;
+        padding: 0.4rem 0.75rem;
+    }
+    .emp-hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .emp-hero-buttons .button.hero-cta-primary {
+        width: 100%;
     }
 }
 

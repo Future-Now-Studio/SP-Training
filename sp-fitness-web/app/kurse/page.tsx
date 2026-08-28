@@ -53,7 +53,7 @@ export default function Kurse() {
                 <h3>Kurskarten & Mitgliedschaften</h3>
                 <p>
                   5er Karte: 60 € (12 € pro Einheit)<br />
-                  10er Karte: 99 € (9,90 € pro Einheit)<br />
+                  10er Karte: 100 € (10 € pro Einheit)<br />
                   <strong>Mitgliedschaft 6 Monate: 60 € pro Monat</strong><br />
                   <strong>Mitgliedschaft 12 Monate: 50 € pro Monat</strong>
                 </p>

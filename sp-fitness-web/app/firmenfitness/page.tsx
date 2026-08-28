@@ -29,9 +29,9 @@ export default function Firmenfitness() {
         {/* Background Image */}
         <div className="hero-bg-image">
           <Image
-            src="/images/Hero-Sebastian.jpg" 
-            alt="Firmenfitness Background" 
-            fill 
+            src="/images/firmenfitness-group.jpg"
+            alt="Firmenfitness Background"
+            fill
             style={{objectFit: "cover"}}
             priority
             quality={90}
@@ -213,8 +213,8 @@ export default function Firmenfitness() {
             <FadeIn direction="right" className="firmenfitness-benefits-image">
               <div className="firmenfitness-image-wrapper">
                 <Image
-                  src="/images/Hero-Sebastian.jpg"
-                  alt="Firmenfitness Benefits"
+                  src="/images/paula-group-2.jpg"
+                  alt="Firmenfitness Benefits – Gruppe beim Training im Grünen"
                   fill
                   style={{objectFit: "cover"}}
                   quality={90}

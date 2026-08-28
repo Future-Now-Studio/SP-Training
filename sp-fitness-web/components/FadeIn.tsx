@@ -10,70 +10,67 @@ interface FadeInProps {
   className?: string;
 }
 
-export default function FadeIn({ children, delay = 0, direction = "up", className = "" }: FadeInProps) {
+/**
+ * FadeIn renders children fully visible by default (SSR + first client
+ * render), then — once mounted — plays a short reveal animation for
+ * content that is currently in view or scrolls into view.
+ *
+ * Correctness first, animation second: the previous implementation could
+ * leave content stuck at opacity:0 because framer-motion baked the
+ * `initial` prop into the SSR inline style and never removed it (the hero
+ * invisibility bug). Here the SSR/first render is always visible, so the
+ * worst case is "no animation", never "no content".
+ */
+export default function FadeIn({
+  children,
+  delay = 0,
+  direction = "up",
+  className = "",
+}: FadeInProps) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [shouldAnimate, setShouldAnimate] = useState(false);
-  
-  const directionOffset = {
-    up: 50,
-    down: -50,
-    left: 50,
-    right: -50,
-  };
+  const isInView = useInView(ref, { once: true, amount: 0.05 });
+  const [mounted, setMounted] = useState(false);
+  const [play, setPlay] = useState(false);
 
-  // Check if element is in viewport on mount
+  const directionOffset = { up: 50, down: -50, left: 50, right: -50 };
+
   useEffect(() => {
-    const checkVisibility = () => {
-      const element = ref.current;
-      if (!element) return;
-      const rect = element.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      const isVisible = rect.top < windowHeight + 100 && rect.bottom > -100;
-      
-      if (isVisible) {
-        setShouldAnimate(true);
-      }
-    };
+    setMounted(true);
 
-    // Check immediately
-    checkVisibility();
-    
-    // Also check after a short delay to catch any layout shifts
-    const timeout = setTimeout(checkVisibility, 100);
-    
-    return () => clearTimeout(timeout);
+    // If the element is already on-screen at mount, kick off the reveal.
+    const el = ref.current;
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      const wh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < wh && rect.bottom > 0) {
+        // brief delay so framer-motion can register the hidden state first
+        requestAnimationFrame(() => setPlay(true));
+      }
+    }
   }, []);
 
-  // Update shouldAnimate when isInView changes
   useEffect(() => {
-    if (isInView) {
-      setShouldAnimate(true);
-    }
+    if (isInView) setPlay(true);
   }, [isInView]);
 
-  const initial = { 
-    opacity: 0, 
+  const hidden = {
+    opacity: 0,
     y: direction === "up" || direction === "down" ? directionOffset[direction] : 0,
-    x: direction === "left" || direction === "right" ? directionOffset[direction] : 0 
+    x: direction === "left" || direction === "right" ? directionOffset[direction] : 0,
   };
+  const shown = { opacity: 1, y: 0, x: 0 };
 
-  const animate = { 
-    opacity: 1, 
-    y: 0, 
-    x: 0 
-  };
-
+  // SSR + first client render: no `initial` prop → element renders visible.
+  // After mount: use `initial={hidden}` and animate to `shown` when triggered.
   return (
     <motion.div
       ref={ref}
-      initial={initial}
-      animate={shouldAnimate || isInView ? animate : initial}
-      transition={{ duration: 0.6, delay: delay, ease: "easeOut" }}
+      initial={mounted ? hidden : false}
+      animate={!mounted || play ? shown : hidden}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
       className={className}
     >
       {children}
     </motion.div>
   );
 }
-

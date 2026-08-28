@@ -16,7 +16,7 @@ export const trainers: Trainer[] = [
   {
     name: "Sebastian",
     title: "Personal Trainer für nachhaltige Ergebnisse",
-    image: "/images/sebastian-trainer.jpg",
+    image: "/images/sebastian-portrait-6049.jpg",
     imageAlt: "Sebastian - Personal Trainer",
     intro: "Mit über 8 Jahren Berufserfahrung im professionellen Personal Training, umfassender Trainingspraxis seit 2006 und einer langjährigen Leidenschaft für Kraft- und Kampfsport begleitet Sebastian dich auf deinem Weg zu deinem besten Ich.",
     specialties: ["Krafttraining", "Muskelaufbau", "Körperfettreduzierung", "Funktionelles Training", "Athletik Training", "Training mit Einschränkungen und Verletzungen (Reha)"],

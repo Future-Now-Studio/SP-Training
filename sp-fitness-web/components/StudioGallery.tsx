@@ -8,6 +8,7 @@ const images = [
   "/img/studio/VG8_4135.jpg",
   "/img/studio/VG8_4271.jpg",
   "/img/studio/VG8_4151.jpg",
+  "/img/studio/VG8_4137.jpg",
 ];
 
 export default function StudioGallery() {

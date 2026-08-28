@@ -30,8 +30,8 @@ export default function PersonalTraining() {
         {/* Background Image */}
         <div className="hero-bg-image">
           <Image
-            src="/images/Hero-Sebastian.jpg" 
-            alt="Gym Background" 
+            src="/images/sebastian-pullup-6035.jpg"
+            alt="Gym Background"
             fill 
             style={{objectFit: "cover"}}
             priority

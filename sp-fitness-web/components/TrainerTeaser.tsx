@@ -109,11 +109,11 @@ export default function TrainerTeaser() {
         {/* Right Side - Image */}
         <FadeIn className="trainer-image-wrapper" direction="left" delay={0.4}>
           <div className="trainer-image-frame">
-            <Image 
-              src={sebastian.image} 
-              alt={sebastian.imageAlt} 
+            <Image
+              src="/images/sebastian-studio-6021.jpg"
+              alt={sebastian.imageAlt}
               fill
-              style={{objectFit: "contain", objectPosition: "center"}}
+              style={{objectFit: "cover", objectPosition: "center"}}
               priority
             />
           </div>

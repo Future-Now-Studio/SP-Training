@@ -29,10 +29,10 @@ export default function Wirbelsaeulengymnastik() {
         {/* Background Image */}
         <div className="hero-bg-image">
           <Image
-            src="/images/Pilates.jpg" 
-            alt="Wirbelsäulengymnastik Background" 
-            fill 
-            style={{objectFit: "cover"}}
+            src="/images/sebastian-back-6039.jpg"
+            alt="Wirbelsäulengymnastik – Wirbelsäulen-Mobilisation im Sonnenuntergang"
+            fill
+            style={{objectFit: "cover", objectPosition: "center 40%"}}
             priority
             quality={90}
           />
@@ -95,7 +95,7 @@ export default function Wirbelsaeulengymnastik() {
             <FadeIn direction="left" className="yoga-intro-image">
               <div className="yoga-image-wrapper">
                 <Image
-                  src="/images/Pilates.jpg"
+                  src="/images/sebastian-back-6039.jpg"
                   alt="Wirbelsäulengymnastik Praxis"
                   fill
                   style={{objectFit: "cover"}}

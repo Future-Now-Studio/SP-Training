@@ -11,7 +11,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="hero-bg-image">
         <Image
-            src="/images/hero-new.jpg" 
+            src="/images/sebastian-studio-6021.jpg"
             alt="Gym Background" 
             fill 
             style={{objectFit: "cover"}}
@@ -293,7 +293,7 @@ export default function Home() {
                 </div>
                 <div className="pricing-item">
                   <span className="pricing-label">10er Karte</span>
-                  <span className="pricing-price">99 € <small>9,90 €/Einheit</small></span>
+                  <span className="pricing-price">100 € <small>10 €/Einheit</small></span>
                 </div>
                 <div className="pricing-item">
                   <span className="pricing-label">Mitgliedschaft <small>6 Monate</small></span>

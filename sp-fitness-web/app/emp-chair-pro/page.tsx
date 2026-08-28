@@ -4,6 +4,7 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import EmpFaqAccordion from "@/components/EmpFaqAccordion";
 import EmpGallery from "@/components/EmpGallery";
+import EmpHeroVideo from "@/components/EmpHeroVideo";
 
 export const metadata: Metadata = {
   title: "EMP Chair Pro – SP Fitness by Sebastian Pfau | Starker Beckenboden auf Knopfdruck",
@@ -32,34 +33,50 @@ export default function EmpChairPro() {
   return (
     <main>
       {/* HERO with video */}
-      <section id="start" className="emp-split-hero">
+      <section id="start">
+        {/* Background video – starts at 3s and loops back to 3s */}
         <div className="hero-bg-image">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
+          <EmpHeroVideo
+            src="/videos/emp-chair-pro.mp4"
             poster="/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Frau_02.jpg"
-          >
-            <source src="/videos/emp-chair-pro.mp4" type="video/mp4" />
-            Ihr Browser unterstützt das Video-Element nicht.
-          </video>
+            startAt={3}
+          />
         </div>
 
+        {/* Blue Gradient Overlay - Stronger on Right */}
         <div className="hero-blue-overlay"></div>
 
+        {/* Content Overlay on Right Side */}
         <div className="hero-content-overlay">
           <FadeIn className="hero-content" delay={0.2} direction="left">
+            {/* SP Logo */}
+            <div className="hero-logo-container">
+              <Image
+                src="/images/logo.svg"
+                alt="SP Fitness Logo"
+                width={320}
+                height={320}
+                className="hero-logo"
+                priority
+              />
+            </div>
+
+            {/* Text Content */}
             <div className="hero-text-content">
               <h1 className="hero-fitness-title">EMP CHAIR PRO</h1>
               <h2 className="hero-tagline">
-                Ein <span className="highlight-blue">starker Beckenboden</span><br />
-                auf Knopfdruck
+                Ein <span className="highlight-blue">starker Beckenboden</span><br/>auf Knopfdruck
               </h2>
 
+              {/* Buttons */}
               <div className="hero-buttons">
-                <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key hero-cta-primary">
-                  <span>KOSTENLOSE PROBESITZUNG SICHERN</span>
+                <Link
+                  href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button key hero-cta-primary"
+                >
+                  <span>KOSTENLOSE PROBESITZUNG</span>
                   <i className="fa-solid fa-arrow-right"></i>
                 </Link>
                 <Link href="/" className="button hero-cta-secondary">

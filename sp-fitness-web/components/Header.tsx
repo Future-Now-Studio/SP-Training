@@ -178,6 +178,11 @@ export default function Header() {
                     Ernährungsberatung
                   </Link>
                 </li>
+                <li>
+                  <Link href="/emp-chair-pro" className="button flat" onClick={closeMenu}>
+                    EMP Chair Pro
+                  </Link>
+                </li>
               </ul>
             </li>
             <li 
