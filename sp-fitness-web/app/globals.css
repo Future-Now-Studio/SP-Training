@@ -9895,12 +9895,12 @@ header .wrapper .end ul.links li a:hover {
     }
 }
 
-/* --- CLOSING (light) --- */
+/* --- CLOSING CTA (nested inside #emp-faq, no own background) --- */
 #emp-closing {
-    padding: 6rem 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    margin-top: 5rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(0, 9, 49, 0.08);
     text-align: center;
-    color: var(--brand-dark);
 }
 #emp-closing .closing-title,
 #emp-closing .closing-text {
@@ -9923,8 +9923,8 @@ header .wrapper .end ul.links li a:hover {
     #emp-ablauf,
     #emp-anwendung,
     #emp-vergleich,
-    #emp-faq,
-    #emp-closing { padding: 4rem 1.25rem; }
+    #emp-faq { padding: 4rem 1.25rem; }
+    #emp-closing { margin-top: 3rem; padding-top: 3rem; }
 
     #emp-facts .features-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     #emp-ablauf .features-grid,

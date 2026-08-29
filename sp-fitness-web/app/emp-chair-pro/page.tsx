@@ -360,7 +360,7 @@ export default function EmpChairPro() {
         </div>
       </section>
 
-      {/* FAQ – Bild + Akkordion */}
+      {/* FAQ – Bild + Akkordion + Closing CTA */}
       <section id="emp-faq">
         <div className="wrapper">
           <div className="emp-faq-layout">
@@ -384,14 +384,9 @@ export default function EmpChairPro() {
               <EmpFaqAccordion />
             </FadeIn>
           </div>
-        </div>
-      </section>
 
-      {/* CLOSING CTA */}
-      <section id="emp-closing">
-        <div className="wrapper">
           <FadeIn direction="up">
-            <div className="closing-content-wrapper">
+            <div id="emp-closing" className="closing-content-wrapper">
               <div className="closing-icon-container">
                 <div className="closing-icon-circle">
                   <i className="fa-solid fa-bolt"></i>
