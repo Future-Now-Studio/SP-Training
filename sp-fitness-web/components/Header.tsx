@@ -178,11 +178,6 @@ export default function Header() {
                     Ernährungsberatung
                   </Link>
                 </li>
-                <li>
-                  <Link href="/emp-chair-pro" className="button flat" onClick={closeMenu}>
-                    EMP Chair Pro
-                  </Link>
-                </li>
               </ul>
             </li>
             <li 
@@ -241,6 +236,11 @@ export default function Header() {
             <li><Link href="/#preise" className="button flat" onClick={closeMenu}>Preise</Link></li>
             <li><Link href="/#kontakt" className="button flat" onClick={closeMenu}>Kontakt</Link></li>
             <li><Link href="/trainer" className="button flat" onClick={closeMenu}>Trainer</Link></li>
+            <li>
+              <Link href="/emp-chair-pro" className="button flat" onClick={closeMenu}>
+                Beckenboden EMP Stuhl
+              </Link>
+            </li>
           </ul>
           
           {/* Social Icons on the right */}

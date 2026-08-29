@@ -32,9 +32,8 @@ export const metadata: Metadata = {
 export default function EmpChairPro() {
   return (
     <main>
-      {/* HERO with video */}
-      <section id="start">
-        {/* Background video – starts at 3s and loops back to 3s */}
+      {/* HERO – nur Video, ohne Overlay/Text, mit Scroll-Teaser */}
+      <section id="start" className="emp-hero-video-only">
         <div className="hero-bg-image">
           <EmpHeroVideo
             src="/videos/emp-chair-pro.mp4"
@@ -43,49 +42,13 @@ export default function EmpChairPro() {
           />
         </div>
 
-        {/* Blue Gradient Overlay - Stronger on Right */}
-        <div className="hero-blue-overlay"></div>
-
-        {/* Content Overlay on Right Side */}
-        <div className="hero-content-overlay">
-          <FadeIn className="hero-content" delay={0.2} direction="left">
-            {/* SP Logo */}
-            <div className="hero-logo-container">
-              <Image
-                src="/images/logo.svg"
-                alt="SP Fitness Logo"
-                width={320}
-                height={320}
-                className="hero-logo"
-                priority
-              />
-            </div>
-
-            {/* Text Content */}
-            <div className="hero-text-content">
-              <h1 className="hero-fitness-title">EMP CHAIR PRO</h1>
-              <h2 className="hero-tagline">
-                Ein <span className="highlight-blue">starker Beckenboden</span><br/>auf Knopfdruck
-              </h2>
-
-              {/* Buttons */}
-              <div className="hero-buttons">
-                <Link
-                  href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button key hero-cta-primary"
-                >
-                  <span>KOSTENLOSE PROBESITZUNG</span>
-                  <i className="fa-solid fa-arrow-right"></i>
-                </Link>
-                <Link href="/" className="button hero-cta-secondary">
-                  <span>Zurück zur Startseite</span>
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
+        {/* Scroll teaser */}
+        <a href="#emp-intro" className="emp-scroll-teaser" aria-label="Weiter scrollen">
+          <span className="emp-scroll-teaser-label">Mehr entdecken</span>
+          <span className="emp-scroll-teaser-mouse" aria-hidden="true">
+            <span className="emp-scroll-teaser-wheel"></span>
+          </span>
+        </a>
       </section>
 
       {/* INTRO */}

@@ -29,10 +29,10 @@ export default function Wirbelsaeulengymnastik() {
         {/* Background Image */}
         <div className="hero-bg-image">
           <Image
-            src="/images/sebastian-back-6039.jpg"
-            alt="Wirbelsäulengymnastik – Wirbelsäulen-Mobilisation im Sonnenuntergang"
+            src="/images/wirbelsaeule-hero.jpg"
+            alt="Wirbelsäulengymnastik – Yoga-Studio, Dehnung & Mobilisation"
             fill
-            style={{objectFit: "cover", objectPosition: "center 40%"}}
+            style={{objectFit: "cover", objectPosition: "center bottom"}}
             priority
             quality={90}
           />
@@ -95,8 +95,8 @@ export default function Wirbelsaeulengymnastik() {
             <FadeIn direction="left" className="yoga-intro-image">
               <div className="yoga-image-wrapper">
                 <Image
-                  src="/images/sebastian-back-6039.jpg"
-                  alt="Wirbelsäulengymnastik Praxis"
+                  src="/images/wirbelsaeule-jan.jpg"
+                  alt="Wirbelsäulengymnastik Praxis – Brücke mit Beinheben in der Kleingruppe"
                   fill
                   style={{objectFit: "cover"}}
                   quality={90}
@@ -124,8 +124,8 @@ export default function Wirbelsaeulengymnastik() {
             <FadeIn direction="up" delay={0.1} className="yoga-pillar-card">
               <div className="pillar-image-container">
                 <Image
-                  src="/images/Pilates.jpg"
-                  alt="Sanfte Kräftigung"
+                  src="/images/wirbelsaeule-heather.jpg"
+                  alt="Sanfte Kräftigung – Utkatasana / Stuhlhaltung für aufrechte Haltung"
                   fill
                   style={{objectFit: "cover"}}
                   quality={90}
@@ -144,8 +144,8 @@ export default function Wirbelsaeulengymnastik() {
             <FadeIn direction="up" delay={0.2} className="yoga-pillar-card">
               <div className="pillar-image-container">
                 <Image
-                  src="/images/Pilates.jpg"
-                  alt="Gezielte Mobilisation"
+                  src="/images/wirbelsaeule-margaret.jpg"
+                  alt="Gezielte Mobilisation – Sitzende Rotation für die Wirbelsäule"
                   fill
                   style={{objectFit: "cover"}}
                   quality={90}
@@ -164,8 +164,8 @@ export default function Wirbelsaeulengymnastik() {
             <FadeIn direction="up" delay={0.3} className="yoga-pillar-card">
               <div className="pillar-image-container">
                 <Image
-                  src="/images/Pilates.jpg"
-                  alt="Wohltuende Dehnübungen"
+                  src="/images/wirbelsaeule-rendy-child.jpg"
+                  alt="Wohltuende Dehnübungen – Kindhaltung (Balasana) im ruhigen Studio"
                   fill
                   style={{objectFit: "cover"}}
                   quality={90}

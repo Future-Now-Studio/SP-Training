@@ -127,98 +127,70 @@ export default function Zirkeltraining() {
         </div>
       </section>
 
-      {/* Power Tools Section */}
+      {/* Power Tools Section – compact */}
       <section id="power-tools">
         <div className="wrapper">
           <FadeIn direction="down">
             <h2 className="section-title">Power-Tools, die dein Training auf das nächste Level bringen</h2>
-            <p className="section-subtitle">Um ein abwechslungsreiches und intensives Training zu gewährleisten, kommen verschiedene Trainingsgeräte zum Einsatz</p>
-            <p className="section-intro">
-              Jedes Tool hat seinen ganz eigenen Fokus:
-            </p>
+            <p className="section-subtitle">Verschiedene Trainingsgeräte für ein abwechslungsreiches und intensives Training</p>
           </FadeIn>
 
-          <div className="yoga-pillars-grid">
-            <FadeIn direction="up" delay={0.1} className="yoga-pillar-card">
-              <div className="pillar-image-container">
-                <Image
-                  src="/img/studio/VG8_4250.jpg"
-                  alt="TRX Schlingentrainer"
-                  fill
-                  style={{objectFit: "cover"}}
-                  quality={90}
-                />
+          <div className="power-tools-grid">
+            <FadeIn className="power-tool-card" delay={0.05}>
+              <div className="power-tool-image">
+                <Image src="/img/studio/VG8_4250.jpg" alt="TRX Schlingentrainer" fill style={{objectFit: "cover"}} sizes="(max-width: 900px) 50vw, 25vw" quality={85} />
+                <div className="power-tool-icon"><i className="fa-solid fa-dumbbell"></i></div>
               </div>
-              <div className="pillar-content">
-                <div className="pillar-icon-large">
-                  <i className="fa-solid fa-dumbbell"></i>
-                </div>
+              <div className="power-tool-body">
                 <h3>TRX®-Schlingentrainer</h3>
-                <p className="pillar-subtitle">Kraft & Stabilität</p>
-                <p className="pillar-description">Nutze dein eigenes Körpergewicht, um Kraft, Stabilität und Rumpfspannung zu erhöhen. Perfekt, um Tiefenmuskulatur und Gleichgewicht zu trainieren.</p>
-              </div>
-            </FadeIn>
-              
-            <FadeIn direction="up" delay={0.2} className="yoga-pillar-card">
-              <div className="pillar-image-container">
-                <Image
-                  src="/images/VG8_4148.jpg"
-                  alt="Plyoboxen"
-                  fill
-                  style={{objectFit: "cover"}}
-                  quality={90}
-                />
-              </div>
-              <div className="pillar-content">
-                <div className="pillar-icon-large">
-                  <i className="fa-solid fa-fire"></i>
-                </div>
-                <h3>Plyoboxen</h3>
-                <p className="pillar-subtitle">Sprungkraft & Explosivität</p>
-                <p className="pillar-description">Ideal für Sprungkraft, Explosivität und Schnelligkeit. Perfekt für HIIT-Elemente und sportliche Leistungssteigerung.</p>
-              </div>
-            </FadeIn>
-              
-            <FadeIn direction="up" delay={0.3} className="yoga-pillar-card">
-              <div className="pillar-image-container">
-                <Image
-                  src="/images/VG8_4173.jpg"
-                  alt="Battleropes"
-                  fill
-                  style={{objectFit: "cover"}}
-                  quality={90}
-                />
-              </div>
-              <div className="pillar-content">
-                <div className="pillar-icon-large">
-                  <i className="fa-solid fa-wave-square"></i>
-                </div>
-                <h3>Battleropes</h3>
-                <p className="pillar-subtitle">Ausdauer & Kraft</p>
-                <p className="pillar-description">Ein energiegeladenes Ganzkörpertraining, das Ausdauer und Kraft vereint. Perfekt, um den Puls nach oben zu treiben und jede Menge Kalorien zu verbrennen.</p>
+                <p className="power-tool-tag">Kraft & Stabilität</p>
+                <p className="power-tool-desc">Eigenes Körpergewicht für Kraft, Tiefenmuskulatur und Gleichgewicht.</p>
               </div>
             </FadeIn>
 
-            <FadeIn direction="up" delay={0.4} className="yoga-pillar-card">
-              <div className="pillar-image-container">
-                <Image
-                  src="/images/delaney-van-Mzu7qcmP5tk-unsplash.jpg"
-                  alt="Tubes & Widerstandsbänder"
-                  fill
-                  style={{objectFit: "cover"}}
-                  quality={90}
-                />
+            <FadeIn className="power-tool-card" delay={0.1}>
+              <div className="power-tool-image">
+                <Image src="/images/VG8_4148.jpg" alt="Plyoboxen" fill style={{objectFit: "cover"}} sizes="(max-width: 900px) 50vw, 25vw" quality={85} />
+                <div className="power-tool-icon"><i className="fa-solid fa-fire"></i></div>
               </div>
-              <div className="pillar-content">
-                <div className="pillar-icon-large">
-                  <i className="fa-solid fa-ring"></i>
-                </div>
-                <h3>Tubes & Widerstandsbänder</h3>
-                <p className="pillar-subtitle">Mobilität & Funktion</p>
-                <p className="pillar-description">Schonend für die Gelenke, vielseitig einsetzbar – ideal für Kräftigung, Mobilität und funktionelle Bewegungen.</p>
+              <div className="power-tool-body">
+                <h3>Plyoboxen</h3>
+                <p className="power-tool-tag">Sprungkraft & Explosivität</p>
+                <p className="power-tool-desc">Perfekt für HIIT-Elemente und sportliche Leistungssteigerung.</p>
+              </div>
+            </FadeIn>
+
+            <FadeIn className="power-tool-card" delay={0.15}>
+              <div className="power-tool-image">
+                <Image src="/images/VG8_4173.jpg" alt="Battleropes" fill style={{objectFit: "cover"}} sizes="(max-width: 900px) 50vw, 25vw" quality={85} />
+                <div className="power-tool-icon"><i className="fa-solid fa-wave-square"></i></div>
+              </div>
+              <div className="power-tool-body">
+                <h3>Battleropes</h3>
+                <p className="power-tool-tag">Ausdauer & Kraft</p>
+                <p className="power-tool-desc">Energiegeladenes Ganzkörpertraining, treibt den Puls & verbrennt Kalorien.</p>
+              </div>
+            </FadeIn>
+
+            <FadeIn className="power-tool-card" delay={0.2}>
+              <div className="power-tool-image">
+                <Image src="/images/delaney-van-Mzu7qcmP5tk-unsplash.jpg" alt="Tubes & Widerstandsbänder" fill style={{objectFit: "cover"}} sizes="(max-width: 900px) 50vw, 25vw" quality={85} />
+                <div className="power-tool-icon"><i className="fa-solid fa-ring"></i></div>
+              </div>
+              <div className="power-tool-body">
+                <h3>Tubes & Bänder</h3>
+                <p className="power-tool-tag">Mobilität & Funktion</p>
+                <p className="power-tool-desc">Gelenkschonend, vielseitig – für Kräftigung und funktionelle Bewegung.</p>
               </div>
             </FadeIn>
           </div>
+
+          <FadeIn direction="up" delay={0.3}>
+            <p className="power-tools-hint">
+              <i className="fa-solid fa-plus" aria-hidden="true"></i>
+              <span>und noch vieles weiteres mehr</span>
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -229,57 +201,38 @@ export default function Zirkeltraining() {
             <h2 className="section-title">Der Vorteil eines funktionellen Zirkels: Vielfalt trifft Effizienz</h2>
             <p className="section-subtitle">Jede Trainingsstation fordert dich auf unterschiedliche Weise heraus</p>
           </FadeIn>
-          
-          <div className="features-grid">
-            <FadeIn className="feature-card" delay={0.1}>
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon-circle">
-                  <i className="fa-solid fa-users"></i>
-                </div>
-              </div>
-              <h4>alle großen Muskelgruppen anspricht</h4>
+
+          <div className="zirkel-vorteile-grid">
+            <FadeIn className="zirkel-vorteil-card" delay={0.1}>
+              <div className="zirkel-vorteil-icon"><i className="fa-solid fa-users"></i></div>
+              <h4>Alle großen Muskelgruppen</h4>
               <p>Ein ganzheitliches Training, das deinen gesamten Körper fordert und stärkt – von Kopf bis Fuß.</p>
             </FadeIn>
 
-            <FadeIn className="feature-card" delay={0.2}>
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon-circle">
-                  <i className="fa-solid fa-shuffle"></i>
-                </div>
-              </div>
-              <h4>extrem abwechslungsreich ist</h4>
-              <p>Kein Training gleicht dem anderen. Durch die Vielfalt der Stationen bleibt jedes Workout spannend und motivierend.</p>
+            <FadeIn className="zirkel-vorteil-card" delay={0.15}>
+              <div className="zirkel-vorteil-icon"><i className="fa-solid fa-shuffle"></i></div>
+              <h4>Extrem abwechslungsreich</h4>
+              <p>Kein Training gleicht dem anderen. Durch die Vielfalt der Stationen bleibt jedes Workout spannend.</p>
             </FadeIn>
 
-            <FadeIn className="feature-card" delay={0.3}>
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon-circle">
-                  <i className="fa-solid fa-heart-pulse"></i>
-                </div>
-              </div>
-              <h4>die Herz-Kreislauf-Fitness deutlich verbessert</h4>
+            <FadeIn className="zirkel-vorteil-card" delay={0.2}>
+              <div className="zirkel-vorteil-icon"><i className="fa-solid fa-heart-pulse"></i></div>
+              <h4>Bessere Herz-Kreislauf-Fitness</h4>
               <p>Das dynamische Training steigert deine Ausdauer und stärkt dein Herz-Kreislauf-System nachhaltig.</p>
             </FadeIn>
 
-            <FadeIn className="feature-card" delay={0.4}>
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon-circle">
-                  <i className="fa-solid fa-fire"></i>
-                </div>
-              </div>
-              <h4>das Training jedes Mal spannend und motivierend macht</h4>
+            <FadeIn className="zirkel-vorteil-card" delay={0.25}>
+              <div className="zirkel-vorteil-icon"><i className="fa-solid fa-fire"></i></div>
+              <h4>Motivation & Spaß</h4>
               <p>Die Abwechslung und Dynamik sorgen dafür, dass du mit Begeisterung trainierst und deine Ziele erreichst.</p>
             </FadeIn>
 
-            <FadeIn className="feature-card" delay={0.5}>
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon-circle">
-                  <i className="fa-solid fa-sliders"></i>
-                </div>
-              </div>
-              <h4>ideal für jedes Leistungsniveau geeignet ist</h4>
-              <p>Egal, ob du Anfänger bist oder bereits Trainingserfahrung hast – durch die modulare Struktur wird jeder Zirkel optimal an dein individuelles Fitnesslevel angepasst.</p>
+            <FadeIn className="zirkel-vorteil-card" delay={0.3}>
+              <div className="zirkel-vorteil-icon"><i className="fa-solid fa-sliders"></i></div>
+              <h4>Für jedes Leistungsniveau</h4>
+              <p>Ob Anfänger oder Fortgeschritten – jeder Zirkel wird optimal an dein individuelles Fitnesslevel angepasst.</p>
             </FadeIn>
+
           </div>
         </div>
       </section>

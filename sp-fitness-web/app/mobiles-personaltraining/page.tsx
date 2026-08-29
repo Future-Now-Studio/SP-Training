@@ -29,7 +29,7 @@ export default function MobilesPersonalTraining() {
         {/* Background Image */}
         <div className="hero-bg-image">
           <Image
-            src="/images/sebastian-battlerope-4240.jpg"
+            src="/images/sebastian-outdoor-6075.jpg"
             alt="Mobiles Personal Training Background"
             fill 
             style={{objectFit: "cover"}}

@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sp-fitness-web-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sp-fitness-web"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

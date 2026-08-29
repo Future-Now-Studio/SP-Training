@@ -206,57 +206,43 @@ export default function Firmenfitness() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Benefits Section – centered, no image */}
       <section id="firmenfitness-benefits">
         <div className="wrapper">
-          <div className="firmenfitness-benefits-layout">
-            <FadeIn direction="right" className="firmenfitness-benefits-image">
-              <div className="firmenfitness-image-wrapper">
-                <Image
-                  src="/images/paula-group-2.jpg"
-                  alt="Firmenfitness Benefits – Gruppe beim Training im Grünen"
-                  fill
-                  style={{objectFit: "cover"}}
-                  quality={90}
-                />
-              </div>
-            </FadeIn>
-            
-            <FadeIn direction="left" className="firmenfitness-benefits-content">
-              <h2 className="section-title" style={{textAlign: "left", marginBottom: "2rem"}}>Ihr Mehrwert</h2>
-              <div className="benefits-list-compact">
-                <FadeIn direction="up" delay={0.1} className="benefit-item-compact">
-                  <i className="fa-solid fa-check-circle"></i>
-                  <span>Reduzierung von Stress und Fehlzeiten</span>
-                </FadeIn>
+          <FadeIn direction="down" className="firmenfitness-benefits-content firmenfitness-benefits-centered">
+            <h2 className="section-title" style={{textAlign: "center", marginBottom: "2.5rem"}}>Ihr Mehrwert</h2>
+            <div className="benefits-list-compact">
+              <FadeIn direction="up" delay={0.1} className="benefit-item-compact">
+                <i className="fa-solid fa-check-circle"></i>
+                <span>Reduzierung von Stress und Fehlzeiten</span>
+              </FadeIn>
 
-                <FadeIn direction="up" delay={0.2} className="benefit-item-compact">
-                  <i className="fa-solid fa-check-circle"></i>
-                  <span>Steigerung von Motivation, Gesundheit und Leistungsfähigkeit</span>
-                </FadeIn>
+              <FadeIn direction="up" delay={0.2} className="benefit-item-compact">
+                <i className="fa-solid fa-check-circle"></i>
+                <span>Steigerung von Motivation, Gesundheit und Leistungsfähigkeit</span>
+              </FadeIn>
 
-                <FadeIn direction="up" delay={0.3} className="benefit-item-compact">
-                  <i className="fa-solid fa-check-circle"></i>
-                  <span>Flexible Konzepte passend zu Ihrem Unternehmen</span>
-                </FadeIn>
+              <FadeIn direction="up" delay={0.3} className="benefit-item-compact">
+                <i className="fa-solid fa-check-circle"></i>
+                <span>Flexible Konzepte passend zu Ihrem Unternehmen</span>
+              </FadeIn>
 
-                <FadeIn direction="up" delay={0.4} className="benefit-item-compact">
-                  <i className="fa-solid fa-check-circle"></i>
-                  <span>Persönliche Betreuung durch einen qualifizierten Trainer</span>
-                </FadeIn>
+              <FadeIn direction="up" delay={0.4} className="benefit-item-compact">
+                <i className="fa-solid fa-check-circle"></i>
+                <span>Persönliche Betreuung durch einen qualifizierten Trainer</span>
+              </FadeIn>
 
-                <FadeIn direction="up" delay={0.5} className="benefit-item-compact">
-                  <i className="fa-solid fa-check-circle"></i>
-                  <span>Teambuilding Maßnahme</span>
-                </FadeIn>
+              <FadeIn direction="up" delay={0.5} className="benefit-item-compact">
+                <i className="fa-solid fa-check-circle"></i>
+                <span>Teambuilding Maßnahme</span>
+              </FadeIn>
 
-                <FadeIn direction="up" delay={0.6} className="benefit-item-compact">
-                  <i className="fa-solid fa-check-circle"></i>
-                  <span>Attraktiver als Arbeitgeber</span>
-                </FadeIn>
-              </div>
-            </FadeIn>
-          </div>
+              <FadeIn direction="up" delay={0.6} className="benefit-item-compact">
+                <i className="fa-solid fa-check-circle"></i>
+                <span>Attraktiver als Arbeitgeber</span>
+              </FadeIn>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
