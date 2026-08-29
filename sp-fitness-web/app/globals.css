@@ -8314,11 +8314,12 @@ header #menu-toggle:focus {
 
 #mobiles-pt-benefits {
     padding: 4rem 2rem;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
+    color: #ffffff;
 }
 
 #mobiles-pt-benefits .section-title {
-    color: var(--brand-dark);
+    color: #ffffff;
 }
 
 #mobiles-pt-benefits .benefits-grid {
@@ -8336,16 +8337,16 @@ header #menu-toggle:focus {
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 0.75rem;
     transition: all 0.3s ease;
     text-decoration: none;
     border-bottom: none;
-    border: 2px solid rgba(0, 90, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 #mobiles-pt-benefits .benefit-item i {
-    color: var(--brand-blue) !important;
+    color: var(--brand-blue-hover) !important;
     font-size: 1.5rem;
     flex-shrink: 0;
 }
@@ -8354,7 +8355,7 @@ header #menu-toggle:focus {
     font-family: var(--font-lato), system-ui;
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--brand-dark);
+    color: #ffffff;
 }
 
 #mobiles-pt-cta {
@@ -9894,19 +9895,19 @@ header .wrapper .end ul.links li a:hover {
     }
 }
 
-/* --- CLOSING (light) --- */
+/* --- CLOSING (dark) --- */
 #emp-closing {
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
     text-align: center;
-    color: var(--brand-dark);
+    color: #ffffff;
 }
 #emp-closing .closing-title,
 #emp-closing .closing-text {
-    color: var(--brand-dark);
+    color: #ffffff;
     text-align: center;
 }
-#emp-closing .closing-content a { color: var(--brand-blue); }
+#emp-closing .closing-content a { color: var(--brand-blue-hover); }
 
 /* --- EMP responsive --- */
 @media (max-width: 1024px) {

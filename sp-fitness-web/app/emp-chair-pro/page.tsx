@@ -74,7 +74,7 @@ export default function EmpChairPro() {
 
               <div style={{ marginTop: "2rem" }}>
                 <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key">
-                  <span>Jetzt unverbindlich Termin sichern</span>
+                  <span>Jetzt kostenlosen Probetermin buchen</span>
                   <i className="fa-solid fa-arrow-right"></i>
                 </Link>
               </div>
@@ -208,25 +208,10 @@ export default function EmpChairPro() {
           <FadeIn direction="up" delay={0.4}>
             <div style={{ textAlign: "center", marginTop: "3rem" }}>
               <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key cta-large">
-                <span>Probesitzung kostenfrei buchen</span>
+                <span>Jetzt kostenlosen Probetermin buchen</span>
                 <i className="fa-solid fa-arrow-right"></i>
               </Link>
             </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* GALERIE */}
-      <section id="emp-gallery">
-        <div className="wrapper">
-          <FadeIn direction="down">
-            <h2 className="section-title">Einblicke in den EMP Chair Pro</h2>
-            <p className="section-subtitle" style={{ textAlign: "center", marginTop: "1rem", marginBottom: "3rem" }}>
-              Echte Eindrücke vom Training, der Beratung und dem Beckenbodenstuhl im Detail.
-            </p>
-          </FadeIn>
-          <FadeIn direction="up">
-            <EmpGallery />
           </FadeIn>
         </div>
       </section>
@@ -306,6 +291,21 @@ export default function EmpChairPro() {
         </div>
       </section>
 
+      {/* GALERIE */}
+      <section id="emp-gallery">
+        <div className="wrapper">
+          <FadeIn direction="down">
+            <h2 className="section-title">Einblicke in den EMP Chair Pro</h2>
+            <p className="section-subtitle" style={{ textAlign: "center", marginTop: "1rem", marginBottom: "3rem" }}>
+              Echte Eindrücke vom Training, der Beratung und dem Beckenbodenstuhl im Detail.
+            </p>
+          </FadeIn>
+          <FadeIn direction="up">
+            <EmpGallery />
+          </FadeIn>
+        </div>
+      </section>
+
       {/* VERGLEICH – Face-off */}
       <section id="emp-vergleich">
         <div className="wrapper">
@@ -352,7 +352,7 @@ export default function EmpChairPro() {
                 <li>Spürbare Verbesserung oft schon nach der 1. Sitzung</li>
               </ul>
               <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key emp-faceoff-cta">
-                <span>Probesitzung sichern</span>
+                <span>Jetzt kostenlosen Probetermin buchen</span>
                 <i className="fa-solid fa-arrow-right"></i>
               </Link>
             </FadeIn>
@@ -409,7 +409,7 @@ export default function EmpChairPro() {
                 </p>
                 <div className="closing-cta">
                   <Link href="https://www.studiobookr.com/sp-fitness-by-sebastian-pfau-e-k-73141#/" target="_blank" rel="noopener noreferrer" className="button key cta-large">
-                    <span>Jetzt kostenfreie Probesitzung sichern</span>
+                    <span>Jetzt kostenlosen Probetermin buchen</span>
                     <i className="fa-solid fa-arrow-right"></i>
                   </Link>
                 </div>
