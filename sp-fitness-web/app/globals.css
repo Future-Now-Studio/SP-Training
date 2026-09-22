@@ -9260,6 +9260,54 @@ header .wrapper .end ul.links li a:hover {
     padding: 0 2rem 2rem 2rem;
 }
 
+/* --- Slideshow-Steuerung („Wirkung des Trainings“) ---
+   Nur auf Mobil sichtbar; darüber ist die Sektion ein normales Raster
+   und braucht keine Navigation. */
+.emp-slideshow-nav {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .emp-slideshow-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .emp-slideshow-dots {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .emp-slideshow-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        padding: 0;
+        border: none;
+        border-radius: 999px;
+        background: rgba(0, 9, 49, 0.22);
+        cursor: pointer;
+        transition: width 0.25s ease, background 0.25s ease;
+    }
+
+    /* Aktiver Punkt wird zum Balken – auch ohne Farbunterscheidung erkennbar */
+    .emp-slideshow-dot.is-active {
+        width: 1.5rem;
+        background: var(--brand-blue);
+    }
+
+    .emp-slideshow-count {
+        font-family: var(--font-lato), system-ui;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: rgba(0, 9, 49, 0.55);
+        font-variant-numeric: tabular-nums;
+    }
+}
+
 /* --- ANWENDUNGSGEBIETE (dark, 3 cols) --- */
 #emp-anwendung {
     padding: 6rem 2rem;
@@ -9984,45 +10032,48 @@ header .wrapper .end ul.links li a:hover {
     #emp-faq { padding: 4rem 1.25rem; }
     #emp-closing { margin-top: 3rem; padding-top: 3rem; }
 
-    /* ─── Kartensektionen werden auf Mobil zu Wisch-Slidern ──────────────
-       #emp-facts sprengte als 2-Spalten-Raster den Viewport: Grid-Items
-       haben `min-width: auto` und schrumpfen deshalb nicht unter ihr
-       längstes Wort – die rechte Spalte lief aus dem Bild. Gestapelt
-       wären es bis zu 8 Karten Scrollstrecke.
-       Als Slider sind alle drei Sektionen gleich bedienbar und gleich
-       hoch, und nichts wird abgeschnitten. */
+    /* Beide Kartensektionen einspaltig und damit optisch gleich.
+       `min-width: 0` ist nötig, weil Grid-Items sonst per `min-width: auto`
+       nicht unter ihr längstes Wort schrumpfen – genau daran lief
+       #emp-facts vorher aus dem Viewport. */
     #emp-facts .features-grid,
-    #emp-ablauf .features-grid,
     #emp-anwendung .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    #emp-facts .features-grid > *,
+    #emp-anwendung .features-grid > * {
+        min-width: 0;
+    }
+
+    /* ─── „Wirkung des Trainings“ als Slideshow ──────────────────────────
+       Karten bei 78% Breite: die angeschnittene nächste Karte signalisiert
+       zusammen mit den Punkten darunter, dass seitlich weitergewischt
+       werden kann. Ausbruch um 3.25rem = 1.25rem Sektions- + 2rem
+       Wrapper-Padding, damit der Slider bis an den Displayrand läuft. */
+    #emp-ablauf .features-grid {
         display: grid;
         grid-template-columns: none;
         grid-auto-flow: column;
-        grid-auto-columns: 80%;
+        grid-auto-columns: 78%;
         gap: 1rem;
         overflow-x: auto;
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        /* Bis an den Displayrand ausbrechen (1.25rem Sektions- + 2rem
-           Wrapper-Padding), damit die nächste Karte am Rand hervorlugt –
-           das ist der Hinweis, dass es seitlich weitergeht. Das
-           padding-inline setzt danach den sichtbaren Kartenabstand. */
         margin-inline: -3.25rem;
         padding-inline: 1.25rem;
         scroll-padding-inline: 1.25rem;
-        padding-bottom: 0.75rem;
+        padding-bottom: 0.25rem;
         scrollbar-width: none;
     }
 
-    #emp-facts .features-grid::-webkit-scrollbar,
-    #emp-ablauf .features-grid::-webkit-scrollbar,
-    #emp-anwendung .features-grid::-webkit-scrollbar { display: none; }
+    #emp-ablauf .features-grid::-webkit-scrollbar { display: none; }
 
-    #emp-facts .features-grid > *,
-    #emp-ablauf .features-grid > *,
-    #emp-anwendung .features-grid > * {
+    #emp-ablauf .features-grid > * {
         scroll-snap-align: start;
-        min-width: 0;   /* ohne das schrumpfen Grid-Items nicht */
+        min-width: 0;
     }
 
     #emp-gallery { padding: 4rem 1.25rem; }

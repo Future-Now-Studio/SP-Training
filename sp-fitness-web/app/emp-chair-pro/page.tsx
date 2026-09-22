@@ -5,6 +5,7 @@ import FadeIn from "@/components/FadeIn";
 import EmpFaqAccordion from "@/components/EmpFaqAccordion";
 import EmpGallery from "@/components/EmpGallery";
 import EmpHeroVideo from "@/components/EmpHeroVideo";
+import EmpSlideshow from "@/components/EmpSlideshow";
 
 export const metadata: Metadata = {
   title: "EMP Chair Pro – SP Fitness by Sebastian Pfau | Starker Beckenboden auf Knopfdruck",
@@ -149,7 +150,7 @@ export default function EmpChairPro() {
             </p>
           </FadeIn>
 
-          <div className="features-grid">
+          <EmpSlideshow labels={["Vor dem Training", "Während des Trainings", "Nach dem Training"]}>
             <FadeIn direction="up" delay={0.1} className="feature-card">
               <div className="yoga-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "1/1", marginBottom: "1.5rem" }}>
                 <Image
@@ -203,7 +204,7 @@ export default function EmpChairPro() {
                 Sitzungen sind die ersten Erfolge deutlich spürbar.
               </p>
             </FadeIn>
-          </div>
+          </EmpSlideshow>
 
           <FadeIn direction="up" delay={0.4}>
             <div style={{ textAlign: "center", marginTop: "3rem" }}>
