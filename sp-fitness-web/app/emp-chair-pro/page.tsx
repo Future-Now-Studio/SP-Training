@@ -4,6 +4,7 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import EmpFaqAccordion from "@/components/EmpFaqAccordion";
 import EmpGallery from "@/components/EmpGallery";
+import EmpHeroVideo from "@/components/EmpHeroVideo";
 
 export const metadata: Metadata = {
   title: "EMP Chair Pro – SP Fitness by Sebastian Pfau | Starker Beckenboden auf Knopfdruck",
@@ -34,21 +35,11 @@ export default function EmpChairPro() {
       {/* HERO – Produktvideo im Loop, ohne Overlay/Text, mit Scroll-Teaser */}
       <section id="start" className="emp-hero-video-only">
         <div className="hero-bg-image">
-          {/* Stummes Hintergrundvideo: natives loop, damit der Browser selbst
-              zurückspult (kein `ended`, das Chrome zum Pausieren nutzen würde).
-              hero.jpg dient als Poster, bis das Video dekodiert ist. */}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
+          <EmpHeroVideo
+            src="/videos/emp-chair-pro-one.mp4"
             poster="/images/emp-chair-pro-one/hero.jpg"
-            aria-label="Produktvideo EMP Chair Pro One"
-          >
-            <source src="/videos/emp-chair-pro-one.mp4" type="video/mp4" />
-            Ihr Browser unterstützt das Video-Element nicht.
-          </video>
+            label="Produktvideo EMP Chair Pro One"
+          />
         </div>
 
         {/* Scroll teaser */}

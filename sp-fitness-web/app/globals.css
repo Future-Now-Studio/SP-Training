@@ -5727,6 +5727,47 @@ header #menu-toggle:focus {
 #start.emp-hero-video-only .hero-bg-image video {
     filter: none;
 }
+
+/* ─── EMP-Hero auf Mobil ───────────────────────────────────────────────
+   Der Split-Hero der übrigen Seiten teilt sich in Bild (55vh) + Textblock
+   (45vh). Dieser Hero hat bewusst KEINEN Textblock – dadurch blieben die
+   unteren 45vh schwarz. Zusätzlich schnitt das dort gesetzte
+   `object-position: left center` Logo und Claim des Videos rechts ab.
+
+   Deshalb hier: Höhe folgt dem 16:9 des Videos. Das Bild wird damit
+   vollständig gezeigt statt auf einen schmalen Streifen beschnitten –
+   wichtig, weil die Aussagen als Text im Video eingebrannt sind. */
+@media screen and (max-width: 60rem) {
+    #start.emp-hero-video-only {
+        height: auto;
+        min-height: 0;
+        /* Der Header ist fixed (80px) und lag sonst über dem oberen
+           Drittel des Videos. */
+        padding-top: 5rem;
+    }
+
+    #start.emp-hero-video-only .hero-bg-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    #start.emp-hero-video-only .hero-bg-image video,
+    #start.emp-hero-video-only .hero-bg-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Bei dieser Hero-Höhe ist der Teaser überflüssig – der Inhalt
+       darunter ist ohne Scrollen sichtbar – und lag auf dem Logo. */
+    #start.emp-hero-video-only .emp-scroll-teaser {
+        display: none;
+    }
+}
+
 /* Scroll-Teaser mittig unten */
 .emp-scroll-teaser {
     position: absolute;
