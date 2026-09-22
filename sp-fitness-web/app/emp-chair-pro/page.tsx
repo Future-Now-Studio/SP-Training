@@ -4,7 +4,6 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import EmpFaqAccordion from "@/components/EmpFaqAccordion";
 import EmpGallery from "@/components/EmpGallery";
-import EmpHeroVideo from "@/components/EmpHeroVideo";
 
 export const metadata: Metadata = {
   title: "EMP Chair Pro – SP Fitness by Sebastian Pfau | Starker Beckenboden auf Knopfdruck",
@@ -18,28 +17,38 @@ export const metadata: Metadata = {
       "28 Minuten, vollständig bekleidet, schmerzfrei: Beckenbodentraining mit der HI-EMP Technologie bei SP Fitness in Schwetzingen.",
     url: "https://www.sp-fitness.de/emp-chair-pro",
     type: "website",
-    images: ["https://www.sp-fitness.de/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Frau_02.jpg"],
+    images: ["https://www.sp-fitness.de/images/emp-chair-pro-one/hero.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "EMP Chair Pro – Starker Beckenboden auf Knopfdruck",
     description:
       "28 Minuten, vollständig bekleidet, schmerzfrei: Beckenbodentraining mit Magnetwellen bei SP Fitness in Schwetzingen.",
-    images: ["https://www.sp-fitness.de/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Frau_02.jpg"],
+    images: ["https://www.sp-fitness.de/images/emp-chair-pro-one/hero.jpg"],
   },
 };
 
 export default function EmpChairPro() {
   return (
     <main>
-      {/* HERO – nur Video, ohne Overlay/Text, mit Scroll-Teaser */}
+      {/* HERO – Produktvideo im Loop, ohne Overlay/Text, mit Scroll-Teaser */}
       <section id="start" className="emp-hero-video-only">
         <div className="hero-bg-image">
-          <EmpHeroVideo
-            src="/videos/emp-chair-pro.mp4"
-            poster="/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Frau_02.jpg"
-            startAt={3}
-          />
+          {/* Stummes Hintergrundvideo: natives loop, damit der Browser selbst
+              zurückspult (kein `ended`, das Chrome zum Pausieren nutzen würde).
+              hero.jpg dient als Poster, bis das Video dekodiert ist. */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/emp-chair-pro-one/hero.jpg"
+            aria-label="Produktvideo EMP Chair Pro One"
+          >
+            <source src="/videos/emp-chair-pro-one.mp4" type="video/mp4" />
+            Ihr Browser unterstützt das Video-Element nicht.
+          </video>
         </div>
 
         {/* Scroll teaser */}
@@ -83,8 +92,8 @@ export default function EmpChairPro() {
             <FadeIn direction="left" className="yoga-intro-image">
               <div className="yoga-image-wrapper">
                 <Image
-                  src="/images/emp-chair/gallery/emp-03.jpg"
-                  alt="EMP Chair Pro Beckenbodentraining"
+                  src="/images/emp-chair-pro-one/intro.jpg"
+                  alt="Frau beim entspannten Beckenbodentraining auf dem EMP Chair Pro One"
                   fill
                   style={{ objectFit: "cover" }}
                   quality={90}
@@ -153,7 +162,7 @@ export default function EmpChairPro() {
             <FadeIn direction="up" delay={0.1} className="feature-card">
               <div className="yoga-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "1/1", marginBottom: "1.5rem" }}>
                 <Image
-                  src="/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Frau_01.jpg"
+                  src="/images/emp-chair-pro-one/wirkung-1-vor.jpg"
                   alt="Vor dem Training – geschwächte Beckenbodenmuskulatur"
                   fill
                   style={{ objectFit: "cover" }}
@@ -171,7 +180,7 @@ export default function EmpChairPro() {
             <FadeIn direction="up" delay={0.2} className="feature-card">
               <div className="yoga-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "1/1", marginBottom: "1.5rem" }}>
                 <Image
-                  src="/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Frau_02.jpg"
+                  src="/images/emp-chair-pro-one/wirkung-2-waehrend.jpg"
                   alt="Während des Trainings – Magnetwellen aktivieren alle 3 Schichten"
                   fill
                   style={{ objectFit: "cover" }}
@@ -189,7 +198,7 @@ export default function EmpChairPro() {
             <FadeIn direction="up" delay={0.3} className="feature-card">
               <div className="yoga-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "1/1", marginBottom: "1.5rem" }}>
                 <Image
-                  src="/images/emp-chair/241112_EMP_Chair_Pro_Illustration_Beckenboden_Frau_03.jpg"
+                  src="/images/emp-chair-pro-one/wirkung-3-nach.jpg"
                   alt="Nach dem Training – gestärkte Beckenbodenmuskulatur"
                   fill
                   style={{ objectFit: "cover" }}
@@ -367,8 +376,8 @@ export default function EmpChairPro() {
             <FadeIn direction="right" className="emp-faq-image">
               <div className="emp-faq-image-wrapper">
                 <Image
-                  src="/images/emp-chair/gallery/emp-16.jpg"
-                  alt="EMP Chair Pro – häufige Fragen"
+                  src="/images/emp-chair-pro-one/faq.jpg"
+                  alt="Beratungsgespräch zum EMP Chair Pro One"
                   fill
                   style={{ objectFit: "cover" }}
                   quality={90}

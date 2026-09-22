@@ -9,14 +9,14 @@ interface GalleryImage {
 }
 
 const IMAGES: GalleryImage[] = [
-  { src: "/images/emp-chair/gallery/emp-09.jpg", alt: "Frau beim Beckenbodentraining auf dem EMP Chair Pro" },
-  { src: "/images/emp-chair/gallery/emp-03.jpg", alt: "Persönliche Beratung zum EMP Chair Pro" },
-  { src: "/images/emp-chair/gallery/emp-19.jpg", alt: "Entspannt zurücklehnen während des Trainings" },
-  { src: "/images/emp-chair/gallery/emp-43.jpg", alt: "Der EMP Chair Pro im Detail" },
-  { src: "/images/emp-chair/gallery/emp-16.jpg", alt: "Individuelle Betreuung während der Sitzung" },
-  { src: "/images/emp-chair/gallery/emp-07.jpg", alt: "Entspanntes Training auf dem EMP Chair Pro" },
-  { src: "/images/emp-chair/gallery/emp-32.jpg", alt: "Training in entspannter Atmosphäre" },
-  { src: "/images/emp-chair/gallery/emp-28.jpg", alt: "Beckenbodentraining auf dem EMP Chair Pro" },
+  { src: "/images/emp-chair-pro-one/gallery/chair-front.jpg", alt: "Der EMP Chair Pro One in der Frontansicht" },
+  { src: "/images/emp-chair-pro-one/gallery/mann-training.jpg", alt: "Mann beim Beckenbodentraining auf dem EMP Chair Pro One" },
+  { src: "/images/emp-chair-pro-one/gallery/beratung.jpg", alt: "Persönliche Beratung zum EMP Chair Pro One" },
+  { src: "/images/emp-chair-pro-one/gallery/frau-entspannt.jpg", alt: "Entspannt zurücklehnen während des Trainings" },
+  { src: "/images/emp-chair-pro-one/gallery/chair-raum.jpg", alt: "Der EMP Chair Pro One im Trainingsraum" },
+  { src: "/images/emp-chair-pro-one/gallery/frau-laechelnd.jpg", alt: "Entspanntes Training auf dem EMP Chair Pro One" },
+  { src: "/images/emp-chair-pro-one/gallery/mann-seitlich.jpg", alt: "Training in entspannter Atmosphäre" },
+  { src: "/images/emp-chair-pro-one/gallery/chair-detail.jpg", alt: "Der EMP Chair Pro One im Detail" },
 ];
 
 export default function EmpGallery() {
