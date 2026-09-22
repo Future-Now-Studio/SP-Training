@@ -182,7 +182,7 @@ export default function EmpChairPro() {
               <p>
                 Auf Knopfdruck stimulieren Magnetwellen die gesamte Beckenbodenmuskulatur.
                 Du musst nichts tun – einfach bekleidet sitzen. Alle drei Muskelschichten werden in 28 Minuten zu{" "}
-                <span style={{ whiteSpace: "nowrap" }}>12.000 Kontraktionen gebracht.</span>
+                <span className="nowrap-md">12.000 Kontraktionen gebracht.</span>
               </p>
             </FadeIn>
 
@@ -395,7 +395,7 @@ export default function EmpChairPro() {
               <div className="closing-content">
                 <h2 className="closing-title">
                   Probier es einfach aus –{" "}
-                  <span style={{ whiteSpace: "nowrap" }}>kostenfrei und unverbindlich</span>
+                  <span className="nowrap-md">kostenfrei und unverbindlich</span>
                 </h2>
                 <p className="closing-text">
                   Die meisten spüren in der ersten Sitzung etwas, was sie vorher nie gespürt

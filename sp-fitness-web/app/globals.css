@@ -2981,7 +2981,24 @@ header #menu-toggle:focus {
 }
 .closing-content {
     max-width: 60rem;
+    /* Der Wrapper ist Flex mit align-items:center – Kinder richten sich
+       dadurch nach ihrer max-content-Breite statt nach dem Elternteil.
+       Ohne diese Grenze sprengt ein nicht umbrechender Textteil die
+       Sektion nach rechts. */
+    max-width: min(60rem, 100%);
     margin: 0 auto;
+}
+
+/* Hält Wortgruppen auf großen Schirmen zusammen, lässt sie auf dem
+   Handy aber umbrechen – erzwungenes nowrap sprengt dort das Layout. */
+.nowrap-md {
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+    .nowrap-md {
+        white-space: normal;
+    }
 }
 .closing-title {
     font-family: var(--font-jockey-one), system-ui;
@@ -9967,9 +9984,47 @@ header .wrapper .end ul.links li a:hover {
     #emp-faq { padding: 4rem 1.25rem; }
     #emp-closing { margin-top: 3rem; padding-top: 3rem; }
 
-    #emp-facts .features-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    /* ─── Kartensektionen werden auf Mobil zu Wisch-Slidern ──────────────
+       #emp-facts sprengte als 2-Spalten-Raster den Viewport: Grid-Items
+       haben `min-width: auto` und schrumpfen deshalb nicht unter ihr
+       längstes Wort – die rechte Spalte lief aus dem Bild. Gestapelt
+       wären es bis zu 8 Karten Scrollstrecke.
+       Als Slider sind alle drei Sektionen gleich bedienbar und gleich
+       hoch, und nichts wird abgeschnitten. */
+    #emp-facts .features-grid,
     #emp-ablauf .features-grid,
-    #emp-anwendung .features-grid { grid-template-columns: 1fr; }
+    #emp-anwendung .features-grid {
+        display: grid;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 80%;
+        gap: 1rem;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        /* Bis an den Displayrand ausbrechen (1.25rem Sektions- + 2rem
+           Wrapper-Padding), damit die nächste Karte am Rand hervorlugt –
+           das ist der Hinweis, dass es seitlich weitergeht. Das
+           padding-inline setzt danach den sichtbaren Kartenabstand. */
+        margin-inline: -3.25rem;
+        padding-inline: 1.25rem;
+        scroll-padding-inline: 1.25rem;
+        padding-bottom: 0.75rem;
+        scrollbar-width: none;
+    }
+
+    #emp-facts .features-grid::-webkit-scrollbar,
+    #emp-ablauf .features-grid::-webkit-scrollbar,
+    #emp-anwendung .features-grid::-webkit-scrollbar { display: none; }
+
+    #emp-facts .features-grid > *,
+    #emp-ablauf .features-grid > *,
+    #emp-anwendung .features-grid > * {
+        scroll-snap-align: start;
+        min-width: 0;   /* ohne das schrumpfen Grid-Items nicht */
+    }
+
     #emp-gallery { padding: 4rem 1.25rem; }
     .emp-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
     .emp-lightbox-nav { width: 2.5rem; height: 2.5rem; font-size: 1rem; }
