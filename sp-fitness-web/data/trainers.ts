@@ -52,7 +52,7 @@ export const trainers: Trainer[] = [
   },
   {
     name: "Brigitte",
-    title: "Yogalehrerin, Ethnologin & Kulturwissenschaftlerin",
+    title: "Yogalehrerin",
     image: "/images/brigitte-portrait.jpg",
     imageAlt: "Brigitte - Yogalehrerin",
     intro: "„Yoga ist für mich Meditation in Bewegung. Mein Atem trägt mich durch jede Asana.“ Seit 2002 praktiziere ich selbst Yoga in verschiedenen Stilen. Meine erste Stunde hat mich tief entspannt und zugleich voller Energie entlassen – dieses Gefühl hat mich nie wieder losgelassen. Seit 2018 unterrichte ich selbst und bin vor allem dem Vinyasa Stil, dem klassischen Hatha Yoga und dem modernen Yoga für jeden Körper verbunden. In meinen Stunden möchte ich dieses Yoga-Gefühl weitergeben: Ich ermutige dazu, Neues auszuprobieren und die eigenen Grenzen zu erweitern, ohne zu überfordern.",
