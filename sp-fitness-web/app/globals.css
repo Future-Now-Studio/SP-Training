@@ -5277,7 +5277,7 @@ header #menu-toggle:focus {
 
 /* Kurse Page - Timetable Section */
 #kurse-hero {
-    padding: 6rem 2rem 4rem;
+    padding: 8rem 2rem 4rem;
     background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
     color: #ffffff;
 }
@@ -5304,6 +5304,13 @@ header #menu-toggle:focus {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 300;
     margin: 0;
+}
+
+.kurse-contact-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 #timetable-section {
@@ -5418,7 +5425,7 @@ header #menu-toggle:focus {
     justify-content: center;
     padding: 1rem;
     border-radius: 0.5rem;
-    cursor: pointer;
+    cursor: default;
     transition: all 0.3s ease;
     text-decoration: none;
     border-bottom: none;
@@ -5430,10 +5437,6 @@ header #menu-toggle:focus {
     transform: scale(1.02);
     box-shadow: 0 4px 12px rgba(0, 90, 255, 0.3);
     z-index: 10;
-}
-
-.timetable-course:active {
-    transform: scale(0.98);
 }
 
 .timetable-course-default {
@@ -6075,13 +6078,13 @@ header #menu-toggle:focus {
     }
     
     #kurse-hero {
-        padding: 4rem 1.5rem 3rem;
+        padding: 7rem 1.5rem 3rem;
     }
 }
 
 @media screen and (max-width: 40rem) {
     #kurse-hero {
-        padding: 4rem 1.5rem 3rem;
+        padding: 7rem 1.5rem 3rem;
     }
     
     .kurse-title {

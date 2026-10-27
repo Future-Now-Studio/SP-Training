@@ -1,8 +1,4 @@
-"use client";
-
-import { useState } from "react";
 import FadeIn from "./FadeIn";
-import CourseBookingDialog from "./CourseBookingDialog";
 
 // Generate time slots from 8:00 to 20:00 (1 hour intervals)
 const generateTimeSlots = () => {
@@ -40,14 +36,15 @@ const courses: Array<{
 }> = [
   // Montag
   { day: 0, startTime: "17:00", endTime: "18:00", name: "Wirbelsäulengymnastik (WSG)", instructor: "Sebastian", color: "green", icon: "fa-solid fa-spine" },
-  { day: 0, startTime: "19:30", endTime: "20:30", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa", note: "ab 14.09." },
+  { day: 0, startTime: "19:30", endTime: "20:30", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
 
   // Dienstag
   { day: 1, startTime: "09:00", endTime: "10:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
   { day: 1, startTime: "18:00", endTime: "19:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
+  { day: 1, startTime: "19:30", endTime: "20:30", name: "Vinyasa Yoga", instructor: "Brigitte", color: "blue", icon: "fa-solid fa-om", note: "ab 17.11." },
 
   // Mittwoch
-  { day: 2, startTime: "18:00", endTime: "19:00", name: "Hatha Yoga", instructor: "Mary", color: "blue", icon: "fa-solid fa-om" },
+  { day: 2, startTime: "18:00", endTime: "19:00", name: "Hatha Yoga", instructor: "Paula", color: "blue", icon: "fa-solid fa-om" },
 
   // Donnerstag
   { day: 3, startTime: "10:00", endTime: "11:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
@@ -93,19 +90,6 @@ const getCourseDuration = (startTime: string, endTime: string) => {
 };
 
 export default function CourseTimetable() {
-  const [selectedCourse, setSelectedCourse] = useState<typeof courses[0] | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  const handleCourseClick = (course: typeof courses[0]) => {
-    setSelectedCourse(course);
-    setIsDialogOpen(true);
-  };
-
-  const handleCloseDialog = () => {
-    setIsDialogOpen(false);
-    setSelectedCourse(null);
-  };
-
   return (
     <>
       <FadeIn direction="up">
@@ -149,7 +133,6 @@ export default function CourseTimetable() {
                         className={`timetable-cell timetable-course timetable-course-${course.color || 'default'}`}
                         style={{ gridRow: `span ${duration}` }}
                         title={`${course.name}${course.instructor ? ` - ${course.instructor}` : ''}`}
-                        onClick={() => handleCourseClick(course)}
                       >
                         <div className="course-name">{course.name}</div>
                         {course.instructor && (
@@ -187,13 +170,6 @@ export default function CourseTimetable() {
           </div>
         </div>
       </FadeIn>
-
-      {/* Course Booking Dialog */}
-      <CourseBookingDialog
-        course={selectedCourse}
-        isOpen={isDialogOpen}
-        onClose={handleCloseDialog}
-      />
     </>
   );
 }
