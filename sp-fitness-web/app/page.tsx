@@ -307,10 +307,38 @@ export default function Home() {
               
             </FadeIn>
 
-            {/* Consultations */}
+            {/* Personal Training contracts */}
             <FadeIn className="pricing-card" delay={0.3}>
               <div className="pricing-card-header">
-                <h3>Beratung</h3>
+                <h3>Vertragsmodell Personal Training</h3>
+                <p className="pricing-card-description">Monatliche Preise, Kursprogramm optional zubuchbar</p>
+              </div>
+              <div className="pricing-list">
+                <p className="pricing-group-title">6-Monats-Vertrag</p>
+                <div className="pricing-item">
+                  <span className="pricing-label">1× pro Woche <small>90 €/Std.</small></span>
+                  <span className="pricing-price">360 € <small>+ 40 € mit Kursen</small></span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">2× pro Woche <small>85 €/Std.</small></span>
+                  <span className="pricing-price">680 € <small>+ 20 € mit Kursen</small></span>
+                </div>
+                <p className="pricing-group-title">Jahresvertrag</p>
+                <div className="pricing-item">
+                  <span className="pricing-label">1× pro Woche <small>85 €/Std.</small></span>
+                  <span className="pricing-price">340 € <small>+ 30 € mit Kursen</small></span>
+                </div>
+                <div className="pricing-item">
+                  <span className="pricing-label">2× pro Woche <small>80 €/Std.</small></span>
+                  <span className="pricing-price">640 € <small>+ 20 € mit Kursen</small></span>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Consultations & group training */}
+            <FadeIn className="pricing-card" delay={0.4}>
+              <div className="pricing-card-header">
+                <h3>Beratung & Gruppentraining</h3>
                 <p className="pricing-card-description">Professionelle Unterstützung</p>
               </div>
               <div className="pricing-list">
@@ -322,23 +350,9 @@ export default function Home() {
                   <span className="pricing-label">Trainingsplanung</span>
                   <span className="pricing-price">99 €</span>
                 </div>
-              </div>
-            </FadeIn>
-
-            {/* Group Training */}
-            <FadeIn className="pricing-card" delay={0.4}>
-              <div className="pricing-card-header">
-                <h3>Gruppentraining</h3>
-                <p className="pricing-card-description">Training mit deiner Gruppe</p>
-              </div>
-              <div className="pricing-list">
                 <div className="pricing-item">
-                  <span className="pricing-label">Einzeltraining</span>
-                  <span className="pricing-price">99 €</span>
-                </div>
-                <div className="pricing-item">
-                  <span className="pricing-label">Gruppentraining</span>
-                  <span className="pricing-price">150 €</span>
+                  <span className="pricing-label">Gruppentraining <small>mit deiner eigenen Gruppe</small></span>
+                  <span className="pricing-price"><small>Preis auf Anfrage</small></span>
                 </div>
               </div>
             </FadeIn>

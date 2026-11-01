@@ -31,7 +31,7 @@ export default function Kurse() {
             <div className="kurse-header">
               <h1 className="kurse-title">KURSE & STUNDENPLAN</h1>
               <p className="kurse-subtitle">
-                Finde den passenden Kurs für dich und melde dich ganz einfach per WhatsApp, Telefon oder E-Mail bei uns an.
+                Finde den passenden Kurs für dich und melde dich ganz einfach per WhatsApp, Telefon, E-Mail oder Kontaktformular bei uns an.
               </p>
               <p>Bitte beachte, dass die Kurse nur für Mitglieder sind oder alternativ gegen eine <Link href="/#preise" style={{ color: "#ffffff", textDecoration: "underline" }}>Gebühr</Link> gebucht werden können.
               </p>
@@ -69,6 +69,17 @@ export default function Kurse() {
                   <div className="quick-contact-info">
                     <span className="quick-contact-label">E-Mail</span>
                     <span className="quick-contact-value">kontakt@sp-fitness.de</span>
+                  </div>
+                </a>
+                <a
+                  href="#kontakt"
+                  className="quick-contact-btn form"
+                  aria-label="Kontaktformular"
+                >
+                  <i className="fa-solid fa-pen-to-square"></i>
+                  <div className="quick-contact-info">
+                    <span className="quick-contact-label">Kontaktformular</span>
+                    <span className="quick-contact-value">Nachricht schreiben</span>
                   </div>
                 </a>
               </div>

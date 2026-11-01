@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import TrainerCardCompact from "@/components/TrainerCardCompact";
-import { trainers } from "@/data/trainers";
 
 export const metadata: Metadata = {
   title: "Vinyasa Yoga – SP Fitness by Sebastian Pfau | Im Fluss von Atem und Bewegung",
-  description: "Vinyasa Flow bei SP Fitness in Schwetzingen: fließende Sequenzen, getragen von einem gleichmäßigen, tiefen Atem. Für Einsteiger*innen mit Freude an Bewegung und erfahrene Yogis. Dienstags 19:30 Uhr mit Brigitte.",
+  description: "Vinyasa Flow bei SP Fitness in Schwetzingen: fließende Sequenzen, getragen von einem gleichmäßigen, tiefen Atem. Für Einsteiger*innen mit Freude an Bewegung und erfahrene Yogis.",
   keywords: "Vinyasa Yoga Schwetzingen, Vinyasa Flow, Yoga Kurs, Asanas, Atem, Meditation, Kraft, Beweglichkeit, Balance, SP Fitness, Sebastian Pfau",
   openGraph: {
     title: "Vinyasa Yoga – SP Fitness by Sebastian Pfau",
@@ -25,8 +23,6 @@ export const metadata: Metadata = {
 };
 
 export default function VinyasaYoga() {
-  const brigitte = trainers.find(trainer => trainer.name === "Brigitte");
-
   return (
     <main>
       <section id="start">
@@ -93,9 +89,6 @@ export default function VinyasaYoga() {
               </p>
               <p className="yoga-intro-text">
                 Vinyasa Yoga hat seine Wurzeln im Ashtanga Yoga und hat sich zu einem eigenständigen, abwechslungsreichen Stil weiterentwickelt. Die Körperhaltungen (Asanas) werden zu fließenden Sequenzen verbunden, getragen von einem gleichmäßigen, tiefen Atem. Der Kurs eignet sich für Einsteiger*innen mit Freude an Bewegung ebenso wie für erfahrene Yoga-Praktizierende. Jede Asana lässt sich variieren und anpassen, sodass du auf deinem Yoga-Level praktizieren kannst.
-              </p>
-              <p className="yoga-intro-text">
-                <strong>Dienstags, 19:30 – 20:30 Uhr mit Brigitte – ab dem 17.11.</strong>
               </p>
             </FadeIn>
 
@@ -225,20 +218,6 @@ export default function VinyasaYoga() {
           </div>
         </div>
       </section>
-
-      {/* Trainer Section */}
-      {brigitte && (
-        <section className="trainer-team-grid">
-          <div className="wrapper">
-            <FadeIn direction="down">
-              <h2 className="trainer-section-title">Deine Yogalehrerin</h2>
-            </FadeIn>
-            <div className="trainer-cards-container">
-              <TrainerCardCompact {...brigitte} />
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Closing Section */}
       <section id="vinyasa-yoga-closing">

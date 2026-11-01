@@ -1963,6 +1963,20 @@ header #menu-toggle:focus {
     border-bottom: none;
 }
 
+.pricing-group-title {
+    font-family: var(--font-lato), system-ui;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-blue);
+    margin: 0.75rem 0 0;
+}
+
+.pricing-group-title:first-child {
+    margin-top: 0;
+}
+
 .pricing-item-highlight {
     background: linear-gradient(135deg, rgba(0, 90, 255, 0.1) 0%, rgba(0, 90, 255, 0.05) 100%);
     padding: 1rem 1.25rem;
@@ -3008,7 +3022,7 @@ header #menu-toggle:focus {
     color: var(--brand-dark);
     margin: 0 0 2rem 0;
     line-height: 1.3;
-    text-align: left;
+    text-align: center;
 }
 .closing-text {
     font-family: var(--font-lato), system-ui;
@@ -4888,6 +4902,10 @@ header #menu-toggle:focus {
 .quick-contact-btn.email i {
     background: var(--brand-blue-hover);
     color: #ffffff;
+}
+.quick-contact-btn.form i {
+    background: #ffffff;
+    color: var(--brand-blue);
 }
 .quick-contact-info {
     display: flex;
