@@ -3028,13 +3028,15 @@ header #menu-toggle:focus {
 }
 
 /* Hatha Yoga Sections */
-#hatha-yoga-intro {
+#hatha-yoga-intro,
+#vinyasa-yoga-intro {
     padding: 6rem 2rem;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     position: relative;
     overflow: hidden;
 }
-#hatha-yoga-intro::before {
+#hatha-yoga-intro::before,
+#vinyasa-yoga-intro::before {
     content: "";
     position: absolute;
     top: 0;
@@ -3043,7 +3045,8 @@ header #menu-toggle:focus {
     height: 4px;
     background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
 }
-#hatha-yoga-intro .wrapper {
+#hatha-yoga-intro .wrapper,
+#vinyasa-yoga-intro .wrapper {
     position: relative;
     z-index: 1;
 }
@@ -3229,6 +3232,7 @@ header #menu-toggle:focus {
     margin: 0;
 }
 #warum-hatha-yoga,
+#warum-vinyasa-yoga,
 #warum-pilates,
 #warum-yoga-nidra {
     background: linear-gradient(135deg, var(--brand-dark) 0%, #001250 100%);
@@ -3236,12 +3240,14 @@ header #menu-toggle:focus {
     color: #ffffff;
 }
 #warum-hatha-yoga .wrapper,
+#warum-vinyasa-yoga .wrapper,
 #warum-pilates .wrapper,
 #warum-yoga-nidra .wrapper {
     max-width: 100rem;
     margin: 0 auto;
 }
 #warum-hatha-yoga .section-title,
+#warum-vinyasa-yoga .section-title,
 #warum-pilates .section-title,
 #warum-yoga-nidra .section-title {
     font-family: var(--font-jockey-one), system-ui;
@@ -3253,35 +3259,44 @@ header #menu-toggle:focus {
     margin: 0 0 4rem 0;
 }
 #warum-hatha-yoga .features-grid,
+#warum-vinyasa-yoga .features-grid,
 #warum-pilates .features-grid,
 #warum-yoga-nidra .features-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
+#warum-vinyasa-yoga .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
 #warum-hatha-yoga .feature-card,
+#warum-vinyasa-yoga .feature-card,
 #warum-pilates .feature-card,
 #warum-yoga-nidra .feature-card {
     padding: 2.5rem;
 }
 #warum-hatha-yoga .feature-icon-wrapper,
+#warum-vinyasa-yoga .feature-icon-wrapper,
 #warum-pilates .feature-icon-wrapper,
 #warum-yoga-nidra .feature-icon-wrapper {
     margin-bottom: 1.5rem;
 }
 #warum-hatha-yoga .feature-card h4,
+#warum-vinyasa-yoga .feature-card h4,
 #warum-pilates .feature-card h4,
 #warum-yoga-nidra .feature-card h4 {
     font-size: 1.375rem;
     margin: 0 0 1rem 0;
 }
 #warum-hatha-yoga .feature-card p,
+#warum-vinyasa-yoga .feature-card p,
 #warum-pilates .feature-card p,
 #warum-yoga-nidra .feature-card p {
     font-size: 1rem;
     line-height: 1.7;
 }
 #hatha-yoga-closing,
+#vinyasa-yoga-closing,
 #pilates-closing,
 #yoga-nidra-closing {
     padding: 6rem 2rem;
@@ -3290,7 +3305,9 @@ header #menu-toggle:focus {
     color: var(--brand-dark);
 }
 #hatha-yoga-closing .closing-title,
+#vinyasa-yoga-closing .closing-title,
 #hatha-yoga-closing .closing-text,
+#vinyasa-yoga-closing .closing-text,
 #pilates-closing .closing-title,
 #pilates-closing .closing-text,
 #yoga-nidra-closing .closing-title,
@@ -3994,9 +4011,19 @@ header #menu-toggle:focus {
     }
 }
 
+/* Two-column pillar grid: center a lone last card in its row */
+@media screen and (min-width: 40.0625rem) and (max-width: 80rem) {
+    .yoga-pillars-grid > :last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc((100% - 2rem) / 2);
+    }
+}
+
 @media screen and (max-width: 60rem) {
     #personaltraining-intro,
     #hatha-yoga-intro,
+    #vinyasa-yoga-intro,
     #pilates-intro,
     #yoga-nidra-intro,
     #ernaehrungsberatung-intro,
@@ -4084,6 +4111,7 @@ header #menu-toggle:focus {
     }
     #warum-personaltraining,
     #warum-hatha-yoga,
+    #warum-vinyasa-yoga,
     #warum-pilates,
     #warum-yoga-nidra,
     #nutrition-approach,
@@ -4100,6 +4128,7 @@ header #menu-toggle:focus {
     }
     #warum-personaltraining .section-title,
     #warum-hatha-yoga .section-title,
+    #warum-vinyasa-yoga .section-title,
     #warum-pilates .section-title,
     #warum-yoga-nidra .section-title,
     #warum-wirbelsaeulengymnastik .section-title,
@@ -4111,6 +4140,7 @@ header #menu-toggle:focus {
         margin-bottom: 2rem;
     }
     #warum-hatha-yoga .features-grid,
+    #warum-vinyasa-yoga .features-grid,
     #warum-pilates .features-grid,
     #warum-yoga-nidra .features-grid,
     #warum-wirbelsaeulengymnastik .features-grid,
@@ -4121,6 +4151,7 @@ header #menu-toggle:focus {
         gap: 1.25rem;
     }
     #warum-hatha-yoga .feature-card,
+    #warum-vinyasa-yoga .feature-card,
     #warum-pilates .feature-card,
     #warum-yoga-nidra .feature-card,
     #warum-wirbelsaeulengymnastik .feature-card,
@@ -4192,6 +4223,7 @@ header #menu-toggle:focus {
     }
     #personaltraining-closing,
     #hatha-yoga-closing,
+    #vinyasa-yoga-closing,
     #pilates-closing,
     #yoga-nidra-closing,
     #ernaehrungsberatung-closing,
@@ -4371,6 +4403,13 @@ header #menu-toggle:focus {
 .trainer-card-compact-image img {
     border: none !important;
     outline: none !important;
+}
+/* Show the whole photo in its natural proportions, never cropped */
+.trainer-card-compact-image--full {
+    height: auto;
+    min-height: 0;
+    align-self: flex-start;
+    border-radius: 0;
 }
 .trainer-card-compact-overlay {
     position: absolute;
@@ -5022,6 +5061,12 @@ header #menu-toggle:focus {
         min-width: unset;
         height: 20rem;
         border-radius: 1.5rem 1.5rem 0 0;
+    }
+    .trainer-card-compact-image--full {
+        height: auto;
+        max-width: 28rem;
+        align-self: center;
+        border-radius: 0;
     }
     .trainer-card-compact-name {
         font-size: 1.75rem;
@@ -6032,6 +6077,7 @@ header #menu-toggle:focus {
     
     /* Course pages responsive at 60rem */
     #hatha-yoga-intro,
+    #vinyasa-yoga-intro,
     #pilates-intro,
     #yoga-nidra-intro,
     #wirbelsaeulengymnastik-intro,
@@ -6039,13 +6085,16 @@ header #menu-toggle:focus {
         padding: 4rem 1.5rem;
     }
     
-    #hatha-yoga-intro .wrapper {
+    #hatha-yoga-intro .wrapper,
+    #vinyasa-yoga-intro .wrapper {
         padding-left: 0;
         padding-right: 0;
     }
     
     #hatha-yoga-intro .yoga-intro-content,
-    #hatha-yoga-intro .yoga-intro-text {
+    #vinyasa-yoga-intro .yoga-intro-content,
+    #hatha-yoga-intro .yoga-intro-text,
+    #vinyasa-yoga-intro .yoga-intro-text {
         text-align: left;
         padding-left: 0;
         padding-right: 0;
@@ -6058,6 +6107,7 @@ header #menu-toggle:focus {
     
     #was-dich-erwartet,
     #warum-hatha-yoga,
+    #warum-vinyasa-yoga,
     #warum-pilates,
     #warum-yoga-nidra,
     #warum-wirbelsaeulengymnastik,
@@ -6070,6 +6120,7 @@ header #menu-toggle:focus {
     }
     
     #hatha-yoga-closing,
+    #vinyasa-yoga-closing,
     #pilates-closing,
     #yoga-nidra-closing,
     #wirbelsaeulengymnastik-closing,
@@ -6191,6 +6242,7 @@ header #menu-toggle:focus {
     
     /* Course pages responsive improvements */
     #hatha-yoga-intro,
+    #vinyasa-yoga-intro,
     #pilates-intro,
     #yoga-nidra-intro,
     #wirbelsaeulengymnastik-intro,
@@ -6212,6 +6264,7 @@ header #menu-toggle:focus {
     
     #was-dich-erwartet,
     #warum-hatha-yoga,
+    #warum-vinyasa-yoga,
     #warum-pilates,
     #warum-yoga-nidra,
     #warum-wirbelsaeulengymnastik,
@@ -6225,6 +6278,7 @@ header #menu-toggle:focus {
     
     #was-dich-erwartet .section-title,
     #warum-hatha-yoga .section-title,
+    #warum-vinyasa-yoga .section-title,
     #warum-pilates .section-title,
     #warum-yoga-nidra .section-title,
     #warum-wirbelsaeulengymnastik .section-title,
@@ -6260,6 +6314,7 @@ header #menu-toggle:focus {
     }
     
     #warum-hatha-yoga .features-grid,
+    #warum-vinyasa-yoga .features-grid,
     #warum-pilates .features-grid,
     #warum-yoga-nidra .features-grid,
     #warum-wirbelsaeulengymnastik .features-grid,
@@ -6271,6 +6326,7 @@ header #menu-toggle:focus {
     }
     
     #warum-hatha-yoga .feature-card,
+    #warum-vinyasa-yoga .feature-card,
     #warum-pilates .feature-card,
     #warum-yoga-nidra .feature-card,
     #warum-wirbelsaeulengymnastik .feature-card,
@@ -6281,6 +6337,7 @@ header #menu-toggle:focus {
     }
     
     #hatha-yoga-closing,
+    #vinyasa-yoga-closing,
     #pilates-closing,
     #yoga-nidra-closing,
     #wirbelsaeulengymnastik-closing,
@@ -7515,7 +7572,8 @@ header #menu-toggle:focus {
     
     #vereinssport-intro .wrapper,
     #mobiles-pt-intro .wrapper,
-    #hatha-yoga-intro .wrapper {
+    #hatha-yoga-intro .wrapper,
+    #vinyasa-yoga-intro .wrapper {
         padding-left: 0;
         padding-right: 0;
     }

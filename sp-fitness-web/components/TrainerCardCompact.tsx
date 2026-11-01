@@ -17,6 +17,7 @@ interface TrainerCardCompactProps {
   ctaText?: string;
   ctaLink?: string;
   galleryImages?: string[];
+  showFullImage?: boolean;
 }
 
 export default function TrainerCardCompact({
@@ -31,6 +32,7 @@ export default function TrainerCardCompact({
   ctaText,
   ctaLink,
   galleryImages = [],
+  showFullImage = false,
 }: TrainerCardCompactProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -55,14 +57,25 @@ export default function TrainerCardCompact({
     <FadeIn className="trainer-card-compact" direction="up">
       <div className="trainer-card-compact-inner">
         {/* Image Section */}
-        <div className="trainer-card-compact-image">
-          <Image
-            src={currentImageSrc}
-            alt={imageAlt}
-            fill
-            style={{ objectFit: "cover", objectPosition: "center center" }}
-            sizes="(max-width: 768px) 100vw, 400px"
-          />
+        <div className={`trainer-card-compact-image${showFullImage ? " trainer-card-compact-image--full" : ""}`}>
+          {showFullImage ? (
+            <Image
+              src={currentImageSrc}
+              alt={imageAlt}
+              width={0}
+              height={0}
+              style={{ width: "100%", height: "auto", display: "block" }}
+              sizes="(max-width: 768px) 100vw, 400px"
+            />
+          ) : (
+            <Image
+              src={currentImageSrc}
+              alt={imageAlt}
+              fill
+              style={{ objectFit: "cover", objectPosition: "center center" }}
+              sizes="(max-width: 768px) 100vw, 400px"
+            />
+          )}
           <div className="trainer-card-compact-overlay"></div>
 
           {hasGallery && galleryImages.length > 1 && (
