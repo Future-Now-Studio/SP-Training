@@ -99,7 +99,7 @@ export default function TrainerTeaser() {
           <div className="trainer-quote">
             <div className="quote-line"></div>
             <blockquote>
-              "Mein Ziel ist es, dich nicht nur körperlich, sondern auch mental stärker zu machen. Zusammen erreichen wir, was du dir vorgenommen hast."
+              „Mein Ziel ist es, dich nicht nur körperlich, sondern auch mental stärker zu machen. Zusammen erreichen wir, was du dir vorgenommen hast.“
             </blockquote>
             <p className="quote-author">— Sebastian</p>
           </div>

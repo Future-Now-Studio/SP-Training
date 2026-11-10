@@ -31,6 +31,8 @@ export default function EmpHeroVideo({ src, poster, label }: EmpHeroVideoProps) 
     // Wer Bewegung reduziert haben will, bekommt das Poster.
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
+    // Bewusst erst nach dem Mount: matchMedia gibt es serverseitig nicht.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActive(true);
   }, []);
 

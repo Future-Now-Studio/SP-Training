@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
+import { after } from "next/server";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CourseTimetable from "@/components/CourseTimetable";
+import CourseContactButtons from "@/components/CourseContactButtons";
+import TimetableUnavailable from "@/components/TimetableUnavailable";
+import { loadSchedule } from "@/lib/courses";
+import { notifyScheduleFailure } from "@/lib/schedule-alert";
 
 export const metadata: Metadata = {
   title: "Kurse & Stundenplan – SP Fitness by Sebastian Pfau | Aktueller Kursplan",
@@ -22,7 +27,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Kurse() {
+// Kursplan kommt aus der Datenbank der Buchungs-App, höchstens alle 5 Minuten neu.
+export const revalidate = 300;
+
+export default async function Kurse() {
+  const schedule = await loadSchedule();
+  if (schedule.status !== "fresh") {
+    const { error } = schedule;
+    const staleSince = schedule.status === "stale" ? schedule.savedAt : null;
+    after(() => notifyScheduleFailure(error, staleSince));
+  }
+
   return (
     <main>
       <section id="kurse-hero">
@@ -35,54 +50,7 @@ export default function Kurse() {
               </p>
               <p>Bitte beachte, dass die Kurse nur für Mitglieder sind oder alternativ gegen eine <Link href="/#preise" style={{ color: "#ffffff", textDecoration: "underline" }}>Gebühr</Link> gebucht werden können.
               </p>
-              <div className="quick-contact-buttons kurse-contact-buttons">
-                <a
-                  href="https://wa.me/4917696252517"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="quick-contact-btn whatsapp"
-                  aria-label="WhatsApp"
-                >
-                  <i className="fa-brands fa-whatsapp"></i>
-                  <div className="quick-contact-info">
-                    <span className="quick-contact-label">WhatsApp</span>
-                    <span className="quick-contact-value">0176 / 96 25 25 17</span>
-                  </div>
-                </a>
-                <a
-                  href="tel:+4917696252517"
-                  className="quick-contact-btn phone"
-                  aria-label="Telefon"
-                >
-                  <i className="fa-solid fa-phone"></i>
-                  <div className="quick-contact-info">
-                    <span className="quick-contact-label">Telefon</span>
-                    <span className="quick-contact-value">0176 / 96 25 25 17</span>
-                  </div>
-                </a>
-                <a
-                  href="mailto:kontakt@sp-fitness.de"
-                  className="quick-contact-btn email"
-                  aria-label="E-Mail"
-                >
-                  <i className="fa-solid fa-envelope"></i>
-                  <div className="quick-contact-info">
-                    <span className="quick-contact-label">E-Mail</span>
-                    <span className="quick-contact-value">kontakt@sp-fitness.de</span>
-                  </div>
-                </a>
-                <a
-                  href="#kontakt"
-                  className="quick-contact-btn form"
-                  aria-label="Kontaktformular"
-                >
-                  <i className="fa-solid fa-pen-to-square"></i>
-                  <div className="quick-contact-info">
-                    <span className="quick-contact-label">Kontaktformular</span>
-                    <span className="quick-contact-value">Nachricht schreiben</span>
-                  </div>
-                </a>
-              </div>
+              <CourseContactButtons />
             </div>
           </FadeIn>
         </div>
@@ -90,7 +58,11 @@ export default function Kurse() {
 
       <section id="timetable-section">
         <div className="wrapper">
-          <CourseTimetable />
+          {schedule.status === "unavailable" ? (
+            <TimetableUnavailable />
+          ) : (
+            <CourseTimetable courses={schedule.courses} />
+          )}
 
           {/* Info section */}
           <FadeIn direction="up" delay={0.3}>

@@ -5496,6 +5496,74 @@ header #menu-toggle:focus {
     overflow: hidden;
 }
 
+/* Shown instead of the grid when the schedule cannot be loaded */
+.timetable-unavailable {
+    background: var(--brand-dark);
+    color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 3rem 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.timetable-unavailable-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-hover) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+}
+
+.timetable-unavailable-icon i {
+    color: #ffffff;
+}
+
+.timetable-unavailable-title {
+    font-family: var(--font-jockey-one), system-ui;
+    font-weight: 400;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 1rem;
+}
+
+.timetable-unavailable-text {
+    font-family: var(--font-lato), system-ui;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 40rem) {
+    .timetable-unavailable {
+        padding: 2rem 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .timetable-unavailable-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Several courses whose hour rows overlap share one cell */
+.timetable-course-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 0;
+}
+
+.timetable-course-group > .timetable-course {
+    flex: 1;
+}
+
 .timetable-course:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 12px rgba(0, 90, 255, 0.3);

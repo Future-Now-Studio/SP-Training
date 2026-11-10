@@ -85,7 +85,7 @@ export default function YogaNidra() {
             <FadeIn direction="right" className="yoga-intro-content">
               <h2 className="yoga-intro-title">Yoga Nidra – Meditation und Entspannung</h2>
               <p className="yoga-intro-lead">
-                Yoga Nidra, auch „Schlaf der Yogis" genannt, ist eine geführte Tiefenentspannung, die Körper und Geist in einen Zustand tiefer Ruhe bringt. Während der Körper vollständig loslassen darf, bleibt der Geist wach und zugleich entspannt.
+                Yoga Nidra, auch „Schlaf der Yogis“ genannt, ist eine geführte Tiefenentspannung, die Körper und Geist in einen Zustand tiefer Ruhe bringt. Während der Körper vollständig loslassen darf, bleibt der Geist wach und zugleich entspannt.
               </p>
               <p className="yoga-intro-text">
                 Yoga Nidra eignet sich für alle Menschen, unabhängig von körperlicher Fitness oder Yoga-Erfahrung. Die Praxis fördert Erholung, mentale Stärke und wirkt sich positiv auf Schlaf, Stressverarbeitung und allgemeines Wohlbefinden aus – ein wertvoller Ausgleich im anspruchsvollen Alltag.

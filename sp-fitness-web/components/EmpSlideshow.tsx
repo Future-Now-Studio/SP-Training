@@ -42,6 +42,8 @@ export default function EmpSlideshow({ children, labels }: EmpSlideshowProps) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Startwert aus dem gemessenen Layout – geht erst nach dem Mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     sync();
     el.addEventListener("scroll", sync, { passive: true });
     window.addEventListener("resize", sync);

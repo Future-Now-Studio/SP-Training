@@ -1,178 +1,163 @@
 import FadeIn from "./FadeIn";
+import type { Course } from "@/lib/courses";
 
-// Generate time slots from 8:00 to 20:00 (1 hour intervals)
-const generateTimeSlots = () => {
-  const slots = [];
-  for (let hour = 8; hour < 20; hour++) {
-    slots.push(`${hour.toString().padStart(2, '0')}:00`);
+// Days of the week in German (index = weekday from the database)
+const dayNames = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+
+// Default visible range: rows 08:00 … 19:00, extended when a course needs it
+const DEFAULT_FIRST_HOUR = 8;
+const DEFAULT_END_HOUR = 20;
+
+const toMinutes = (time: string) => {
+  const [hours, minutes] = time.split(":").map(Number);
+  return hours * 60 + minutes;
+};
+
+// A block occupies one cell in the grid: usually one course, several when
+// courses of the same day would land in overlapping hour rows.
+interface Block {
+  weekday: number;
+  startHour: number;
+  endHour: number;
+  courses: Course[];
+}
+
+// Each course starts in the row of its start hour and spans as many rows as
+// it lasts in (rounded) hours – a 60-minute course at 19:30 stays in one row.
+const buildBlocks = (courses: Course[]) => {
+  const blocks: Block[] = [];
+  const sorted = [...courses].sort(
+    (a, b) => a.weekday - b.weekday || toMinutes(a.startTime) - toMinutes(b.startTime)
+  );
+  for (const course of sorted) {
+    const start = toMinutes(course.startTime);
+    const startHour = Math.floor(start / 60);
+    const span = Math.max(1, Math.round((toMinutes(course.endTime) - start) / 60));
+    const last = blocks[blocks.length - 1];
+    if (last && last.weekday === course.weekday && startHour < last.endHour) {
+      last.courses.push(course);
+      last.endHour = Math.max(last.endHour, startHour + span);
+    } else {
+      blocks.push({ weekday: course.weekday, startHour, endHour: startHour + span, courses: [course] });
+    }
   }
-  return slots;
+  return blocks;
 };
 
-// Days of the week in German
-const days = [
-  { name: "Montag" },
-  { name: "Dienstag" },
-  { name: "Mittwoch" },
-  { name: "Donnerstag" },
-  { name: "Freitag" },
-  { name: "Samstag" },
-];
-
-const timeSlots = generateTimeSlots();
-
-// Course data structure
-// Format: { day: 0-5, startTime: "10:00", endTime: "11:00", name: "Course Name", instructor: "Instructor", color: "blue", icon: "fa-icon" }
-// Day: 0=Montag, 1=Dienstag, 2=Mittwoch, 3=Donnerstag, 4=Freitag, 5=Samstag
-const courses: Array<{
-  day: number;
-  startTime: string;
-  endTime: string;
-  name: string;
-  instructor?: string;
-  color?: string;
-  icon?: string;
-  note?: string;
-}> = [
-  // Montag
-  { day: 0, startTime: "17:00", endTime: "18:00", name: "Wirbelsäulengymnastik (WSG)", instructor: "Sebastian", color: "green", icon: "fa-solid fa-spine" },
-  { day: 0, startTime: "19:30", endTime: "20:30", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
-
-  // Dienstag
-  { day: 1, startTime: "09:00", endTime: "10:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
-  { day: 1, startTime: "18:00", endTime: "19:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
-  { day: 1, startTime: "19:30", endTime: "20:30", name: "Vinyasa Yoga", instructor: "Brigitte", color: "blue", icon: "fa-solid fa-om", note: "ab 17.11." },
-
-  // Mittwoch
-  { day: 2, startTime: "18:00", endTime: "19:00", name: "Hatha Yoga", instructor: "Paula", color: "blue", icon: "fa-solid fa-om" },
-
-  // Donnerstag
-  { day: 3, startTime: "10:00", endTime: "11:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
-  { day: 3, startTime: "17:00", endTime: "18:00", name: "Rücken Yoga", instructor: "Elisa", color: "blue", icon: "fa-solid fa-om" },
-  { day: 3, startTime: "18:15", endTime: "19:15", name: "Pilates", instructor: "Elisa", color: "purple", icon: "fa-solid fa-spa" },
-  { day: 3, startTime: "19:30", endTime: "20:30", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
-
-  // Freitag
-  { day: 4, startTime: "09:00", endTime: "10:00", name: "Pilates", instructor: "Elisa", color: "purple", icon: "fa-solid fa-spa" },
-  { day: 4, startTime: "10:15", endTime: "11:15", name: "Hatha Yoga", instructor: "Paula", color: "blue", icon: "fa-solid fa-om" },
-  { day: 4, startTime: "18:00", endTime: "19:00", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
-
-  // Samstag
-  { day: 5, startTime: "09:30", endTime: "10:30", name: "Pilates", instructor: "Olya", color: "purple", icon: "fa-solid fa-spa" },
-  { day: 5, startTime: "11:00", endTime: "12:00", name: "Funktional Zirkeltraining", instructor: "Sebastian", color: "orange", icon: "fa-solid fa-dumbbell" },
-];
-
-// Helper function to check if a time slot has a course
-// Matches courses that start in this hour slot (handles times like 10:15, 19:15, etc.)
-// If multiple courses start in the same hour, returns the one that starts earliest
-const getCourseForSlot = (day: number, time: string) => {
-  const slotHour = parseInt(time.split(':')[0]);
-  const coursesInSlot = courses
-    .filter(course => {
-      const courseStartHour = parseInt(course.startTime.split(':')[0]);
-      return course.day === day && courseStartHour === slotHour;
-    })
-    .sort((a, b) => {
-      // Sort by start time (minutes) to get the earliest one
-      const aMinutes = parseInt(a.startTime.split(':')[1]) || 0;
-      const bMinutes = parseInt(b.startTime.split(':')[1]) || 0;
-      return aMinutes - bMinutes;
-    });
-  
-  return coursesInSlot[0] || null;
+// "ab TT.MM." while the start date still lies in the future (German time)
+const startNote = (startsOn: string | null, today: string) => {
+  if (!startsOn || startsOn <= today) return null;
+  const [, month, day] = startsOn.split("-");
+  return `ab ${day}.${month}.`;
 };
 
-// Helper function to get course duration in hours
-const getCourseDuration = (startTime: string, endTime: string) => {
-  const start = parseInt(startTime.split(':')[0]);
-  const end = parseInt(endTime.split(':')[0]);
-  return end - start;
-};
-
-export default function CourseTimetable() {
+function CourseCard({
+  course,
+  today,
+  className = "",
+  style,
+}: {
+  course: Course;
+  today: string;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const note = startNote(course.startsOn, today);
   return (
-    <>
-      <FadeIn direction="up">
-        <div className="timetable-container">
-          <div className="timetable-grid">
-            {/* Empty corner cell */}
-            <div className="timetable-cell timetable-header timetable-corner"></div>
-            
-            {/* Day headers */}
-            {days.map((day, index) => (
-              <div key={`header-${index}`} className="timetable-cell timetable-header timetable-day-header">
-                <div className="day-name">{day.name}</div>
-              </div>
-            ))}
-
-            {/* Time slots with course cells - flattened structure for grid */}
-            {timeSlots.flatMap((time, timeIndex) => {
-              const cells = [];
-              
-              // Time label
-              cells.push(
-                <div key={`time-${timeIndex}`} className="timetable-cell timetable-time-label">
-                  <span className="time-text">{time}</span>
-                </div>
-              );
-              
-              // Course cells for each day - always render all cells to maintain grid structure
-              days.forEach((day, dayIndex) => {
-                const course = getCourseForSlot(dayIndex, time);
-                const slotHour = parseInt(time.split(':')[0]);
-                
-                if (course) {
-                  const courseStartHour = parseInt(course.startTime.split(':')[0]);
-                  const isCourseStart = courseStartHour === slotHour;
-                  
-                  if (isCourseStart) {
-                    const duration = getCourseDuration(course.startTime, course.endTime);
-                    cells.push(
-                      <div
-                        key={`${dayIndex}-${timeIndex}`}
-                        className={`timetable-cell timetable-course timetable-course-${course.color || 'default'}`}
-                        style={{ gridRow: `span ${duration}` }}
-                        title={`${course.name}${course.instructor ? ` - ${course.instructor}` : ''}`}
-                      >
-                        <div className="course-name">{course.name}</div>
-                        {course.instructor && (
-                          <div className="course-instructor">{course.instructor}</div>
-                        )}
-                        <div className="course-time">{course.startTime} - {course.endTime}</div>
-                        {course.note && (
-                          <div className="course-note">{course.note}</div>
-                        )}
-                      </div>
-                    );
-                  } else {
-                    // This is part of a multi-hour course - render invisible placeholder
-                    cells.push(
-                      <div
-                        key={`${dayIndex}-${timeIndex}`}
-                        className="timetable-cell timetable-placeholder"
-                        style={{ visibility: 'hidden' }}
-                      ></div>
-                    );
-                  }
-                } else {
-                  // Empty cell
-                  cells.push(
-                    <div
-                      key={`${dayIndex}-${timeIndex}`}
-                      className="timetable-cell timetable-empty"
-                    ></div>
-                  );
-                }
-              });
-              
-              return cells;
-            })}
-          </div>
-        </div>
-      </FadeIn>
-    </>
+    <div
+      className={`${className}timetable-course timetable-course-${course.color}`}
+      style={style}
+      title={`${course.name}${course.trainer ? ` - ${course.trainer}` : ""}`}
+    >
+      <div className="course-name">{course.name}</div>
+      {course.trainer && <div className="course-instructor">{course.trainer}</div>}
+      <div className="course-time">{course.startTime} - {course.endTime}</div>
+      {note && <div className="course-note">{note}</div>}
+    </div>
   );
 }
 
+export default function CourseTimetable({ courses }: { courses: Course[] }) {
+  const blocks = buildBlocks(courses);
+  const firstHour = Math.min(DEFAULT_FIRST_HOUR, ...blocks.map((b) => b.startHour));
+  const endHour = Math.min(24, Math.max(DEFAULT_END_HOUR, ...blocks.map((b) => b.endHour)));
+  const hours = Array.from({ length: endHour - firstHour }, (_, i) => firstHour + i);
+  const dayCount = courses.some((c) => c.weekday === 6) ? 7 : 6;
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Berlin" }).format(new Date());
 
+  // Explicit placement: header row is 1, the first hour is row 2; the time
+  // label column is 1, Monday is column 2.
+  const rowOf = (hour: number) => hour - firstHour + 2;
+  const covered = new Set<string>();
+  for (const block of blocks) {
+    for (let hour = block.startHour; hour < block.endHour; hour++) covered.add(`${block.weekday}-${hour}`);
+  }
 
+  return (
+    <FadeIn direction="up">
+      <div className="timetable-container">
+        <div
+          className="timetable-grid"
+          style={dayCount === 7 ? { gridTemplateColumns: "80px repeat(7, 1fr)" } : undefined}
+        >
+          {/* Empty corner cell */}
+          <div className="timetable-cell timetable-header timetable-corner"></div>
+
+          {/* Day headers */}
+          {dayNames.slice(0, dayCount).map((name) => (
+            <div key={`header-${name}`} className="timetable-cell timetable-header timetable-day-header">
+              <div className="day-name">{name}</div>
+            </div>
+          ))}
+
+          {/* Time labels and empty cells */}
+          {hours.flatMap((hour) => [
+            <div
+              key={`time-${hour}`}
+              className="timetable-cell timetable-time-label"
+              style={{ gridColumn: 1, gridRow: rowOf(hour) }}
+            >
+              <span className="time-text">{`${hour.toString().padStart(2, "0")}:00`}</span>
+            </div>,
+            ...Array.from({ length: dayCount }, (_, weekday) =>
+              covered.has(`${weekday}-${hour}`) ? null : (
+                <div
+                  key={`${weekday}-${hour}`}
+                  className="timetable-cell timetable-empty"
+                  style={{ gridColumn: weekday + 2, gridRow: rowOf(hour) }}
+                ></div>
+              )
+            ),
+          ])}
+
+          {/* Courses */}
+          {blocks.map((block) => {
+            const placement = {
+              gridColumn: block.weekday + 2,
+              gridRow: `${rowOf(block.startHour)} / span ${block.endHour - block.startHour}`,
+            };
+            return block.courses.length === 1 ? (
+              <CourseCard
+                key={block.courses[0].id}
+                course={block.courses[0]}
+                today={today}
+                className="timetable-cell "
+                style={placement}
+              />
+            ) : (
+              <div
+                key={block.courses.map((c) => c.id).join("+")}
+                className="timetable-cell timetable-course-group"
+                style={placement}
+              >
+                {block.courses.map((course) => (
+                  <CourseCard key={course.id} course={course} today={today} />
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </FadeIn>
+  );
+}
