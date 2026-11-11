@@ -127,6 +127,25 @@ export default function Datenschutz() {
 
                 <h3>6.3 Newsletter</h3>
                 <p>Direktwerbung nur mit vorheriger Zustimmung. Widerspruch jederzeit möglich.</p>
+
+                <h3>6.4 SP-Fitness-App (iOS, Android und app.sp-fitness.de)</h3>
+                <p>
+                  Mit unserer App können Sie Kurse buchen, stornieren, sich auf Wartelisten setzen und Nachrichten zu Ihren Kursen erhalten. Dafür verarbeiten wir: Ihre E-Mail-Adresse, Ihren Namen, optional Ihre
+                  Telefonnummer, Ihre Buchungen und Wartelistenplätze, die Anwesenheit in Kursen, Nachrichten des Studios an Sie sowie – für die Abrechnung – Ihre Tarifart (Mitgliedschaft oder Einzelstunde) und
+                  den Zahlungsstatus. Rechtsgrundlage ist die Durchführung des Vertrags bzw. vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO).
+                </p>
+                <p>
+                  Die Anmeldung erfolgt ohne Passwort über einen Link bzw. Code, den wir per E-Mail versenden. Ihre Anmeldesitzung wird lokal auf Ihrem Gerät gespeichert, damit Sie angemeldet bleiben. Die App
+                  enthält keine Werbung und kein Tracking; es werden keine Daten an Dritte zu Werbe- oder Analysezwecken weitergegeben.
+                </p>
+                <p>
+                  Die App-Daten werden auf einem Server der IONOS SE in einem Rechenzentrum in Deutschland gespeichert; die Anmelde-E-Mails werden über unseren E-Mail-Anbieter ALL-INKL.COM – Neue Medien Münnich
+                  (Deutschland) versendet. Mit beiden Anbietern bestehen Verträge zur Auftragsverarbeitung. Eine Übermittlung in Drittstaaten findet nicht statt.
+                </p>
+                <p>
+                  Ihre Daten werden gespeichert, solange Ihr Konto besteht. Sie können Ihr Konto jederzeit in der App unter „Profil → Konto löschen“ löschen; dabei werden Ihr Konto, Ihre Buchungen und
+                  Nachrichten entfernt. Daten, die wir aus steuer- oder handelsrechtlichen Gründen aufbewahren müssen (z. B. Zahlungsinformationen), löschen wir nach Ablauf der gesetzlichen Fristen.
+                </p>
               </div>
             </FadeIn>
 
@@ -168,7 +187,7 @@ export default function Datenschutz() {
             <FadeIn direction="up" delay={1.3}>
               <div className="datenschutz-section">
                 <h2>11. Änderungen dieser Datenschutzerklärung</h2>
-                <p>Stand: April 2025. Änderungen vorbehalten. Aktuell abrufbar unter: <a href="https://www.sp-fitness.de/datenschutz" target="_blank" rel="noopener noreferrer">www.sp-fitness.de/datenschutz/</a></p>
+                <p>Stand: November 2026. Änderungen vorbehalten. Aktuell abrufbar unter: <a href="https://www.sp-fitness.de/datenschutz" target="_blank" rel="noopener noreferrer">www.sp-fitness.de/datenschutz/</a></p>
               </div>
             </FadeIn>
           </div>
